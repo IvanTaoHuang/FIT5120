@@ -12,6 +12,7 @@ function NavigationBar() {
 </div>
 <ul>
   <li><a class="active" href="#home">Home</a></li>
+  <li><h1>      </h1></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
 </ul>

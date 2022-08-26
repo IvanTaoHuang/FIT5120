@@ -7,10 +7,7 @@ console.log(logo); // /logo.84287d09.png
 function Header() {
   // Import result is the URL of your image
   return <img class="image" style ={{
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain',
+    width:'100%'
   }} src={logo} alt="Logo" />;
 }
 
