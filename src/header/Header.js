@@ -6,8 +6,8 @@ console.log(logo); // /logo.84287d09.png
 
 function Header() {
   // Import result is the URL of your image
-  return <img class="image" style ={{
-    width:'100%'
+  return <img className="image" style ={{
+    width:"100%"
   }} src={logo} alt="Logo" />;
 }
 

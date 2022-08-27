@@ -1,36 +1,106 @@
-import './NavigationBar.css'
+import "./NavigationBar.css";
+import Button from "@mui/material/Button";
 
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
+import { grey } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import FirstPage from "../PastData";
+
+function LinkTab(props) {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+}
 
 function NavigationBar() {
-  
+  const theme = createTheme({
+    palette: {
+      primary: { main: grey[600] },
+    },
+  });
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-  return(
-<div>
-<div class="header">
-  <h2>Scroll Down</h2>
-  <p>Scroll down to see the sticky effect.</p>
-</div>
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><h1>      </h1></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-<h3>Sticky Navigation Bar Example</h3>
-<p>The navbar will <strong>stick</strong> to the top when you reach its scroll position.</p>
-<p><strong>Note:</strong> Internet Explorer do not support sticky positioning and Safari requires a -webkit- prefix.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-<p>Some text to enable scrolling. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
+  const [value, setValue] = React.useState(0);
 
-  
-)
-  
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div>
+      <Box sx={{ width: "100%" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="nav tabs example"
+          centered
+        >
+          <LinkTab label="Home" href="/" />
+          <LinkTab label="Phishing Detector" href="/trash" />
+          <LinkTab label="Phishing Simulation" href="/spam" />
+          <LinkTab label="Know more about scams" href="/drafts" />
+
+          <Router>
+            <ThemeProvider theme={theme}>
+              <Button
+                id="fade-button"
+                aria-controls={open ? "fade-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                color="primary"
+                endIcon={<KeyboardArrowDownIcon />}
+              >
+                Dashboard
+              </Button>
+            </ThemeProvider>
+
+            <Menu
+              id="fade-menu"
+              MenuListProps={{
+                "aria-labelledby": "fade-button",
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+            >
+              <MenuItem onClick={handleClose}>
+                <Link to="/">Past Statistical Data</Link>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link to="./FirstPage.js">Past Scam Articles</Link>
+              </MenuItem>
+            </Menu>
+            <Routes>
+              <Route path="./FirstPage.js" element={<FirstPage />}></Route>
+            </Routes>
+          </Router>
+        </Tabs>
+      </Box>
+    </div>
+  );
 }
 
 export default NavigationBar;
