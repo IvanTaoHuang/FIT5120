@@ -22,9 +22,9 @@ import Fade from "@mui/material/Fade";
 import Home from "./Home";
 import PhishingDetector from "./PhishingDetector";
 import PhishingSimulation from "./PhishingSimulation";
-import KnowScams from "./KnowScams";
 import PastData from "./PastData";
 import PastArticle from "./PastArticle";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 function Router(props) {
   const { children } = props;
@@ -66,7 +66,6 @@ function MyTabs() {
     "/home",
     "/PhishingDetector",
     "/PhishingSimulation",
-    "/KnowScams",
     "fade-button",
     "PastData",
   ]);
@@ -102,12 +101,6 @@ function MyTabs() {
             to="/PhishingSimulation"
             component={Link}
           />
-          <Tab
-            label="Know more about scams"
-            value="/KnowScams"
-            to="/KnowScams"
-            component={Link}
-          />
 
           <ThemeProvider theme={theme}>
             <Button
@@ -120,7 +113,7 @@ function MyTabs() {
               color="primary"
               endIcon={<KeyboardArrowDownIcon />}
             >
-              Dashboard
+              Know more about scams
             </Button>
           </ThemeProvider>
 
@@ -133,14 +126,29 @@ function MyTabs() {
             open={open}
             onClose={handleClose}
             TransitionComponent={Fade}
+            style={{
+              width: "275px",
+            }}
           >
             <MenuItem onClick={handleClose}>
-              <Link to="/PastData" value="PastData">
+              <Link
+                to="/PastData"
+                value="PastData"
+                style={{ textDecoration: "none" }}
+              >
                 Past Statistical Data
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/PastArticle">Past Scam Articles</Link>
+              <Link
+                to="/PastArticle"
+                style={{
+                  textDecoration: "none",
+                  width: "275px",
+                }}
+              >
+                Past Scam Articles
+              </Link>
             </MenuItem>
           </Menu>
         </Tabs>
@@ -163,7 +171,6 @@ export default function TabsRouter() {
           path="/PhishingSimulation"
           element={<PhishingSimulation />}
         />
-        <Route exact path="/KnowScams" element={<KnowScams />} />
       </Routes>
     </Router>
   );
