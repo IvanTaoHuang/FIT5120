@@ -24,7 +24,6 @@ import PhishingDetector from "./PhishingDetector";
 import PhishingSimulation from "./PhishingSimulation";
 import PastData from "./PastData";
 import PastArticle from "./PastArticle";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 function Router(props) {
   const { children } = props;
@@ -86,7 +85,12 @@ function MyTabs() {
 
   return (
     <div>
-      <Box>
+      <Box
+        sx={{
+          width: "100vw",
+          height: "5vh",
+        }}
+      >
         <Tabs value={currentTab} centered>
           <Tab label="Home" value="/home" to="/home" component={Link} />
           <Tab

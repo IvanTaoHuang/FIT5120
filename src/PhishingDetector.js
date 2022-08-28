@@ -10,6 +10,8 @@ import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import { useState } from "react";
+import Slide from "@mui/material/Slide";
+import Zoom from "@mui/material/Zoom";
 
 function PhishingDetector() {
   const [isActive, setIsActive] = useState(false);
@@ -31,20 +33,26 @@ function PhishingDetector() {
         marginTop: "15vh",
       }}
     >
-      <Div>{"About Detector"}</Div>
+      <Zoom in={true} timeout={1000}>
+        <Div>{"About Detector"}</Div>
+      </Zoom>
+
       <br></br>
       <br></br>
-      <Typography
-        variant="body1"
-        gutterBottom
-        fontSize={"30px"}
-        marginLeft="15vw"
-      >
-        body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-        blanditiis tenetur unde suscipit, quam beatae rerum inventore
-        consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-        fugiat deleniti? Eum quasi quidem quibusdam.
-      </Typography>
+      <Zoom in={true} timeout={2500}>
+        <Typography
+          variant="body1"
+          gutterBottom
+          fontSize={"30px"}
+          marginLeft="15vw"
+        >
+          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+          blanditiis tenetur unde suscipit, quam beatae rerum inventore
+          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
+          fugiat deleniti? Eum quasi quidem quibusdam.
+        </Typography>
+      </Zoom>
+
       <br></br>
       <br></br>
       <br></br>
@@ -95,20 +103,19 @@ function PhishingDetector() {
       <br></br>
       <br></br>
       <br></br>
-      <Typography
-        variant="body1"
-        gutterBottom
-        fontSize={"30px"}
-        marginLeft="15vw"
-        style={{
-          display: isActive ? "block" : "none",
-        }}
-      >
-        body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-        blanditiis tenetur unde suscipit, quam beatae rerum inventore
-        consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-        fugiat deleniti? Eum quasi quidem quibusdam.
-      </Typography>
+      <Slide direction="up" in={isActive}>
+        <Typography
+          variant="body1"
+          gutterBottom
+          fontSize={"30px"}
+          marginLeft="15vw"
+        >
+          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+          blanditiis tenetur unde suscipit, quam beatae rerum inventore
+          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
+          fugiat deleniti? Eum quasi quidem quibusdam.
+        </Typography>
+      </Slide>
       <br></br>
       <br></br>
       <br></br>

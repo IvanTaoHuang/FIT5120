@@ -9,6 +9,8 @@ import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import SendIcon from "@mui/icons-material/Send";
+import Collapse from "@mui/material/Collapse";
+import Fade from "@mui/material/Fade";
 
 function PhishingSimulation() {
   const Div = styled("div")(({ theme }) => ({
@@ -26,20 +28,26 @@ function PhishingSimulation() {
         marginTop: "15vh",
       }}
     >
-      <Div>{"About Detector"}</Div>
+      <Fade in={true} timeout={1000}>
+        <Div>{"About Simulation"}</Div>
+      </Fade>
+
       <br></br>
       <br></br>
-      <Typography
-        variant="body1"
-        gutterBottom
-        fontSize={"30px"}
-        marginLeft="15vw"
-      >
-        body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-        blanditiis tenetur unde suscipit, quam beatae rerum inventore
-        consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-        fugiat deleniti? Eum quasi quidem quibusdam.
-      </Typography>
+      <Fade in={true} timeout={3000}>
+        <Typography
+          variant="body1"
+          gutterBottom
+          fontSize={"30px"}
+          marginLeft="15vw"
+        >
+          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+          blanditiis tenetur unde suscipit, quam beatae rerum inventore
+          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
+          fugiat deleniti? Eum quasi quidem quibusdam.
+        </Typography>
+      </Fade>
+
       <br></br>
       <br></br>
       <br></br>
