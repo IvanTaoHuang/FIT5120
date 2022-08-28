@@ -12,6 +12,7 @@ import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import { useState } from "react";
 import Slide from "@mui/material/Slide";
 import Zoom from "@mui/material/Zoom";
+import { Helmet } from "react-helmet";
 
 function PhishingDetector() {
   const [isActive, setIsActive] = useState(false);
@@ -33,6 +34,12 @@ function PhishingDetector() {
         marginTop: "15vh",
       }}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Phishing Detector</title>
+        <link rel="canonical" href="http://catchphish.org/PhishingDetector" />
+        <meta name="description" content="Phishing Detector" />
+      </Helmet>
       <Zoom in={true} timeout={1000}>
         <Div>{"About Detector"}</Div>
       </Zoom>

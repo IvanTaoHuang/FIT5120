@@ -32,12 +32,14 @@ function Home() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Home Page</title>
-        <link rel="canonical" href="http://catchphish.org" />
+        <link rel="canonical" href="http://catchphish.org/home" />
         <meta name="description" content="Home page" />
       </Helmet>
-      <Div>{"About"}</Div>
-      <br></br>
       <Slide direction="right" in={true} timeout={1000}>
+        <Div>{"About"}</Div>
+      </Slide>
+      <br></br>
+      <Slide direction="right" in={true} timeout={2000}>
         <Typography
           variant="body1"
           gutterBottom
@@ -55,9 +57,11 @@ function Home() {
       <br></br>
       <br></br>
       <br></br>
-      <Div>{"Phishing Detector"}</Div>
+      <Fade in={true} timeout={2000}>
+        <Div>{"Phishing Detector"}</Div>
+      </Fade>
       <br></br>
-      <Fade in={true} timeout={3000}>
+      <Fade in={true} timeout={3500}>
         <Typography
           variant="body1"
           gutterBottom
@@ -75,7 +79,9 @@ function Home() {
       <br></br>
       <br></br>
       <br></br>
-      <Div>{"Phishing Simulation"}</Div>
+      <Grow in={true} timeout={2000}>
+        <Div>{"Phishing Simulation"}</Div>
+      </Grow>
       <br></br>
       <Grow in={true} timeout={4000}>
         <Typography
@@ -90,7 +96,7 @@ function Home() {
           fugiat deleniti? Eum quasi quidem quibusdam.
         </Typography>
       </Grow>
-      <Grow in={true} style={{ transformOrigin: "0 0 0" }} timeout={5000}>
+      <Grow in={true} timeout={5000}>
         <Typography
           variant="body1"
           gutterBottom
