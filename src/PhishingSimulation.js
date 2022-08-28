@@ -7,9 +7,7 @@ import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import SendIcon from "@mui/icons-material/Send";
-import Collapse from "@mui/material/Collapse";
 import Fade from "@mui/material/Fade";
 
 function PhishingSimulation() {

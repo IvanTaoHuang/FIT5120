@@ -1,23 +1,12 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
-import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import { useState } from "react";
 import Slide from "@mui/material/Slide";
 
 function PastData() {
-  const [checked, setChecked] = React.useState(false);
-
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-  };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive((current) => !current);
