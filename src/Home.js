@@ -9,6 +9,7 @@ import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import Slide from "@mui/material/Slide";
 import Fade from "@mui/material/Fade";
 import Grow from "@mui/material/Grow";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const Div = styled("div")(({ theme }) => ({
@@ -28,6 +29,12 @@ function Home() {
         marginTop: "5vh",
       }}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home Page</title>
+        <link rel="canonical" href="http://catchphish.org" />
+        <meta name="description" content="Home page" />
+      </Helmet>
       <Div>{"About"}</Div>
       <br></br>
       <Slide direction="right" in={true} timeout={1000}>
