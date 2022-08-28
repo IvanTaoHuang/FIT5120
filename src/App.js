@@ -10,6 +10,7 @@ import {
   Link,
   matchPath,
   useLocation,
+  BrowserRouter as Router,
 } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -25,7 +26,7 @@ import PhishingSimulation from "./PhishingSimulation";
 import PastData from "./PastData";
 import PastArticle from "./PastArticle";
 
-function Router(props) {
+function homeRouter(props) {
   const { children } = props;
   if (typeof window === "undefined") {
     return <StaticRouter location="/home">{children}</StaticRouter>;
@@ -38,7 +39,7 @@ function Router(props) {
   );
 }
 
-Router.propTypes = {
+homeRouter.propTypes = {
   children: PropTypes.node,
 };
 
@@ -62,7 +63,7 @@ function MyTabs() {
   // users, users/new, users/edit.
   // Then the order should be ['users/add', 'users/edit', 'users'].
   const routeMatch = useRouteMatch([
-    "/home",
+    "/",
     "/PhishingDetector",
     "/PhishingSimulation",
     "fade-button",
@@ -92,7 +93,7 @@ function MyTabs() {
         }}
       >
         <Tabs value={currentTab} centered>
-          <Tab label="Home" value="/home" to="/home" component={Link} />
+          <Tab label="Home" value="/" to="/" component={Link} />
           <Tab
             label="Phishing Detector"
             value="/PhishingDetector"
@@ -138,7 +139,7 @@ function MyTabs() {
               <Link
                 to="/PastData"
                 value="PastData"
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", width: "275px" }}
               >
                 Past Statistical Data
               </Link>
@@ -168,7 +169,7 @@ export default function TabsRouter() {
       <Routes>
         <Route exact path="/PastData" element={<PastData />} />
         <Route exact path="/PastArticle" element={<PastArticle />} />
-        <Route exact path="/Home" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/PhishingDetector" element={<PhishingDetector />} />
         <Route
           exact
