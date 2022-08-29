@@ -25,6 +25,7 @@ import PhishingDetector from "./PhishingDetector";
 import PhishingSimulation from "./PhishingSimulation";
 import PastData from "./PastData";
 import PastArticle from "./PastArticle";
+import Header from "./header/Header";
 
 function homeRouter(props) {
   const { children } = props;
@@ -89,7 +90,6 @@ function MyTabs() {
       <Box
         sx={{
           width: "100vw",
-          height: "5vh",
         }}
       >
         <Tabs value={currentTab} centered>
@@ -165,6 +165,7 @@ function MyTabs() {
 export default function TabsRouter() {
   return (
     <Router>
+      <Header />
       <MyTabs />
       <Routes>
         <Route exact path="/PastData" element={<PastData />} />

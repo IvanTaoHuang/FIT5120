@@ -13,8 +13,60 @@ import { useState } from "react";
 import Slide from "@mui/material/Slide";
 import Zoom from "@mui/material/Zoom";
 import { Helmet } from "react-helmet";
+import PropTypes from "prop-types";
+import Toolbar from "@mui/material/Toolbar";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fade from "@mui/material/Fade";
 
-function PhishingDetector() {
+function ScrollTop(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: "center",
+      });
+    }
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+
+ScrollTop.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+function PhishingDetector(props) {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive((current) => !current);
@@ -34,6 +86,15 @@ function PhishingDetector() {
         marginTop: "15vh",
       }}
     >
+      <Toolbar id="back-to-top-anchor" />
+      <React.Fragment>
+        <CssBaseline />
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="large" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+      </React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Phishing Detector</title>
@@ -160,6 +221,11 @@ function PhishingDetector() {
           Chat with us
         </Button>
       </Stack>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </Box>
   );
 }
