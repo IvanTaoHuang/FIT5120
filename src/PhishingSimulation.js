@@ -106,10 +106,12 @@ function PhishingSimulation(props) {
           fontSize={"30px"}
           marginLeft="15vw"
         >
-          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
+          Experience is own’s on teacher. Learning about phishing scams by get a
+          first hand experience will increase awareness and which will make you
+          cautious in entering any unknown links.
+          We created a small simulation which provides an usual phishing mail
+          content in the mail ID you provide. This exercise will help you
+          determine on how to segregate a fake mail from the real one.
         </Typography>
       </Fade>
 

@@ -114,10 +114,14 @@ function PhishingDetector(props) {
           fontSize={"30px"}
           marginLeft="15vw"
         >
-          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
+          The detection feature can be found in the tools dashboard on top. The
+          detection model is created through deep learning therefore it provide
+          you with the authenticity of a provided URL with accuracy in no time.
+          Phising websites are being used widely therefore it is advised to look
+          before you leap. The detection is free to use and can be helpful in
+          clearing your doubts about any links you recieverd from an unknow
+          source. We also provide some common signs to look for determing the
+          validity of any content you recieve
         </Typography>
       </Zoom>
 
