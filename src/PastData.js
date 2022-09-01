@@ -1,5 +1,13 @@
 import { Helmet } from "react-helmet";
-function PastData() {
+import ControlledCheckbox from "./checkBox";
+import ScrollTop from "./ScrollTop";
+import Toolbar from "@mui/material/Toolbar";
+import CssBaseline from "@mui/material/CssBaseline";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import React from "react";
+
+function PastData(props) {
   return (
     <div>
       <Helmet>
@@ -8,7 +16,16 @@ function PastData() {
         <link rel="canonical" href="http://catchphish.org/PastData" />
         <meta name="description" content="Past Data" />
       </Helmet>
-      <h1>This is the Past Statistical Data Page.</h1>
+      <Toolbar id="back-to-top-anchor" />
+      <React.Fragment>
+        <CssBaseline />
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="large" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+      </React.Fragment>
+      <ControlledCheckbox />
     </div>
   );
 }
