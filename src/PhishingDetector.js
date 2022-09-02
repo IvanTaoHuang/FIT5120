@@ -5,8 +5,6 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
-import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import { useState } from "react";
@@ -17,7 +15,8 @@ import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./ScrollTop";
+import ScrollTop from "./scrollTop";
+import ReportScamButton from "./reportChatButton";
 
 function PhishingDetector(props) {
   const [isActive, setIsActive] = useState(false);
@@ -40,6 +39,7 @@ function PhishingDetector(props) {
         marginTop: "5vh",
       }}
     >
+      {/* Component for scroll to top button */}
       <Toolbar id="back-to-top-anchor" />
       <React.Fragment>
         <CssBaseline />
@@ -49,6 +49,8 @@ function PhishingDetector(props) {
           </Fab>
         </ScrollTop>
       </React.Fragment>
+
+      {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>Phishing Detector</title>
@@ -67,7 +69,7 @@ function PhishingDetector(props) {
       
     
 
-
+{/* Component for About Detector and text animation */}
       <Zoom in={true} timeout={1000}>
         <Div>{"About Detector"}</Div>
       </Zoom>
@@ -95,6 +97,7 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
+      {/* Component for Enter URL and Check button */}
       <Stack marginLeft="35vw" spacing="2vw" direction="row">
         <TextField
           id="outlined-basic"
@@ -124,6 +127,7 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
+      {/* Component for Common signs of Phshing button and text animation*/}
       <Stack marginLeft="20vw">
         <Button
           startIcon={<WarningAmberOutlinedIcon />}
@@ -158,40 +162,8 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
-
-      <Stack
-        spacing="48vw"
-        direction="row"
-        marginLeft="15vw"
-        marginRight="15vw"
-      >
-        <Button
-          startIcon={<ReportOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "200px",
-            minHeight: "50px",
-          }}
-        >
-          Report a scam
-        </Button>
-        <Button
-          startIcon={<ChatOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "200px",
-            minHeight: "50px",
-          }}
-        >
-          Chat with us
-        </Button>
-      </Stack>
+{/* Component for Report a scam and Chat with us buttons*/}
+      <ReportScamButton/>
       <br></br>
       <br></br>
       <br></br>

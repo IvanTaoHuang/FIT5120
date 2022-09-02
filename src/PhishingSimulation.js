@@ -1,12 +1,9 @@
 import { Button } from "@mui/material";
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
-import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import SendIcon from "@mui/icons-material/Send";
 import Fade from "@mui/material/Fade";
 import { Helmet } from "react-helmet";
@@ -15,25 +12,18 @@ import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./ScrollTop";
+import ScrollTop from "./scrollTop";
+import TitleTheme from "./titleTheme"
+import ReportScamButton from "./reportChatButton"
 
+//To scroll to top
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
 function PhishingSimulation(props) {
-  const Div = styled("div")(({ theme }) => ({
-    ...theme.typography.button,
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(1),
-    fontSize: "40px",
-    marginLeft: "10vw",
-  }));
+  const Div = TitleTheme();
   return (
     <Box
       sx={{
@@ -42,6 +32,7 @@ function PhishingSimulation(props) {
         marginTop: "5vh",
       }}
     >
+      {/* Component for scroll to top button */}
       <Toolbar id="back-to-top-anchor" />
       <React.Fragment>
         <CssBaseline />
@@ -51,6 +42,8 @@ function PhishingSimulation(props) {
           </Fab>
         </ScrollTop>
       </React.Fragment>
+
+      {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>Phishing Simulation</title>
@@ -63,7 +56,8 @@ function PhishingSimulation(props) {
         height: "40vh",
       }} />
       </Box>
-      
+
+      {/* Component for About Simulation and text animation */}
       <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">Sorry, page is still under construction. Please comeback another time!</Typography>
       <Fade in={true} timeout={1000}>
         <Div>{"About Simulation"}</Div>
@@ -90,6 +84,7 @@ function PhishingSimulation(props) {
       <br></br>
       <br></br>
       <br></br>
+      {/* Component for Enter Email Address text field and Submit button */}
       <Stack marginLeft="35vw" spacing="2vw" direction="row">
         <TextField
           id="outlined-basic"
@@ -120,40 +115,8 @@ function PhishingSimulation(props) {
       <br></br>
       <br></br>
       <br></br>
-
-      <Stack
-        spacing="48vw"
-        direction="row"
-        marginLeft="15vw"
-        marginRight="15vw"
-      >
-        <Button
-          startIcon={<ReportOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "200px",
-            minHeight: "50px",
-          }}
-        >
-          Report a scam
-        </Button>
-        <Button
-          startIcon={<ChatOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "200px",
-            minHeight: "50px",
-          }}
-        >
-          Chat with us
-        </Button>
-      </Stack>
+{/* Component for Report a scam and Chat with us buttons*/}
+      <ReportScamButton/>
       <br></br>
       <br></br>
       <br></br>
