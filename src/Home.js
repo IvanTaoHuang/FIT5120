@@ -1,5 +1,4 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
@@ -15,21 +14,18 @@ import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./ScrollTop";
+import ScrollTop from "./scrollTop";
+import TitleTheme from "./titleTheme";
+import ReportScamButton from "./reportChatButton"
 
+// To scroll to top 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
 };
 
 function Home(props) {
-  const Div = styled("div")(({ theme }) => ({
-    ...theme.typography.button,
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(1),
-    fontSize: "40px",
-    marginLeft: "10vw",
-  }));
+  const Div = TitleTheme();
 
   return (
     <Box
@@ -40,6 +36,7 @@ function Home(props) {
         marginTop: "5vh",
       }}
     >
+      {/* Component for scroll to top button */}
       <Toolbar id="back-to-top-anchor" />
       <React.Fragment>
         <CssBaseline />
@@ -49,12 +46,16 @@ function Home(props) {
           </Fab>
         </ScrollTop>
       </React.Fragment>
+
+      {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>Home Page</title>
         <link rel="canonical" href="http://catchphish.org/home" />
         <meta name="description" content="Home page" />
       </Helmet>
+
+      {/* Component for About and text with animation */}
       <Slide direction="right" in={true} timeout={1000}>
         <Div>{"About"}</Div>
       </Slide>
@@ -83,6 +84,7 @@ phishing scams you discovered.
       <br></br>
       <br></br>
       <br></br>
+      {/* Component for Phishing Detector and text with animation */}
       <Fade in={true} timeout={2000}>
         <Div>{"Phishing Detector"}</Div>
       </Fade>
@@ -109,6 +111,7 @@ phishing scams you discovered.
       <br></br>
       <br></br>
       <br></br>
+      {/* Component for Phishing Simulation and text with animation */}
       <Grow in={true} timeout={2000}>
         <Div>{"Phishing Simulation"}</Div>
       </Grow>
@@ -141,39 +144,8 @@ phishing scams you discovered.
       <br></br>
       <br></br>
       <br></br>
-      <Stack
-        spacing="48vw"
-        direction="row"
-        marginLeft="15vw"
-        marginRight="15vw"
-      >
-        <Button
-          startIcon={<ReportOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "220px",
-            minHeight: "50px",
-          }}
-        >
-          Report a scam
-        </Button>
-        <Button
-          startIcon={<ChatOutlinedIcon />}
-          variant="outlined"
-          size="large"
-          style={{
-            maxWidth: "200px",
-            maxHeight: "50px",
-            minWidth: "220px",
-            minHeight: "50px",
-          }}
-        >
-          Chat with us
-        </Button>
-      </Stack>
+      {/* Component for Report a scam and Chat with us buttons*/}
+      <ReportScamButton/>
       <br></br>
       <br></br>
       <br></br>
