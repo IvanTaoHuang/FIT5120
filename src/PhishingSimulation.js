@@ -39,7 +39,7 @@ function PhishingSimulation(props) {
       sx={{
         width: "100%",
         maxWidth: "90%",
-        marginTop: "15vh",
+        marginTop: "5vh",
       }}
     >
       <Toolbar id="back-to-top-anchor" />
@@ -57,6 +57,7 @@ function PhishingSimulation(props) {
         <link rel="canonical" href="http://catchphish.org/PhishingSimulation" />
         <meta name="description" content="Phishing Simulation" />
       </Helmet>
+      <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">Sorry, page is still under construction. Please comeback another time!</Typography>
       <Fade in={true} timeout={1000}>
         <Div>{"About Simulation"}</Div>
       </Fade>

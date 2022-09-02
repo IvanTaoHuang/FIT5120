@@ -66,15 +66,16 @@ function Home(props) {
           fontSize={"30px"}
           marginLeft="15vw"
         >
-          CatchPhish is a website dedicated to reduce phising scams in
-          Australia. 20% of young Australians have reported their experience of
-          scam by entering URL which they usually recieve through mails. Through
-          the website, we detect and educate about these phishing scams so that
-          such scams can be reported. The features offered in the website is to
-          detect any URL you are suspicious about and another is a simulation
-          which offers an experience on how phishing scams usually occur. The
-          website also links you to SCAMWatch to report any phishing scams you
-          discovered.
+          CatchPhish is a website dedicated to reduce phishing scams in 
+Australia. 20% of young Australians have reported their 
+experience of scam by entering URL which they usually 
+recieve through mails. Through the website, we detect and 
+educate about these phishing scams so that such scams can 
+be reported. The features offered in the website is to detect 
+any URL you are suspicious about and another is a simulation 
+which offers an experience on how phishing scams usually 
+occur. The website also links you to SCAMWatch to report any 
+phishing scams you discovered.
         </Typography>
       </Slide>
 
