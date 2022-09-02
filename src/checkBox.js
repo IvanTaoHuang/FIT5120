@@ -32,7 +32,15 @@ import TypesWomenPF from "./Data/typesWomenPF";
 import TypesStateCF from "./Data/typesStateCF";
 import TypesStateIT from "./Data/typesStateIT";
 import TypesStateScams from "./Data/typesStateScams";
-
+import {
+  MemoryRouter,
+  Route,
+  Routes,
+  Link,
+  matchPath,
+  useLocation,
+  BrowserRouter as Router,
+} from "react-router-dom";
 export default function ControlledCheckbox() {
   // Data from Reported Scams datasets
   const ageGroup2019AL = AgeGroup2019AL();
@@ -756,7 +764,12 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2019ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+        </Typography>
       </Box>
+      
       <Box
         sx={{
           display: ageGroupChecked.agsecond ? "block" : "none",
@@ -775,6 +788,10 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2020ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -794,6 +811,10 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2021ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+        </Typography>
       </Box>
 
       <Box
@@ -814,6 +835,10 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2019ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -833,6 +858,10 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2020ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -852,6 +881,10 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2021ALstate} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+        </Typography>
       </Box>
 
       <Box
@@ -924,6 +957,12 @@ export default function ControlledCheckbox() {
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={typesAgeGroupExpState} />
+        <Box sx={{ height: "4vh" }}></Box>
+      <Typography variant="h3" fontSize={"2vw"}>
+      Based on the provided information in the above graph, an estimated 55% of Australians aged 15 years and over were exposed to a scam. The lowest age group is 15-24 with 39.5 % exposure rate while this rate is slightly higher in all other age groups. However, the rate of response is dramatically lower than exposure. It means from 10 people who are exposed to scams, only 1 of them respond to that.
+
+<br></br>
+        </Typography>
       </Box>
       <Box
         sx={{

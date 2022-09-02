@@ -24,7 +24,6 @@ import Home from "./Home";
 import PhishingDetector from "./PhishingDetector";
 import PhishingSimulation from "./PhishingSimulation";
 import PastData from "./PastData";
-import PastArticle from "./PastArticle";
 import Header from "./header/Header";
 
 function homeRouter(props) {
@@ -127,7 +126,7 @@ export default function TabsRouter() {
       <MyTabs />
       <Routes>
         <Route exact path="/PastData" element={<PastData />} />
-        <Route exact path="/PastArticle" element={<PastArticle />} />
+        
         <Route exact path="/" element={<Home />} />
         <Route exact path="/PhishingDetector" element={<PhishingDetector />} />
         <Route
