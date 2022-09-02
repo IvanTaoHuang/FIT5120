@@ -106,56 +106,14 @@ function MyTabs() {
             to="/PhishingSimulation"
             component={Link}
           />
+          <Tab
+            label="Know More"
+            value="/PastData"
+            to="/PastData"
+            component={Link}
+          />
 
-          <ThemeProvider theme={theme}>
-            <Button
-              value="fade-button"
-              id="fade-button"
-              aria-controls={open ? "fade-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-              color="primary"
-              endIcon={<KeyboardArrowDownIcon />}
-            >
-              Know more about scams
-            </Button>
-          </ThemeProvider>
-
-          <Menu
-            id="fade-menu"
-            MenuListProps={{
-              "aria-labelledby": "fade-button",
-            }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-            style={{
-              width: "275px",
-            }}
-          >
-            <MenuItem onClick={handleClose}>
-              <Link
-                to="/PastData"
-                value="PastData"
-                style={{ textDecoration: "none", width: "275px" }}
-              >
-                Past Statistical Data
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link
-                to="/PastArticle"
-                style={{
-                  textDecoration: "none",
-                  width: "275px",
-                }}
-              >
-                Past Scam Articles
-              </Link>
-            </MenuItem>
-          </Menu>
+          
         </Tabs>
       </Box>
     </div>
