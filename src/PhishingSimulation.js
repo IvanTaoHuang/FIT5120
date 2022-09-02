@@ -57,6 +57,13 @@ function PhishingSimulation(props) {
         <link rel="canonical" href="http://catchphish.org/PhishingSimulation" />
         <meta name="description" content="Phishing Simulation" />
       </Helmet>
+      <Box sx={{marginLeft: "35vw", marginBottom:"5vh"}}>
+      <img src={require('./cry.jpg')} style={{
+        width: "30vw",
+        height: "40vh",
+      }} />
+      </Box>
+      
       <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">Sorry, page is still under construction. Please comeback another time!</Typography>
       <Fade in={true} timeout={1000}>
         <Div>{"About Simulation"}</Div>
