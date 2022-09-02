@@ -767,6 +767,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+      If you are interested in more about the reasons click <a href="https://www.socialworktoday.com/news/dn_040617.shtml">here</a>.
         </Typography>
       </Box>
       
@@ -791,6 +792,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+      If you are interested in more about the reasons click <a href="https://www.socialworktoday.com/news/dn_040617.shtml">here</a>.
         </Typography>
       </Box>
       <Box
@@ -814,6 +816,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables above, people aged 65 and more are the most vulnerable group among the other generation, this is followed by the fact that this group is not engaged as same as the other age groups in the online world. Besides, there are a couple of biomedical reasons that put them in danger.<br></br>
+      If you are interested in more about the reasons click <a href="https://www.socialworktoday.com/news/dn_040617.shtml">here</a>.
         </Typography>
       </Box>
 
@@ -838,6 +841,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+      If you want to find more about the details, you can click <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">here</a>.
         </Typography>
       </Box>
       <Box
@@ -861,6 +865,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+      If you want to find more about the details, you can click <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">here</a>.
         </Typography>
       </Box>
       <Box
@@ -884,6 +889,7 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
       <Typography variant="h3" fontSize={"2vw"}>
       Based on the provided tables, the first thing which is worth mentioning is the amount of money lost in May 2021. This trend dramatically increased in one month by over 20%. The reason was the huge smishing attack (SMS phishing attack) which affects many Aussie families in one month.<br></br>
+      If you want to find more about the details, you can click <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">here</a>.
         </Typography>
       </Box>
 
