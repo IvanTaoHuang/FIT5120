@@ -1,10 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
-import { Stack } from "@mui/system";
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
-import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 import Slide from "@mui/material/Slide";
 import Fade from "@mui/material/Fade";
 import Grow from "@mui/material/Grow";
@@ -16,9 +12,9 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ScrollTop from "./scrollTop";
 import TitleTheme from "./titleTheme";
-import ReportScamButton from "./reportChatButton"
+import ReportScamButton from "./reportChatButton";
 
-// To scroll to top 
+// To scroll to top
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
@@ -67,16 +63,15 @@ function Home(props) {
           fontSize={"30px"}
           marginLeft="15vw"
         >
-          CatchPhish is a website dedicated to reduce phishing scams in 
-Australia. 20% of young Australians have reported their 
-experience of scam by entering URL which they usually 
-recieve through mails. Through the website, we detect and 
-educate about these phishing scams so that such scams can 
-be reported. The features offered in the website is to detect 
-any URL you are suspicious about and another is a simulation 
-which offers an experience on how phishing scams usually 
-occur. The website also links you to SCAMWatch to report any 
-phishing scams you discovered.
+          CatchPhish is a website dedicated to reduce phishing scams in
+          Australia. 20% of young Australians have reported their experience of
+          scam by entering URL which they usually recieve through mails. Through
+          the website, we detect and educate about these phishing scams so that
+          such scams can be reported. The features offered in the website is to
+          detect any URL you are suspicious about and another is a simulation
+          which offers an experience on how phishing scams usually occur. The
+          website also links you to SCAMWatch to report any phishing scams you
+          discovered.
         </Typography>
       </Slide>
 
@@ -145,7 +140,7 @@ phishing scams you discovered.
       <br></br>
       <br></br>
       {/* Component for Report a scam and Chat with us buttons*/}
-      <ReportScamButton/>
+      <ReportScamButton />
       <br></br>
       <br></br>
       <br></br>

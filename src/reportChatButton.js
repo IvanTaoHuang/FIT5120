@@ -4,18 +4,10 @@ import { Stack } from "@mui/system";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 
-
-
-function ReportScamButton(){
-    return(
-        
-<Stack
-      spacing="48vw"
-      direction="row"
-      marginLeft="15vw"
-      marginRight="15vw"
-    >
-        {/* Component for Report a scam and Chat with us buttons*/}
+function ReportScamButton() {
+  return (
+    <Stack spacing="48vw" direction="row" marginLeft="15vw" marginRight="15vw">
+      {/* Component for Report a scam and Chat with us buttons*/}
       <Button
         startIcon={<ReportOutlinedIcon />}
         variant="outlined"
@@ -43,10 +35,7 @@ function ReportScamButton(){
         Chat with us
       </Button>
     </Stack>
-    )
-        
-    
-
+  );
 }
 
 export default ReportScamButton;
