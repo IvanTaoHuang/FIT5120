@@ -57,6 +57,7 @@ function PhishingDetector(props) {
         <meta name="description" content="Phishing Detector" />
       </Helmet>
 
+
       <Box sx={{ marginLeft: "35vw", marginBottom: "5vh" }}>
         <img
           src={require("./cry.jpg")}
@@ -163,8 +164,10 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
+
       {/* Component for Report a scam and Chat with us buttons*/}
       <ReportScamButton />
+
       <br></br>
       <br></br>
       <br></br>

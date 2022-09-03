@@ -12,9 +12,11 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ScrollTop from "./scrollTop";
 import TitleTheme from "./titleTheme";
+
 import ReportScamButton from "./reportChatButton";
 
 // To scroll to top
+
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
@@ -63,6 +65,7 @@ function Home(props) {
           fontSize={"30px"}
           marginLeft="15vw"
         >
+
           CatchPhish is a website dedicated to reduce phishing scams in
           Australia. 20% of young Australians have reported their experience of
           scam by entering URL which they usually recieve through mails. Through
@@ -72,6 +75,7 @@ function Home(props) {
           which offers an experience on how phishing scams usually occur. The
           website also links you to SCAMWatch to report any phishing scams you
           discovered.
+
         </Typography>
       </Slide>
 
@@ -140,6 +144,7 @@ function Home(props) {
       <br></br>
       <br></br>
       {/* Component for Report a scam and Chat with us buttons*/}
+
       <ReportScamButton />
       <br></br>
       <br></br>

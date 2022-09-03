@@ -16,6 +16,7 @@ import ScrollTop from "./scrollTop";
 import TitleTheme from "./titleTheme";
 import ReportScamButton from "./reportChatButton";
 
+
 //To scroll to top
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
@@ -67,10 +68,12 @@ function PhishingSimulation(props) {
         >
           Experience is own’s on teacher. Learning about phishing scams by get a
           first hand experience will increase awareness and which will make you
+
           cautious in entering any unknown links. We created a small simulation
           which provides an usual phishing mail content in the mail ID you
           provide. This exercise will help you determine on how to segregate a
           fake mail from the real one.
+
         </Typography>
       </Fade>
 
@@ -108,6 +111,7 @@ function PhishingSimulation(props) {
       <br></br>
       <br></br>
       <br></br>
+
       {/* Component for Report a scam and Chat with us buttons*/}
       <ReportScamButton />
       <br></br>
