@@ -13,8 +13,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ScrollTop from "./scrollTop";
-import TitleTheme from "./titleTheme"
-import ReportScamButton from "./reportChatButton"
+import TitleTheme from "./titleTheme";
+import ReportScamButton from "./reportChatButton";
+
 
 //To scroll to top
 ScrollTop.propTypes = {
@@ -50,15 +51,8 @@ function PhishingSimulation(props) {
         <link rel="canonical" href="http://catchphish.org/PhishingSimulation" />
         <meta name="description" content="Phishing Simulation" />
       </Helmet>
-      <Box sx={{marginLeft: "35vw", marginBottom:"5vh"}}>
-      <img src={require('./cry.jpg')} style={{
-        width: "30vw",
-        height: "40vh",
-      }} />
-      </Box>
 
       {/* Component for About Simulation and text animation */}
-      <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">Sorry, page is still under construction. Please comeback another time!</Typography>
       <Fade in={true} timeout={1000}>
         <Div>{"About Simulation"}</Div>
       </Fade>
@@ -74,10 +68,12 @@ function PhishingSimulation(props) {
         >
           Experience is own’s on teacher. Learning about phishing scams by get a
           first hand experience will increase awareness and which will make you
-          cautious in entering any unknown links.
-          We created a small simulation which provides an usual phishing mail
-          content in the mail ID you provide. This exercise will help you
-          determine on how to segregate a fake mail from the real one.
+
+          cautious in entering any unknown links. We created a small simulation
+          which provides an usual phishing mail content in the mail ID you
+          provide. This exercise will help you determine on how to segregate a
+          fake mail from the real one.
+
         </Typography>
       </Fade>
 
@@ -115,8 +111,9 @@ function PhishingSimulation(props) {
       <br></br>
       <br></br>
       <br></br>
-{/* Component for Report a scam and Chat with us buttons*/}
-      <ReportScamButton/>
+
+      {/* Component for Report a scam and Chat with us buttons*/}
+      <ReportScamButton />
       <br></br>
       <br></br>
       <br></br>

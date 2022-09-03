@@ -31,7 +31,6 @@ function PhishingDetector(props) {
     marginLeft: "10vw",
   }));
   return (
-
     <Box
       sx={{
         width: "100%",
@@ -58,18 +57,21 @@ function PhishingDetector(props) {
         <meta name="description" content="Phishing Detector" />
       </Helmet>
 
-      <Box sx={{marginLeft: "35vw", marginBottom:"5vh"}}>
-      <img src={require('./cry.jpg')} style={{
-        width: "30vw",
-        height: "40vh",
-      }} />
-      </Box>
-      <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">Sorry, page is still under construction. Please comeback another time!</Typography>
-    
-      
-    
 
-{/* Component for About Detector and text animation */}
+      <Box sx={{ marginLeft: "35vw", marginBottom: "5vh" }}>
+        <img
+          src={require("./cry.jpg")}
+          style={{
+            width: "30vw",
+            height: "40vh",
+          }}
+        />
+      </Box>
+      <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">
+        Sorry, page is still under construction. Please comeback another time!
+      </Typography>
+
+      {/* Component for About Detector and text animation */}
       <Zoom in={true} timeout={1000}>
         <Div>{"About Detector"}</Div>
       </Zoom>
@@ -162,8 +164,10 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
-{/* Component for Report a scam and Chat with us buttons*/}
-      <ReportScamButton/>
+
+      {/* Component for Report a scam and Chat with us buttons*/}
+      <ReportScamButton />
+
       <br></br>
       <br></br>
       <br></br>
