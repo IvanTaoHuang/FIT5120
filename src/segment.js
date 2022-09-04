@@ -22,9 +22,10 @@ function Segment() {
               path="/pastData"
             />
           </ul>
-          {/** <ul className="cards__items">
+
+          {/* <ul className="segments__items">
             <SegmentItem
-              src="images/img-3.jpg"
+              src="images/img-2.jpg"
               text="Set Sail in the Atlantic Ocean visiting Uncharted Waters"
               label="Mystery"
               path="/services"
@@ -41,7 +42,7 @@ function Segment() {
               label="Adrenaline"
               path="/sign-up"
             />
-          </ul>*/}
+          </ul> */}
         </div>
       </div>
     </div>
