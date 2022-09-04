@@ -18,17 +18,6 @@ function PastData(props) {
         <meta name="description" content="Past Data" />
       </Helmet>
 
-      {/* Component for scroll to top button */}
-      <Toolbar id="back-to-top-anchor" />
-      <React.Fragment>
-        <CssBaseline />
-        <ScrollTop {...props}>
-          <Fab color="secondary" size="large" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </React.Fragment>
-
       {/* Component for check-boxes and charts */}
       <ControlledCheckbox />
     </div>

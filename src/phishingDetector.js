@@ -38,17 +38,6 @@ function PhishingDetector(props) {
         marginTop: "5vh",
       }}
     >
-      {/* Component for scroll to top button */}
-      <Toolbar id="back-to-top-anchor" />
-      <React.Fragment>
-        <CssBaseline />
-        <ScrollTop {...props}>
-          <Fab color="secondary" size="large" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </React.Fragment>
-
       {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
@@ -56,20 +45,6 @@ function PhishingDetector(props) {
         <link rel="canonical" href="http://catchphish.org/PhishingDetector" />
         <meta name="description" content="Phishing Detector" />
       </Helmet>
-
-
-      <Box sx={{ marginLeft: "35vw", marginBottom: "5vh" }}>
-        <img
-          src={require("./cry.jpg")}
-          style={{
-            width: "30vw",
-            height: "40vh",
-          }}
-        />
-      </Box>
-      <Typography variant="h5" marginLeft="15vw" marginBottom="5vh" color="red">
-        Sorry, page is still under construction. Please comeback another time!
-      </Typography>
 
       {/* Component for About Detector and text animation */}
       <Zoom in={true} timeout={1000}>
