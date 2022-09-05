@@ -44,6 +44,14 @@ export default function SimpleAccordion() {
               usually through mail disguised as it is sent from a trusted
               source. The access to the victim’s device is gained when this
               malicious content is opened.
+              <br />
+              <br />
+              To know more visit:{" "}
+              <a href="https://ovic.vic.gov.au/privacy/phishing-attacks-and-how-to-protect-against-them/#:~:text=WHAT%20IS%20PHISHING%3F,or%20to%20make%20it%20unavailable.">
+                Phishing Attacks and How to Protect Against Them -
+                (ovic.vic.gov.au)
+              </a>
+              .
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -67,6 +75,13 @@ export default function SimpleAccordion() {
               It involves using another individual’s personal information for
               own benefit. It often utilizes public information such as name,
               birth date, social media etc.
+              <br />
+              <br />
+              To know more visit:{" "}
+              <a href="https://www.oaic.gov.au/privacy/data-breaches/identity-fraud">
+                Identity fraud - Home (oaic.gov.au)
+              </a>
+              .
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -91,6 +106,13 @@ export default function SimpleAccordion() {
               your consent or authorization. This illegal purchase can be done
               through your lost or stolen physical card or through your bank
               details they have obtained.
+              <br />
+              <br />
+              To know more visit:{" "}
+              <a href="https://www.commbank.com.au/support/security/card-fraud.html#:~:text=Card%20fraud%20occurs%20when%20someone,hold%20of%20without%20your%20knowledge.">
+                Card fraud - CommBank
+              </a>
+              .
             </Typography>
           </AccordionDetails>
         </Accordion>
