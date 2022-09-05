@@ -682,10 +682,14 @@ export default function ControlledCheckbox() {
               label="State"
             />
           </FormGroup>
+          <br />
+          <Button variant="contained" onClick={typeHandleChange}>
+            Reset
+          </Button>
         </Box>
         <Box sx={{ width: "12vw" }}></Box>
         <Box sx={{ display: attrChecked.ageGroup ? "block" : "none" }}>
-          <Typography variant="h6">Please select a year</Typography>
+          <Typography variant="h6">Please select a year:</Typography>
           <FormGroup>
             <FormControlLabel
               control={
@@ -718,6 +722,10 @@ export default function ControlledCheckbox() {
               label="2021"
             />
           </FormGroup>
+          <br />
+          <Button variant="contained" onClick={typeHandleChange}>
+            Reset
+          </Button>
         </Box>
 
         <Box sx={{ display: attrChecked.month ? "block" : "none" }}>
@@ -754,6 +762,10 @@ export default function ControlledCheckbox() {
               label="2021"
             />
           </FormGroup>
+          <br />
+          <Button variant="contained" onClick={typeHandleChange}>
+            Reset
+          </Button>
         </Box>
 
         <Box sx={{ display: attrChecked.state ? "block" : "none" }}>
@@ -790,6 +802,10 @@ export default function ControlledCheckbox() {
               label="2021"
             />
           </FormGroup>
+          <br />
+          <Button variant="contained" onClick={typeHandleChange}>
+            Reset
+          </Button>
         </Box>
       </Stack>
       <Box sx={{ marginTop: "10vh" }}></Box>
