@@ -5,10 +5,12 @@ import PhishingSimulation from "./phishingSimulation";
 import PastData from "./pastData";
 import Navbar from "./Navibar";
 import About from "./about";
+import ScrollToTop from "./scroll";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       {/** Drawer */}
       <Navbar />
       {/** Routes to navigate to different pages */}

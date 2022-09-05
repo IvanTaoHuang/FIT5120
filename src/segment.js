@@ -17,7 +17,7 @@ function Segment() {
             />
             <SegmentItem
               src="images/img-2.jpg"
-              text="Konw about various scams through data visualisation"
+              text="Know about various scams through data visualisation"
               label="Know about Scams"
               path="/pastData"
             />

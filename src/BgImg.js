@@ -15,7 +15,7 @@ function BgImg() {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          GET STARTED
+          KNOW MORE
         </Button>
         {/**<Button
           className="btns"
