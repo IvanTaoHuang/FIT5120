@@ -11,7 +11,7 @@ import AgeGroup2020NoR from "./Data/ageGroup2020NoR";
 import AgeGroup2020AL from "./Data/ageGroup2020AL";
 import AgeGroup2021NoR from "./Data/ageGroup2021NoR";
 import AgeGroup2021AL from "./Data/ageGroup2021AL";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Month2019AL from "./Data/month2019AL";
 import Month2019NoR from "./Data/month2019NoR";
 import Month2020AL from "./Data/month2020AL";
@@ -31,8 +31,33 @@ import TypesWomenPF from "./Data/typesWomenPF";
 import TypesStateCF from "./Data/typesStateCF";
 import TypesStateIT from "./Data/typesStateIT";
 import TypesStateScams from "./Data/typesStateScams";
+import HelpIcon from "@mui/icons-material/Help";
+import IconButton from "@mui/material/IconButton";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
+import ScrollTop from "./scroll";
+
+// Transition for dialog
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function ControlledCheckbox() {
+  // Open state for dialog
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   // Data from Reported Scams datasets
   const ageGroup2019AL = AgeGroup2019AL();
   const ageGroup2019NoR = AgeGroup2019NoR();
@@ -530,31 +555,62 @@ export default function ControlledCheckbox() {
       <Stack direction="row" spacing={2}>
         <Box sx={{ width: "10vw" }}></Box>
         <Box>
-          <Typography variant="h6">
-            Please select one of the following:
-          </Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={reports}
-                  onChange={typeHandleChange}
-                  name="reports"
-                />
-              }
-              label="Reported Scams"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={exposed}
-                  onChange={typeHandleChange}
-                  name="exposed"
-                />
-              }
-              label="Types of Scams"
-            />
-          </FormGroup>
+          <Stack direction="row" spacing={0.2}>
+            <IconButton size="small" onClick={handleClickOpen} color="primary">
+              <HelpIcon />
+            </IconButton>
+            <Dialog
+              open={open}
+              TransitionComponent={Transition}
+              keepMounted
+              onClose={handleClose}
+              aria-describedby="alert-dialog-slide-description"
+            >
+              <DialogTitle>{"Description "}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-slide-description">
+                  Here you can see the past statistics related to fraud
+                  conducted through internet. You would be able to see the
+                  Reported scams and the types of Personal Fraud according to
+                  Age, Gender and State. <br />
+                  <br />
+                  To see your desired visualization simply select which option
+                  you would like to see. All analysis is supported through
+                  articles if a significant trend can be seen.
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>CLOSE</Button>
+              </DialogActions>
+            </Dialog>
+            <Typography variant="h6">
+              Please select one of the following:
+            </Typography>
+          </Stack>
+          <Box sx={{ marginLeft: "33px" }}>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={reports}
+                    onChange={typeHandleChange}
+                    name="reports"
+                  />
+                }
+                label="Reported Scams"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={exposed}
+                    onChange={typeHandleChange}
+                    name="exposed"
+                  />
+                }
+                label="Types of Personal fraud"
+              />
+            </FormGroup>
+          </Box>
         </Box>
         <Box sx={{ width: "12vw" }}></Box>
         <Box sx={{ display: typeChecked.reports ? "block" : "none" }}>
@@ -746,12 +802,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to Age Groups in 2019
+          Number of scams reported according to Age Groups in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2019NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to Age Groups in 2019
+          Reported amount lost in AUD according to Age Groups in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2019ALstate} />
@@ -779,12 +835,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to Age Groups in 2020
+          Number of scams reported according to Age Groups in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2020NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to Age Groups in 2020
+          Reported amount lost in AUD according to Age Groups in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2020ALstate} />
@@ -811,12 +867,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to Age Groups in 2021
+          Number of scams reported according to Age Groups in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2021NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to Age Groups in 2021
+          Reported amount lost in AUD according to Age Groups in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2021ALstate} />
@@ -844,12 +900,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to months in 2019
+          Number of scams reported according to months in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2019NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to months in 2019
+          Reported amount lost in AUD according to months in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2019ALstate} />
@@ -876,12 +932,11 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to months in 2020
+          Number of scams reported according to months in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
-        <Barchart chartData={month2020NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to months in 2020
+          Reported amount lost in AUD according to months in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2020ALstate} />
@@ -908,12 +963,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to months in 2021
+          Number of scams reported according to months in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2021NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to months in 2021
+          Reported amount lost in AUD according to months in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2021ALstate} />
@@ -941,12 +996,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to states in 2019
+          Number of scams reported according to states in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2019NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to states in 2019
+          Reported amount lost in AUD according to states in 2019
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2019ALstate} />
@@ -960,12 +1015,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to states in 2020
+          Number of scams reported according to states in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2020NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to states in 2020
+          Reported amount lost in AUD according to states in 2020
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2020ALstate} />
@@ -979,12 +1034,12 @@ export default function ControlledCheckbox() {
         }}
       >
         <Typography variant="h4" fontSize={"2vw"}>
-          Reported Scams Number according to states in 2021
+          Number of scams reported according to states in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2021NoRstate} />
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
-          Reported Scams Lost according to states in 2021
+          Reported amount lost in AUD according to states in 2021
         </Typography>
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={state2021ALstate} />
