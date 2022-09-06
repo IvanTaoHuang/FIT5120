@@ -48,9 +48,9 @@ function About(props) {
         {/* To change the title of page on browser */}
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Home Page</title>
-          <link rel="canonical" href="http://catchphish.org/home" />
-          <meta name="description" content="Home page" />
+          <title>About</title>
+          <link rel="canonical" href="http://catchphish.org/about" />
+          <meta name="description" content="About" />
         </Helmet>
 
         {/* Component for About and text with animation */}
