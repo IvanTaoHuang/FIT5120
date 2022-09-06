@@ -15,9 +15,10 @@ export default function SimpleAccordion() {
   const matches = useMediaQuery("(min-width:1000px)");
   return (
     <div>
+      <Typography variant ="h2" sx={{paddingTop:"2vh",textAlign:"center"}}> Learn about Frauds</Typography>
       <Box
         sx={{
-          paddingTop: "5vw",
+          paddingTop: "3vw",
           paddingLeft: "30vw",
           paddingBottom: "5vw",
           width: "40vw",
