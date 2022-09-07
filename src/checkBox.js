@@ -45,6 +45,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import Radio from "@mui/material/Radio";
 
 // Transition for dialog
@@ -882,6 +883,7 @@ export default function ControlledCheckbox() {
                 couple of biomedical reasons that put them in danger.
                 <br />
                 <br />
+                couple of biomedical reasons that put them in danger.<br></br>
                 If you are interested in more about the reasons click{" "}
                 <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
                   here

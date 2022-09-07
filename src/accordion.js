@@ -4,9 +4,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Stack } from "@mui/system";
+
 import { Box } from "@mui/system";
-import { styled } from "@mui/material/styles";
+
 import { useTheme } from "styled-components";
 import { useMediaQuery } from "@mui/material";
 
