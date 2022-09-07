@@ -39,7 +39,13 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
-import ScrollTop from "./scroll";
+import { useTheme } from "styled-components";
+import { useMediaQuery } from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Radio from "@mui/material/Radio";
 
 // Transition for dialog
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -47,6 +53,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function ControlledCheckbox() {
+  //Breakpoints
+  const theme = useTheme();
+  const matches = useMediaQuery("(min-width:1000px)");
   // Open state for dialog
   const [open, setOpen] = React.useState(false);
 
@@ -550,6 +559,19 @@ export default function ControlledCheckbox() {
   };
   const { ageGroupType, genderType, stateType } = typesChecked;
 
+  // const [ageYear, ageYearChecked] = React.useState({
+  //   age2019: false,
+  //   age2020: false,
+  //   age2021: false,
+  // });
+  // const ageYearHandleChange = (event) => {
+  //   ageYearSetChecked({
+  //     ...ageYear,
+  //     [event.target.name]: event.target.checked,
+  //   });
+  // };
+  // const { age2019, age2020, age2021 } = ageYear;
+
   return (
     <div>
       <Stack direction="row" spacing={2}>
@@ -591,7 +613,7 @@ export default function ControlledCheckbox() {
             <FormGroup>
               <FormControlLabel
                 control={
-                  <Checkbox
+                  <Radio
                     checked={reports}
                     onChange={typeHandleChange}
                     name="reports"
@@ -601,7 +623,7 @@ export default function ControlledCheckbox() {
               />
               <FormControlLabel
                 control={
-                  <Checkbox
+                  <Radio
                     checked={exposed}
                     onChange={typeHandleChange}
                     name="exposed"
@@ -618,7 +640,7 @@ export default function ControlledCheckbox() {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={ageGroup}
                   onChange={attrHandleChange}
                   name="ageGroup"
@@ -628,7 +650,7 @@ export default function ControlledCheckbox() {
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={month}
                   onChange={attrHandleChange}
                   name="month"
@@ -638,7 +660,7 @@ export default function ControlledCheckbox() {
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={state}
                   onChange={attrHandleChange}
                   name="state"
@@ -653,7 +675,7 @@ export default function ControlledCheckbox() {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={ageGroupType}
                   onChange={typesHandleChange}
                   name="ageGroupType"
@@ -663,7 +685,7 @@ export default function ControlledCheckbox() {
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={genderType}
                   onChange={typesHandleChange}
                   name="genderType"
@@ -673,7 +695,7 @@ export default function ControlledCheckbox() {
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   checked={stateType}
                   onChange={typesHandleChange}
                   name="stateType"
@@ -828,18 +850,47 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2019ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables above, people aged 65 and more are the
-          most vulnerable group among the other generation, this is followed by
-          the fact that this group is not engaged as same as the other age
-          groups in the online world. Besides, there are a couple of biomedical
-          reasons that put them in danger.<br></br>
-          If you are interested in more about the reasons click{" "}
-          <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
-            here
-          </a>
-          .
-        </Typography>
+        <Box
+          sx={{
+            paddingTop: "5vh",
+            paddingLeft: "17vw",
+            paddingBottom: "5vw",
+            width: "40vw",
+          }}
+        >
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                variant="h2"
+                fontSize={matches ? "2vw" : "4vw"}
+                paddingLeft={matches ? "38%" : "33%"}
+                fontFamily="Helvetica Neue"
+              >
+                Analysis
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Based on the provided tables above, people aged 65 and more are
+                the most vulnerable group among the other generation, this is
+                followed by the fact that this group is not engaged as same as
+                the other age groups in the online world. Besides, there are a
+                couple of biomedical reasons that put them in danger.
+                <br />
+                <br />
+                If you are interested in more about the reasons click{" "}
+                <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
+                  here
+                </a>
+                .
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       </Box>
 
       <Box
@@ -861,18 +912,47 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2020ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables above, people aged 65 and more are the
-          most vulnerable group among the other generation, this is followed by
-          the fact that this group is not engaged as same as the other age
-          groups in the online world. Besides, there are a couple of biomedical
-          reasons that put them in danger.<br></br>
-          If you are interested in more about the reasons click{" "}
-          <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
-            here
-          </a>
-          .
-        </Typography>
+        <Box
+          sx={{
+            paddingTop: "5vh",
+            paddingLeft: "17vw",
+            paddingBottom: "5vw",
+            width: "40vw",
+          }}
+        >
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                variant="h2"
+                fontSize={matches ? "2vw" : "4vw"}
+                paddingLeft={matches ? "38%" : "33%"}
+                fontFamily="Helvetica Neue"
+              >
+                Analysis
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Based on the provided tables above, people aged 65 and more are
+                the most vulnerable group among the other generation, this is
+                followed by the fact that this group is not engaged as same as
+                the other age groups in the online world. Besides, there are a
+                couple of biomedical reasons that put them in danger.
+                <br />
+                <br />
+                If you are interested in more about the reasons click{" "}
+                <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
+                  here
+                </a>
+                .
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       </Box>
       <Box
         sx={{
@@ -893,18 +973,47 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={ageGroup2021ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables above, people aged 65 and more are the
-          most vulnerable group among the other generation, this is followed by
-          the fact that this group is not engaged as same as the other age
-          groups in the online world. Besides, there are a couple of biomedical
-          reasons that put them in danger.<br></br>
-          If you are interested in more about the reasons click{" "}
-          <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
-            here
-          </a>
-          .
-        </Typography>
+        <Box
+          sx={{
+            paddingTop: "5vh",
+            paddingLeft: "17vw",
+            paddingBottom: "5vw",
+            width: "40vw",
+          }}
+        >
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                variant="h2"
+                fontSize={matches ? "2vw" : "4vw"}
+                paddingLeft={matches ? "38%" : "33%"}
+                fontFamily="Helvetica Neue"
+              >
+                Analysis
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Based on the provided tables above, people aged 65 and more are
+                the most vulnerable group among the other generation, this is
+                followed by the fact that this group is not engaged as same as
+                the other age groups in the online world. Besides, there are a
+                couple of biomedical reasons that put them in danger.
+                <br />
+                <br />
+                If you are interested in more about the reasons click{" "}
+                <a href="https://www.socialworktoday.com/news/dn_040617.shtml">
+                  here
+                </a>
+                .
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       </Box>
 
       <Box
@@ -926,18 +1035,6 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2019ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables, the first thing which is worth
-          mentioning is the amount of money lost in May 2021. This trend
-          dramatically increased in one month by over 20%. The reason was the
-          huge smishing attack (SMS phishing attack) which affects many Aussie
-          families in one month.<br></br>
-          If you want to find more about the details, you can click{" "}
-          <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
-            here
-          </a>
-          .
-        </Typography>
       </Box>
       <Box
         sx={{
@@ -950,6 +1047,7 @@ export default function ControlledCheckbox() {
         <Typography variant="h4" fontSize={"2vw"}>
           Number of scams reported according to months in 2020
         </Typography>
+        <Barchart chartData={month2020NoRstate} />
         <Box sx={{ height: "4vh" }}></Box>
         <Typography variant="h4" fontSize={"2vw"} marginTop={"5vh"}>
           Reported amount lost in AUD according to months in 2020
@@ -957,18 +1055,6 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2020ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables, the first thing which is worth
-          mentioning is the amount of money lost in May 2021. This trend
-          dramatically increased in one month by over 20%. The reason was the
-          huge smishing attack (SMS phishing attack) which affects many Aussie
-          families in one month.<br></br>
-          If you want to find more about the details, you can click{" "}
-          <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
-            here
-          </a>
-          .
-        </Typography>
       </Box>
       <Box
         sx={{
@@ -989,18 +1075,47 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={month2021ALstate} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided tables, the first thing which is worth
-          mentioning is the amount of money lost in May 2021. This trend
-          dramatically increased in one month by over 20%. The reason was the
-          huge smishing attack (SMS phishing attack) which affects many Aussie
-          families in one month.<br></br>
-          If you want to find more about the details, you can click{" "}
-          <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
-            here
-          </a>
-          .
-        </Typography>
+        <Box
+          sx={{
+            paddingTop: "5vh",
+            paddingLeft: "17vw",
+            paddingBottom: "5vw",
+            width: "40vw",
+          }}
+        >
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                variant="h2"
+                fontSize={matches ? "2vw" : "4vw"}
+                paddingLeft={matches ? "38%" : "33%"}
+                fontFamily="Helvetica Neue"
+              >
+                Analysis
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Based on the provided tables, the first thing which is worth
+                mentioning is the amount of money lost in May 2021. This trend
+                dramatically increased in one month by over 20%. The reason was
+                the huge smishing attack (SMS phishing attack) which affects
+                many Aussie families in one month.
+                <br />
+                <br />
+                If you want to find more about the details, you can click{" "}
+                <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
+                  here
+                </a>
+                .
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       </Box>
 
       <Box
@@ -1074,15 +1189,43 @@ export default function ControlledCheckbox() {
         <Box sx={{ height: "4vh" }}></Box>
         <Barchart chartData={typesAgeGroupExpState} />
         <Box sx={{ height: "4vh" }}></Box>
-        <Typography variant="h3" fontSize={"2vw"} gutterBottom>
-          Based on the provided information in the above graph, an estimated 55%
-          of Australians aged 15 years and over were exposed to a scam. The
-          lowest age group is 15-24 with 39.5 % exposure rate while this rate is
-          slightly higher in all other age groups. However, the rate of response
-          is dramatically lower than exposure. It means from 10 people who are
-          exposed to scams, only 1 of them respond to that.
-          <br></br>
-        </Typography>
+        <Box
+          sx={{
+            paddingTop: "5vh",
+            paddingLeft: "17vw",
+            paddingBottom: "5vw",
+            width: "40vw",
+          }}
+        >
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography
+                variant="h2"
+                fontSize={matches ? "2vw" : "4vw"}
+                paddingLeft={matches ? "38%" : "33%"}
+                fontFamily="Helvetica Neue"
+              >
+                Analysis
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Based on the provided information in the above graph, an
+                estimated 55% of Australians aged 15 years and over were exposed
+                to a scam. The lowest age group is 15-24 with 39.5 % exposure
+                rate while this rate is slightly higher in all other age groups.
+                However, the rate of response is dramatically lower than
+                exposure. It means from 10 people who are exposed to scams, only
+                1 of them respond to that.
+                <br></br>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
       </Box>
       <Box
         sx={{
