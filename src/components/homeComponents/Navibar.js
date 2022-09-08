@@ -31,7 +31,7 @@ function Navbar() {
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             CatchPhish &nbsp;
             <i>
-              <img src={require("./logo.png")} width="35px"></img>
+              <img src={require("../../images/logo.png")} width="35px"></img>
             </i>
           </Link>
           <div className="menu-icon" onClick={handleClick}>

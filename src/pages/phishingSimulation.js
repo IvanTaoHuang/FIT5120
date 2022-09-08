@@ -12,10 +12,9 @@ import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./scrollTop";
-import TitleTheme from "./titleTheme";
-import ReportScamButton from "./reportChatButton";
-
+import ScrollTop from "../components/scrollTop";
+import TitleTheme from "../components/titleTheme";
+import ReportScamButton from "../components/reportChatButton";
 
 //To scroll to top
 ScrollTop.propTypes = {
@@ -68,12 +67,10 @@ function PhishingSimulation(props) {
         >
           Experience is own’s on teacher. Learning about phishing scams by get a
           first hand experience will increase awareness and which will make you
-
           cautious in entering any unknown links. We created a small simulation
           which provides an usual phishing mail content in the mail ID you
           provide. This exercise will help you determine on how to segregate a
           fake mail from the real one.
-
         </Typography>
       </Fade>
 
