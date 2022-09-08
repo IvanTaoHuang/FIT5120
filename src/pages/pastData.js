@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
-import ControlledCheckbox from "./checkBox";
+import ControlledCheckbox from "../components/pastDataComponents/checkBox";
 import React from "react";
-import ScrollToTop from "./scroll";
-import SimpleAccordion from "./accordion";
+import ScrollToTop from "../components/scroll";
+import SimpleAccordion from "../components/pastDataComponents/accordion";
 
 function PastData(props) {
   return (
@@ -18,6 +18,7 @@ function PastData(props) {
           </Fab>
         </ScrollTop>
       </React.Fragment> */}
+
       {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />

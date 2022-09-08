@@ -2,24 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Slide from "@mui/material/Slide";
-import Fade from "@mui/material/Fade";
-import Grow from "@mui/material/Grow";
 import { Helmet } from "react-helmet";
-import PropTypes from "prop-types";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./scrollTop";
-import TitleTheme from "./titleTheme";
-import ReportScamButton from "./reportChatButton";
-
-// To scroll to top
-
-// ScrollTop.propTypes = {
-//   children: PropTypes.element.isRequired,
-//   window: PropTypes.func,
-// };
+import TitleTheme from "../components/titleTheme";
 
 function About(props) {
   const Div = TitleTheme();
@@ -34,18 +18,6 @@ function About(props) {
           marginTop: "5vh",
         }}
       >
-        {/* Component for scroll to top button
-        <Toolbar id="back-to-top-anchor" />
-        <React.Fragment>
-          <CssBaseline />
-          <ScrollTop {...props}>
-            <Fab color="secondary" size="large" aria-label="scroll back to top">
-              <KeyboardArrowUpIcon />
-            </Fab>
-          </ScrollTop>
-        </React.Fragment> */}
-
-        {/* To change the title of page on browser */}
         <Helmet>
           <meta charSet="utf-8" />
           <title>About</title>

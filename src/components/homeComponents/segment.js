@@ -1,6 +1,8 @@
 import React from "react";
 import "./segment.css";
 import SegmentItem from "./segmentItem";
+import image1 from "../../images/img-1.png";
+import image2 from "../../images/img-2.jpg";
 
 function Segment() {
   return (
@@ -10,13 +12,13 @@ function Segment() {
         <div className="segments__wrapper">
           <ul className="segments__items">
             <SegmentItem
-              src="images/img-1.png"
+              src={image1}
               text="Get to know about what we are doing"
               label="About"
               path="/about"
             />
             <SegmentItem
-              src="images/img-2.jpg"
+              src={image2}
               text="Know about various scams through data visualisation"
               label="Know about Scams"
               path="/pastData"

@@ -1,11 +1,11 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import Home from "./home";
-import PhishingDetector from "./phishingDetector";
-import PhishingSimulation from "./phishingSimulation";
-import PastData from "./pastData";
-import Navbar from "./Navibar";
-import About from "./about";
-import ScrollToTop from "./scroll";
+import Home from "./pages/home";
+import PhishingDetector from "./pages/phishingDetector";
+import PhishingSimulation from "./pages/phishingSimulation";
+import PastData from "./pages/pastData";
+import Navbar from "./components/homeComponents/Navibar";
+import About from "./pages/about";
+import ScrollToTop from "./components/scroll";
 
 export default function App() {
   return (

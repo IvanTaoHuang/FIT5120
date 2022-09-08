@@ -11,12 +11,7 @@ import { useState } from "react";
 import Slide from "@mui/material/Slide";
 import Zoom from "@mui/material/Zoom";
 import { Helmet } from "react-helmet";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "./scrollTop";
-import ReportScamButton from "./reportChatButton";
+import ReportScamButton from "../components/reportChatButton";
 
 function PhishingDetector(props) {
   const [isActive, setIsActive] = useState(false);
