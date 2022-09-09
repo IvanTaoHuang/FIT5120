@@ -12,7 +12,6 @@ import Age1920 from "../../ageCharts/age1920";
 import Age1921 from "../../ageCharts/age1921";
 import Age2120 from "../../ageCharts/age2120";
 import Age192021 from "../../ageCharts/age192021";
-
 import Month1920 from "../../monthCharts/month1920";
 import Month2019 from "../../monthCharts/month2019";
 import Month2020 from "../../monthCharts/month2020";
@@ -20,7 +19,6 @@ import Month2021 from "../../monthCharts/month2021";
 import Month2120 from "../../monthCharts/month2120";
 import Month1921 from "../../monthCharts/month1921";
 import Month192021 from "../../monthCharts/month192021";
-
 import State1920 from "../../stateCharts/state1920";
 import State192021 from "../../stateCharts/state192021";
 import State1921 from "../../stateCharts/state1921";
@@ -28,9 +26,7 @@ import State2019 from "../../stateCharts/state2019";
 import State2020 from "../../stateCharts/state2020";
 import State2021 from "../../stateCharts/state2021";
 import State2120 from "../../stateCharts/state2120";
-
 import { Button, Typography } from "@mui/material";
-
 import TypesAgeGroupExp from "../../Data/typesAgeGroupExp";
 import TypesAgeGroupRes from "../../Data/typesAgeGroupRes";
 import TypesMenPF from "../../Data/typesMenPF";
@@ -46,8 +42,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AgeAnalysis from "./ageAnalysis";
-
 import Radio from "@mui/material/Radio";
+import { Card } from "@mui/material";
 
 export default function ControlledCheckbox() {
   //Breakpoints
@@ -277,627 +273,907 @@ export default function ControlledCheckbox() {
   return (
     <div>
       <Stack direction="row" spacing={2}>
-        <Box sx={{ width: "10vw" }}></Box>
-        <Box>
-          <Stack direction="row" spacing={0.2}>
-            <StatisticDialog />
-            <Typography variant="h6">
-              Please select one of the following:
-            </Typography>
-          </Stack>
-          <Box sx={{ marginLeft: "33px" }}>
+        <Card sx={{ width: "23vw", marginLeft: "5vw" }}>
+          <Box>
+            <Stack direction="row" spacing={0.2}>
+              <StatisticDialog />
+              <Typography variant="h6">
+                Please select one of the following:
+              </Typography>
+            </Stack>
+            <Box sx={{ marginLeft: "33px" }}>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={reports}
+                      onChange={typeHandleChange}
+                      name="reports"
+                    />
+                  }
+                  label="Reported Scams"
+                />
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={exposed}
+                      onChange={typeHandleChange}
+                      name="exposed"
+                    />
+                  }
+                  label="Types of Personal fraud"
+                />
+              </FormGroup>
+            </Box>
+          </Box>
+        </Card>
+
+        <Box sx={{ width: "8vw" }}></Box>
+
+        <Card
+          sx={{
+            width: "23vw",
+            display: typeChecked.reports ? "block" : "none",
+          }}
+        >
+          <Box
+            sx={{
+              // display: typeChecked.reports ? "block" : "none",
+              marginLeft: "1vw",
+            }}
+          >
+            <Typography variant="h6">Please select another one:</Typography>
             <FormGroup>
               <FormControlLabel
                 control={
                   <Radio
-                    checked={reports}
-                    onChange={typeHandleChange}
-                    name="reports"
+                    checked={ageGroup}
+                    onChange={attrHandleChange}
+                    name="ageGroup"
                   />
                 }
-                label="Reported Scams"
+                label="Age Group"
               />
               <FormControlLabel
                 control={
                   <Radio
-                    checked={exposed}
-                    onChange={typeHandleChange}
-                    name="exposed"
+                    checked={month}
+                    onChange={attrHandleChange}
+                    name="month"
                   />
                 }
-                label="Types of Personal fraud"
+                label="Month"
+              />
+              <FormControlLabel
+                control={
+                  <Radio
+                    checked={state}
+                    onChange={attrHandleChange}
+                    name="state"
+                  />
+                }
+                label="State"
               />
             </FormGroup>
           </Box>
-        </Box>
-        <Box sx={{ width: "12vw" }}></Box>
-        <Box sx={{ display: typeChecked.reports ? "block" : "none" }}>
-          <Typography variant="h6">Please select another one:</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={ageGroup}
-                  onChange={attrHandleChange}
-                  name="ageGroup"
-                />
-              }
-              label="Age Group"
-            />
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={month}
-                  onChange={attrHandleChange}
-                  name="month"
-                />
-              }
-              label="Month"
-            />
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={state}
-                  onChange={attrHandleChange}
-                  name="state"
-                />
-              }
-              label="State"
-            />
-          </FormGroup>
-        </Box>
-        <Box sx={{ display: typeChecked.exposed ? "block" : "none" }}>
-          <Typography variant="h6">Please select another one:</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={ageGroupType}
-                  onChange={typesHandleChange}
-                  name="ageGroupType"
-                />
-              }
-              label="Age Group"
-            />
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={genderType}
-                  onChange={typesHandleChange}
-                  name="genderType"
-                />
-              }
-              label="Gender"
-            />
-            <FormControlLabel
-              control={
-                <Radio
-                  checked={stateType}
-                  onChange={typesHandleChange}
-                  name="stateType"
-                />
-              }
-              label="State"
-            />
-          </FormGroup>
-          <br />
-          <Button variant="contained" onClick={typeHandleChange}>
-            Reset
-          </Button>
-        </Box>
-        <Box sx={{ width: "12vw" }}></Box>
-        <Box sx={{ display: attrChecked.ageGroup ? "block" : "none" }}>
-          <Typography variant="h6">Please select a year:</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={age2019}
-                  onChange={ageYearHandleChange}
-                  name="age2019"
-                />
-              }
-              label="2019"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={age2020}
-                  onChange={ageYearHandleChange}
-                  name="age2020"
-                />
-              }
-              label="2020"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={age2021}
-                  onChange={ageYearHandleChange}
-                  name="age2021"
-                />
-              }
-              label="2021"
-            />
-          </FormGroup>
-          <br />
-          <Button variant="contained" onClick={typeHandleChange}>
-            Reset
-          </Button>
-        </Box>
+        </Card>
+        <Card
+          sx={{
+            width: "23vw",
+            display: typeChecked.exposed ? "block" : "none",
+          }}
+        >
+          <Box
+            sx={{
+              marginLeft: "1vw",
+            }}
+          >
+            <Typography variant="h6">Please select another one:</Typography>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Radio
+                    checked={ageGroupType}
+                    onChange={typesHandleChange}
+                    name="ageGroupType"
+                  />
+                }
+                label="Age Group"
+              />
+              <FormControlLabel
+                control={
+                  <Radio
+                    checked={genderType}
+                    onChange={typesHandleChange}
+                    name="genderType"
+                  />
+                }
+                label="Gender"
+              />
+              <FormControlLabel
+                control={
+                  <Radio
+                    checked={stateType}
+                    onChange={typesHandleChange}
+                    name="stateType"
+                  />
+                }
+                label="State"
+              />
+            </FormGroup>
+            <br />
+            <Button
+              variant="contained"
+              onClick={typeHandleChange}
+              sx={{ marginBottom: "1vw" }}
+            >
+              Reset
+            </Button>
+          </Box>
+        </Card>
 
-        <Box sx={{ display: attrChecked.month ? "block" : "none" }}>
-          <Typography variant="h6">Please select a year</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={month2019}
-                  onChange={monthYearHandleChange}
-                  name="month2019"
-                />
-              }
-              label="2019"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={month2020}
-                  onChange={monthYearHandleChange}
-                  name="month2020"
-                />
-              }
-              label="2020"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={month2021}
-                  onChange={monthYearHandleChange}
-                  name="month2021"
-                />
-              }
-              label="2021"
-            />
-          </FormGroup>
-          <br />
-          <Button variant="contained" onClick={typeHandleChange}>
-            Reset
-          </Button>
-        </Box>
+        <Box sx={{ width: "8vw" }}></Box>
 
-        <Box sx={{ display: attrChecked.state ? "block" : "none" }}>
-          <Typography variant="h6">Please select a year</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={state2019}
-                  onChange={stateYearHandleChange}
-                  name="state2019"
-                />
-              }
-              label="2019"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={state2020}
-                  onChange={stateYearHandleChange}
-                  name="state2020"
-                />
-              }
-              label="2020"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={state2021}
-                  onChange={stateYearHandleChange}
-                  name="state2021"
-                />
-              }
-              label="2021"
-            />
-          </FormGroup>
-          <br />
-          <Button variant="contained" onClick={typeHandleChange}>
-            Reset
-          </Button>
-        </Box>
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.ageGroup ? "block" : "none",
+          }}
+        >
+          <Box
+            sx={{
+              marginLeft: "1vw",
+            }}
+          >
+            <Typography variant="h6">Please select a year:</Typography>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={age2019}
+                    onChange={ageYearHandleChange}
+                    name="age2019"
+                  />
+                }
+                label="2019"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={age2020}
+                    onChange={ageYearHandleChange}
+                    name="age2020"
+                  />
+                }
+                label="2020"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={age2021}
+                    onChange={ageYearHandleChange}
+                    name="age2021"
+                  />
+                }
+                label="2021"
+              />
+            </FormGroup>
+            <br />
+            <Button
+              variant="contained"
+              onClick={typeHandleChange}
+              sx={{ marginBottom: "1vw" }}
+            >
+              Reset
+            </Button>
+          </Box>
+        </Card>
+
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.month ? "block" : "none",
+          }}
+        >
+          <Box
+            sx={{
+              marginLeft: "1vw",
+            }}
+          >
+            <Typography variant="h6">Please select a year</Typography>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={month2019}
+                    onChange={monthYearHandleChange}
+                    name="month2019"
+                  />
+                }
+                label="2019"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={month2020}
+                    onChange={monthYearHandleChange}
+                    name="month2020"
+                  />
+                }
+                label="2020"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={month2021}
+                    onChange={monthYearHandleChange}
+                    name="month2021"
+                  />
+                }
+                label="2021"
+              />
+            </FormGroup>
+            <br />
+            <Button
+              variant="contained"
+              onClick={typeHandleChange}
+              sx={{ marginBottom: "1vw" }}
+            >
+              Reset
+            </Button>
+          </Box>
+        </Card>
+
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.state ? "block" : "none",
+          }}
+        >
+          <Box
+            sx={{
+              marginLeft: "1vw",
+            }}
+          >
+            <Typography variant="h6">Please select a year</Typography>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state2019}
+                    onChange={stateYearHandleChange}
+                    name="state2019"
+                  />
+                }
+                label="2019"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state2020}
+                    onChange={stateYearHandleChange}
+                    name="state2020"
+                  />
+                }
+                label="2020"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={state2021}
+                    onChange={stateYearHandleChange}
+                    name="state2021"
+                  />
+                }
+                label="2021"
+              />
+            </FormGroup>
+            <br />
+            <Button
+              variant="contained"
+              onClick={typeHandleChange}
+              sx={{ marginBottom: "1vw" }}
+            >
+              Reset
+            </Button>
+          </Box>
+        </Card>
       </Stack>
+
       <Box sx={{ marginTop: "10vh" }}></Box>
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display:
             age2019 && age2020 === false && age2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age2019 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age2019 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display:
             age2020 && age2019 === false && age2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age2020 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age2020 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display:
             age2021 && age2019 === false && age2020 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age2021 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age2021 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
       {/** Age 2019 2020 */}
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display: age2019 && age2020 && age2021 === false ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age1920 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age1920 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
       {/** Age 2019 2021 */}
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display: age2019 && age2021 && age2020 === false ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age1921 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age1921 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
       {/** Age 2020 2021 */}
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display: age2020 && age2021 && age2019 === false ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age2120 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age2120 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
       {/** Age 2019 2020 2021 */}
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
           display: age2019 && age2021 && age2020 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Age192021 />
-        <AgeAnalysis />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Age192021 />
+          <AgeAnalysis />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             month2019 && month2020 === false && month2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month2019 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month2019 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             month2019 === false && month2020 && month2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month2020 />
-      </Box>
-      <Box
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month2020 />
+        </Box>
+      </Card>
+
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "175vw",
+          marginLeft: "7.5vw",
           display:
             month2019 === false && month2020 === false && month2021
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month2021 />
         <Box
           sx={{
-            paddingTop: "5vh",
-            paddingLeft: "17vw",
-            paddingBottom: "5vw",
-            width: "40vw",
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
           }}
         >
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography
-                variant="h2"
-                fontSize={matches ? "2vw" : "4vw"}
-                paddingLeft={matches ? "38%" : "33%"}
-                fontFamily="Helvetica Neue"
+          <Month2021 />
+          <Box
+            sx={{
+              paddingTop: matches ? "5vh" : "3vh",
+              paddingLeft: matches ? "17vw" : "14vw",
+              paddingBottom: "5vw",
+              width: matches ? "40vw" : "50vw",
+            }}
+          >
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
               >
-                Analysis
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Based on the provided tables, the first thing which is worth
-                mentioning is the amount of money lost in May 2021. This trend
-                dramatically increased in one month by over 20%. The reason was
-                the huge smishing attack (SMS phishing attack) which affects
-                many Aussie families in one month.
-                <br />
-                <br />
-                If you want to find more about the details, you can click{" "}
-                <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
-                  here
-                </a>
-                .
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+                <Typography
+                  variant="h2"
+                  fontSize={matches ? "2vw" : "4vw"}
+                  paddingLeft={matches ? "38%" : "33%"}
+                  fontFamily="Helvetica Neue"
+                >
+                  Analysis
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography fontSize={matches ? "1vw" : "2vw"}>
+                  Based on the provided tables, the first thing which is worth
+                  mentioning is the amount of money lost in May 2021. This trend
+                  dramatically increased in one month by over 20%. The reason
+                  was the huge smishing attack (SMS phishing attack) which
+                  affects many Aussie families in one month.
+                  <br />
+                  <br />
+                  If you want to find more about the details, you can click{" "}
+                  <a href="https://www.9news.com.au/technology/what-is-smishing-the-new-scam-fleecing-australians-of-hundreds-of-thousands/553671fc-5067-4094-9252-b1bf6919cec8">
+                    here
+                  </a>
+                  .
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Box>
         </Box>
-      </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             month2019 && month2020 && month2021 === false ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month1920 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month1920 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             month2019 && month2020 === false && month2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month1921 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month1921 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             month2019 === false && month2020 && month2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month2120 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month2120 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display: month2019 && month2020 && month2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Month192021 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <Month192021 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             state2019 && state2020 === false && state2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <State2019 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State2019 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             state2019 === false && state2020 && state2021 === false
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <State2020 />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State2020 />
+        </Box>
+      </Card>
 
-      <Box
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
           display:
             state2019 === false && state2020 === false && state2021
               ? "block"
               : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <State2021 />
-      </Box>
-      <Box
-        sx={{
-          display:
-            state2019 && state2020 && state2021 === false ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
-        }}
-      >
-        <State1920 />
-      </Box>
-      <Box
-        sx={{
-          display:
-            state2019 && state2020 === false && state2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
-        }}
-      >
-        <State1921 />
-      </Box>
-      <Box
-        sx={{
-          display:
-            state2019 === false && state2020 && state2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
-        }}
-      >
-        <State2120 />
-      </Box>
-      <Box
-        sx={{
-          display: state2019 && state2020 && state2021 ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
-        }}
-      >
-        <State192021 />
-      </Box>
-
-      <Box
-        sx={{
-          display: typesChecked.ageGroupType ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
-        }}
-      >
-        <Typography variant="h4" fontSize={"2vw"}>
-          Exposed Rate and Respond Rate according to Age groups
-        </Typography>
-        <Box sx={{ height: "4vh" }}></Box>
-        <Barchart chartData={typesAgeGroupExpState} />
-        <Box sx={{ height: "4vh" }}></Box>
         <Box
           sx={{
-            paddingTop: "5vh",
-            paddingLeft: "17vw",
-            paddingBottom: "5vw",
-            width: "40vw",
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
           }}
         >
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography
-                variant="h2"
-                fontSize={matches ? "2vw" : "4vw"}
-                paddingLeft={matches ? "38%" : "33%"}
-                fontFamily="Helvetica Neue"
-              >
-                Analysis
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Based on the provided information in the above graph, an
-                estimated 55% of Australians aged 15 years and over were exposed
-                to a scam. The lowest age group is 15-24 with 39.5 % exposure
-                rate while this rate is slightly higher in all other age groups.
-                However, the rate of response is dramatically lower than
-                exposure. It means from 10 people who are exposed to scams, only
-                1 of them respond to that.
-                <br></br>
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+          <State2021 />
         </Box>
-      </Box>
-      <Box
+      </Card>
+
+      <Card
         sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 && state2020 && state2021 === false ? "block" : "none",
+        }}
+      >
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State1920 />
+        </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 && state2020 === false && state2021 ? "block" : "none",
+        }}
+      >
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State1921 />
+        </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 === false && state2020 && state2021 ? "block" : "none",
+        }}
+      >
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State2120 />
+        </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display: state2019 && state2020 && state2021 ? "block" : "none",
+        }}
+      >
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+          }}
+        >
+          <State192021 />
+        </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "120vh" : "85vh",
+          marginLeft: "7.5vw",
+          display: typesChecked.ageGroupType ? "block" : "none",
+        }}
+      >
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+            marginTop: "2vw",
+          }}
+        >
+          <Typography variant="h4" fontSize={"2vw"}>
+            Exposed Rate and Respond Rate according to Age groups
+          </Typography>
+          <Box sx={{ height: "4vh" }}></Box>
+          <Barchart chartData={typesAgeGroupExpState} />
+          <Box sx={{ height: "4vh" }}></Box>
+          <Box
+            sx={{
+              paddingTop: "5vh",
+              paddingLeft: "17vw",
+              paddingBottom: "5vw",
+              width: "40vw",
+            }}
+          >
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography
+                  variant="h2"
+                  fontSize={matches ? "2vw" : "4vw"}
+                  paddingLeft={matches ? "38%" : "33%"}
+                  fontFamily="Helvetica Neue"
+                >
+                  Analysis
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography fontSize={matches ? "1vw" : "2vw"}>
+                  Based on the provided information in the above graph, an
+                  estimated 55% of Australians aged 15 years and over were
+                  exposed to a scam. The lowest age group is 15-24 with 39.5 %
+                  exposure rate while this rate is slightly higher in all other
+                  age groups. However, the rate of response is dramatically
+                  lower than exposure. It means from 10 people who are exposed
+                  to scams, only 1 of them respond to that.
+                  <br></br>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Box>
+        </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: "47vw",
+          marginLeft: "7.5vw",
           display: typesChecked.genderType ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Typography variant="h4" fontSize={"2vw"}>
-          Number of different types of scams according to genders
-        </Typography>
-        <Box sx={{ height: "4vh" }}></Box>
-        <Barchart chartData={typesMenPFState} />
-      </Box>
-      <Box
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+            marginTop: "2vw",
+          }}
+        >
+          <Typography variant="h4" fontSize={"2vw"}>
+            Number of different types of scams according to genders
+          </Typography>
+          <Box sx={{ height: "4vh" }}></Box>
+          <Barchart chartData={typesMenPFState} />
+        </Box>
+      </Card>
+
+      <Card
         sx={{
+          width: "85vw",
+          height: "47vw",
+          marginLeft: "7.5vw",
           display: typesChecked.stateType ? "block" : "none",
-          width: "70vw",
-          height: "40vh",
-          marginLeft: "12vw",
         }}
       >
-        <Typography variant="h4" fontSize={"2vw"}>
-          Number of different types of scams according to states
-        </Typography>
-        <Box sx={{ height: "4vh" }}></Box>
-        <Barchart chartData={typesStateState} />
-      </Box>
+        <Box
+          sx={{
+            width: "70vw",
+            height: "40vh",
+            marginLeft: "8vw",
+            marginTop: "2vw",
+          }}
+        >
+          <Typography variant="h4" fontSize={"2vw"}>
+            Number of different types of scams according to states
+          </Typography>
+          <Box sx={{ height: "4vh" }}></Box>
+          <Barchart chartData={typesStateState} />
+        </Box>
+      </Card>
     </div>
   );
 }

@@ -16,10 +16,10 @@ const AgeAnalysis = () => {
   return (
     <Box
       sx={{
-        paddingTop: "5vh",
-        paddingLeft: "17vw",
+        paddingTop: matches ? "5vh" : "3vh",
+        paddingLeft: matches ? "17vw" : "14vw",
         paddingBottom: "5vw",
-        width: "40vw",
+        width: matches ? "40vw" : "50vw",
       }}
     >
       <Accordion>
@@ -38,7 +38,7 @@ const AgeAnalysis = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography fontSize={matches ? "1vw" : "2vw"}>
             Based on the provided tables above, people aged 65 and more are the
             most vulnerable group among the other generation, this is followed
             by the fact that this group is not engaged as same as the other age
