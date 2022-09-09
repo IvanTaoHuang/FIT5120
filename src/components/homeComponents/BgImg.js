@@ -8,7 +8,8 @@ function BgImg() {
   return (
     <div className="bg-container">
       <video src={video} autoPlay loop muted />
-      <h1>Think before you click!</h1>
+      {/* <h1>Think before you click!</h1> */}
+      <h1>Iteration2</h1>
       <p>What are you waiting for?</p>
       <div className="bg-btns">
         <Button
