@@ -310,10 +310,15 @@ export default function ControlledCheckbox() {
 
         <Box sx={{ width: "8vw" }}></Box>
 
-        <Card sx={{ width: "23vw" }}>
+        <Card
+          sx={{
+            width: "23vw",
+            display: typeChecked.reports ? "block" : "none",
+          }}
+        >
           <Box
             sx={{
-              display: typeChecked.reports ? "block" : "none",
+              // display: typeChecked.reports ? "block" : "none",
               marginLeft: "1vw",
             }}
           >
@@ -351,10 +356,15 @@ export default function ControlledCheckbox() {
               />
             </FormGroup>
           </Box>
-
+        </Card>
+        <Card
+          sx={{
+            width: "23vw",
+            display: typeChecked.exposed ? "block" : "none",
+          }}
+        >
           <Box
             sx={{
-              display: typeChecked.exposed ? "block" : "none",
               marginLeft: "1vw",
             }}
           >
@@ -404,10 +414,14 @@ export default function ControlledCheckbox() {
 
         <Box sx={{ width: "8vw" }}></Box>
 
-        <Card sx={{ width: "23vw" }}>
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.ageGroup ? "block" : "none",
+          }}
+        >
           <Box
             sx={{
-              display: attrChecked.ageGroup ? "block" : "none",
               marginLeft: "1vw",
             }}
           >
@@ -453,10 +467,16 @@ export default function ControlledCheckbox() {
               Reset
             </Button>
           </Box>
+        </Card>
 
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.month ? "block" : "none",
+          }}
+        >
           <Box
             sx={{
-              display: attrChecked.month ? "block" : "none",
               marginLeft: "1vw",
             }}
           >
@@ -502,10 +522,16 @@ export default function ControlledCheckbox() {
               Reset
             </Button>
           </Box>
+        </Card>
 
+        <Card
+          sx={{
+            width: "23vw",
+            display: attrChecked.state ? "block" : "none",
+          }}
+        >
           <Box
             sx={{
-              display: attrChecked.state ? "block" : "none",
               marginLeft: "1vw",
             }}
           >
@@ -553,21 +579,21 @@ export default function ControlledCheckbox() {
           </Box>
         </Card>
       </Stack>
-      <Box sx={{ height: "10vh" }}></Box>
+
+      <Box sx={{ marginTop: "10vh" }}></Box>
       <Card
         sx={{
           width: "85vw",
-          height: "230vh",
+          height: matches ? "125vw" : "185vw",
           marginLeft: "7.5vw",
+          display:
+            age2019 && age2020 === false && age2021 === false
+              ? "block"
+              : "none",
         }}
       >
-        <Box sx={{ marginTop: "10vh" }}></Box>
         <Box
           sx={{
-            display:
-              age2019 && age2020 === false && age2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -576,13 +602,21 @@ export default function ControlledCheckbox() {
           <Age2019 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display:
+            age2020 && age2019 === false && age2021 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              age2020 && age2019 === false && age2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -591,13 +625,21 @@ export default function ControlledCheckbox() {
           <Age2020 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display:
+            age2021 && age2019 === false && age2020 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              age2021 && age2019 === false && age2020 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -606,11 +648,19 @@ export default function ControlledCheckbox() {
           <Age2021 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
-        {/** Age 2019 2020 */}
+      {/** Age 2019 2020 */}
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display: age2019 && age2020 && age2021 === false ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: age2019 && age2020 && age2021 === false ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -619,11 +669,19 @@ export default function ControlledCheckbox() {
           <Age1920 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
-        {/** Age 2019 2021 */}
+      {/** Age 2019 2021 */}
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display: age2019 && age2021 && age2020 === false ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: age2019 && age2021 && age2020 === false ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -632,11 +690,19 @@ export default function ControlledCheckbox() {
           <Age1921 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
-        {/** Age 2020 2021 */}
+      {/** Age 2020 2021 */}
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display: age2020 && age2021 && age2019 === false ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: age2020 && age2021 && age2019 === false ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -645,11 +711,19 @@ export default function ControlledCheckbox() {
           <Age2120 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
-        {/** Age 2019 2020 2021 */}
+      {/** Age 2019 2020 2021 */}
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "185vw",
+          marginLeft: "7.5vw",
+          display: age2019 && age2021 && age2020 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: age2019 && age2021 && age2020 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -658,13 +732,21 @@ export default function ControlledCheckbox() {
           <Age192021 />
           <AgeAnalysis />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 && month2020 === false && month2021 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 && month2020 === false && month2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -672,13 +754,21 @@ export default function ControlledCheckbox() {
         >
           <Month2019 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 === false && month2020 && month2021 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 === false && month2020 && month2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -686,12 +776,21 @@ export default function ControlledCheckbox() {
         >
           <Month2020 />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "125vw" : "175vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 === false && month2020 === false && month2021
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 === false && month2020 === false && month2021
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -700,10 +799,10 @@ export default function ControlledCheckbox() {
           <Month2021 />
           <Box
             sx={{
-              paddingTop: "5vh",
-              paddingLeft: "17vw",
+              paddingTop: matches ? "5vh" : "3vh",
+              paddingLeft: matches ? "17vw" : "14vw",
               paddingBottom: "5vw",
-              width: "40vw",
+              width: matches ? "40vw" : "50vw",
             }}
           >
             <Accordion>
@@ -722,7 +821,7 @@ export default function ControlledCheckbox() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography fontSize={matches ? "1vw" : "2vw"}>
                   Based on the provided tables, the first thing which is worth
                   mentioning is the amount of money lost in May 2021. This trend
                   dramatically increased in one month by over 20%. The reason
@@ -740,11 +839,19 @@ export default function ControlledCheckbox() {
             </Accordion>
           </Box>
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 && month2020 && month2021 === false ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 && month2020 && month2021 === false ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -752,11 +859,19 @@ export default function ControlledCheckbox() {
         >
           <Month1920 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 && month2020 === false && month2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 && month2020 === false && month2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -764,11 +879,19 @@ export default function ControlledCheckbox() {
         >
           <Month1921 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            month2019 === false && month2020 && month2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              month2019 === false && month2020 && month2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -776,10 +899,18 @@ export default function ControlledCheckbox() {
         >
           <Month2120 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display: month2019 && month2020 && month2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: month2019 && month2020 && month2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -787,13 +918,21 @@ export default function ControlledCheckbox() {
         >
           <Month192021 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 && state2020 === false && state2021 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 && state2020 === false && state2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -801,13 +940,21 @@ export default function ControlledCheckbox() {
         >
           <State2019 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 === false && state2020 && state2021 === false
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 === false && state2020 && state2021 === false
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -815,13 +962,21 @@ export default function ControlledCheckbox() {
         >
           <State2020 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 === false && state2020 === false && state2021
+              ? "block"
+              : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 === false && state2020 === false && state2021
-                ? "block"
-                : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -829,10 +984,19 @@ export default function ControlledCheckbox() {
         >
           <State2021 />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 && state2020 && state2021 === false ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 && state2020 && state2021 === false ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -840,10 +1004,19 @@ export default function ControlledCheckbox() {
         >
           <State1920 />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 && state2020 === false && state2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 && state2020 === false && state2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -851,10 +1024,19 @@ export default function ControlledCheckbox() {
         >
           <State1921 />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display:
+            state2019 === false && state2020 && state2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display:
-              state2019 === false && state2020 && state2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -862,9 +1044,18 @@ export default function ControlledCheckbox() {
         >
           <State2120 />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "90vw" : "110vw",
+          marginLeft: "7.5vw",
+          display: state2019 && state2020 && state2021 ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: state2019 && state2020 && state2021 ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
@@ -872,13 +1063,22 @@ export default function ControlledCheckbox() {
         >
           <State192021 />
         </Box>
+      </Card>
 
+      <Card
+        sx={{
+          width: "85vw",
+          height: matches ? "120vh" : "85vh",
+          marginLeft: "7.5vw",
+          display: typesChecked.ageGroupType ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: typesChecked.ageGroupType ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
+            marginTop: "2vw",
           }}
         >
           <Typography variant="h4" fontSize={"2vw"}>
@@ -911,7 +1111,7 @@ export default function ControlledCheckbox() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography fontSize={matches ? "1vw" : "2vw"}>
                   Based on the provided information in the above graph, an
                   estimated 55% of Australians aged 15 years and over were
                   exposed to a scam. The lowest age group is 15-24 with 39.5 %
@@ -925,12 +1125,22 @@ export default function ControlledCheckbox() {
             </Accordion>
           </Box>
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: "47vw",
+          marginLeft: "7.5vw",
+          display: typesChecked.genderType ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: typesChecked.genderType ? "block" : "none",
             width: "70vw",
             height: "40vh",
-            marginLeft: "12vw",
+            marginLeft: "8vw",
+            marginTop: "2vw",
           }}
         >
           <Typography variant="h4" fontSize={"2vw"}>
@@ -939,12 +1149,22 @@ export default function ControlledCheckbox() {
           <Box sx={{ height: "4vh" }}></Box>
           <Barchart chartData={typesMenPFState} />
         </Box>
+      </Card>
+
+      <Card
+        sx={{
+          width: "85vw",
+          height: "47vw",
+          marginLeft: "7.5vw",
+          display: typesChecked.stateType ? "block" : "none",
+        }}
+      >
         <Box
           sx={{
-            display: typesChecked.stateType ? "block" : "none",
             width: "70vw",
             height: "40vh",
             marginLeft: "8vw",
+            marginTop: "2vw",
           }}
         >
           <Typography variant="h4" fontSize={"2vw"}>
