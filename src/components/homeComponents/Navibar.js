@@ -48,25 +48,24 @@ function Navbar() {
                 About
               </Link>
             </li>
-            {/**<li className="nav-item">
-              <Link
-                to="/phishingDetector"
-                className="nav-links1"
-                style={{ ponterEvents: "none" }}
-                onClick={closeMobileMenu}
-              >
-                Phishing Detector
-              </Link>
-            </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/phishingSimulation"
-                className="nav-links1"
+                className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Phishing Simulation
               </Link>
             </li> */}
+            <li className="nav-item">
+              <Link
+                to="/phishingDetector"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Phishing Detection
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 to="/pastData"
