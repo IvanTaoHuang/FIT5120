@@ -3,16 +3,16 @@
   }
   .icon-position{
     position: fixed;
-    bottom: 40px;
+    bottom: 100px;
     right: 25px;
     z-index: 20;
   }
   .icon-style{
     background-color: #551B54;
-    border: 2px solid #fff;
+    border: 18px solid #fff;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     color: #fff;
     cursor: pointer;
     animation: movebtn 3s ease-in-out infinite;
@@ -22,7 +22,7 @@
     animation: none;
     background: #fff;
     color: #551B54;
-    border: 2px solid #551B54;
+    border: 18px solid #551B54;
   }
   @keyframes movebtn {
     0%{
@@ -39,5 +39,24 @@
     }
     100%{
       transform: translateY(0px);
+    }
+  }
+  @media screen and (max-width: 390px) {
+    .icon-style{
+      background-color: #551B54;
+      border: 12px solid #fff;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      color: #fff;
+      cursor: pointer;
+      animation: movebtn 3s ease-in-out infinite;
+      transition: all .5s ease-in-out;
+    }
+    .icon-style:hover{
+      animation: none;
+      background: #fff;
+      color: #551B54;
+      border: 12px solid #551B54;
     }
   }

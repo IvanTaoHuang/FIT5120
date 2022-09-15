@@ -7,15 +7,14 @@ import image2 from "../../images/img-2.jpg";
 function Segment() {
   return (
     <div className="segments">
-      <h1>Check out these features of the website!</h1>
       <div className="segments__container">
         <div className="segments__wrapper">
           <ul className="segments__items">
             <SegmentItem
               src={image1}
-              text="Get to know about what we are doing"
-              label="About"
-              path="/about"
+              text="Identify"
+              label="identify"
+              path="/identify"
             />
             <SegmentItem
               src={image2}

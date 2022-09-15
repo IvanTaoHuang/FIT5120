@@ -43,11 +43,11 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
                 About
               </Link>
-            </li>
+            </li> */}
             {/* <li className="nav-item">
               <Link
                 to="/phishingSimulation"
@@ -63,10 +63,10 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Phishing Detection
+                Detector
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/pastData"
                 className="nav-links"
@@ -74,7 +74,7 @@ function Navbar() {
               >
                 Know More
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

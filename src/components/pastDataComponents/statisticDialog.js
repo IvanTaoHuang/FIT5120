@@ -28,7 +28,7 @@ const StatisticDialog = () => {
   return (
     <>
       <IconButton size="small" onClick={handleClickOpen} color="primary">
-        <HelpIcon />
+        <HelpIcon sx={{ fontSize: "1.9vw" }} />
       </IconButton>
       <Dialog
         open={open}
