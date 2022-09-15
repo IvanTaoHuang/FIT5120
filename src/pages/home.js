@@ -13,7 +13,7 @@ function Home(props) {
         <meta name="description" content="Home" />
       </Helmet>
       <BgImg />
-      <Segment />
+      {/* <Segment /> */}
     </>
   );
 }

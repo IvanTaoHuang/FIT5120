@@ -5,6 +5,8 @@ import PhishingSimulation from "./pages/phishingSimulation";
 import PastData from "./pages/pastData";
 import Navbar from "./components/homeComponents/Navibar";
 import About from "./pages/about";
+import Identify from "./pages/identify";
+import Report from "./pages/report";
 import ScrollToTop from "./components/scroll";
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
         <Route exact path="/pastData" element={<PastData />} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/phishingDetector" element={<PhishingDetector />} />
+        <Route exact path="/identify" element={<Identify />} />
+        <Route exact path="/report" element={<Report />} />
         <Route
           exact
           path="/phishingSimulation"
