@@ -5,20 +5,20 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import Breadcrumb from "../components/breadCrumb.js";
+import "./breadCrumb.css";
 
-export default function Identify() {
-  // const breadcrumbs = [
-  //   <Link to="/" className="breadcrumb">
-  //     Home
-  //   </Link>,
-  //   <Typography key="3" color="text.primary" variant="h5">
-  //     Identify
-  //   </Typography>,
-  // ];
+export default function Breadcrumb(props) {
+  const breadcrumbs = [
+    <Link to="/" className="breadcrumb" sx={{ color: props.color }}>
+      Home
+    </Link>,
+    <Typography key="3" color="text.primary" variant="h5">
+      {props.page}
+    </Typography>,
+  ];
   return (
     <>
-      {/* <Stack spacing={2}>
+      <Stack spacing={2}>
         <Breadcrumbs
           separator={<NavigateNextIcon fontSize="large" />}
           aria-label="breadcrumb"
@@ -26,9 +26,7 @@ export default function Identify() {
         >
           {breadcrumbs}
         </Breadcrumbs>
-      </Stack> */}
-      <Breadcrumb page="Identify" />
-      <ImageAvatars />
+      </Stack>
     </>
   );
 }

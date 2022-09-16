@@ -57,15 +57,7 @@
     padding: 0.5rem 1rem;
     height: 75%;
   }
-  .nav-links1 {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
-    pointer-events: none;
-  }
+  
   
   .nav-links:hover {
     border-bottom: 4px solid #fff;
