@@ -27,11 +27,17 @@ function BgImg() {
                 path="/identify"
               />
               <></>
-              <SegmentItem
+              {/* <SegmentItem
                 src={detector}
                 text="Phishing Detector"
                 label="Detect"
                 path="/phishingDetector"
+              /> */}
+              <SegmentItem
+                src={detector}
+                text="Phishing Detector"
+                label="Visualisation"
+                path="/pastData"
               />
               <SegmentItem
                 src={report}

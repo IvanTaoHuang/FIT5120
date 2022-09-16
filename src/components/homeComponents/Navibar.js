@@ -57,7 +57,7 @@ function Navbar() {
                 Phishing Simulation
               </Link>
             </li> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/phishingDetector"
                 className="nav-links"
@@ -65,8 +65,8 @@ function Navbar() {
               >
                 Detector
               </Link>
-            </li>
-            {/* <li className="nav-item">
+            </li> */}
+            <li className="nav-item">
               <Link
                 to="/pastData"
                 className="nav-links"
@@ -74,7 +74,7 @@ function Navbar() {
               >
                 Know More
               </Link>
-            </li> */}
+            </li>
           </ul>
         </div>
       </nav>
