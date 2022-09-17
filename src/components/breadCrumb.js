@@ -6,13 +6,20 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import "./breadCrumb.css";
+import { useMediaQuery } from "@mui/material";
 
 export default function Breadcrumb(props) {
+  const matches = useMediaQuery("(min-width:450px)");
   const breadcrumbs = [
     <Link to="/" className="breadcrumb" sx={{ color: props.color }}>
       Home
     </Link>,
-    <Typography key="3" color="text.primary" variant="h5">
+    <Typography
+      key="3"
+      color="text.primary"
+      variant="h5"
+      fontSize={matches ? 24 : 18}
+    >
       {props.page}
     </Typography>,
   ];

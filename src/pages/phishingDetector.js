@@ -10,49 +10,70 @@ import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import { useState } from "react";
 import Slide from "@mui/material/Slide";
 import Zoom from "@mui/material/Zoom";
-import { Helmet } from "react-helmet";
 import ReportScamButton from "../components/reportChatButton";
+import Breadcrumb from "../components/breadCrumb";
+import RobotHand from "../images/robotHand.png";
+import "../components/phishingDetectorComponents/phishingDetector.css";
+import { Helmet } from "react-helmet";
+import { useMediaQuery } from "@mui/material";
 
 function PhishingDetector(props) {
+  const matches = useMediaQuery("(min-width:575px)");
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
-    setIsActive((current) => !current);
+    // setIsActive((current) => !current);
+    console.log("hi");
+    // const data = { url: `{props.url}` };
+    const data = { url: "https//:www.catchphish.org" };
+    fetch("https://api.isitphish.com/v2/query", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": "7bViEf9asD8trUVHmhFRc7g5j048cMqH8CZBO8Cn",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1),
-    fontSize: "40px",
+    fontSize: matches ? "40px" : "25px",
     marginLeft: "10vw",
+    textAlign: "center",
   }));
   return (
     <Box
+      className="box"
       sx={{
         width: "100%",
-        maxWidth: "90%",
-        marginTop: "5vh",
+        width: "90%",
       }}
     >
-      {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Phishing Detector</title>
-        <link rel="canonical" href="http://catchphish.org/PhishingDetector" />
-        <meta name="description" content="Phishing Detector" />
+        <title>Detector</title>
+        <link rel="canonical" href="http://catchphish.org/phishingDetector" />
+        <meta name="description" content="Detector" />
       </Helmet>
-
+      <Breadcrumb page="Phishing Detector" />
       {/* Component for About Detector and text animation */}
       <Zoom in={true} timeout={1000}>
-        <Div>{"About Detector"}</Div>
+        <Div>{"Phishing Detector"}</Div>
       </Zoom>
 
-      <br></br>
-      <br></br>
-      <Zoom in={true} timeout={2500}>
+      {/* <Zoom in={true} timeout={2500}>
         <Typography
           variant="body1"
           gutterBottom
-          fontSize={"30px"}
+          fontSize={"25px"}
           marginLeft="15vw"
         >
           The detection feature can be found in the tools dashboard on top. The
@@ -64,34 +85,23 @@ function PhishingDetector(props) {
           source. We also provide some common signs to look for determing the
           validity of any content you recieve
         </Typography>
-      </Zoom>
+      </Zoom> */}
 
       <br></br>
       <br></br>
-      <br></br>
       {/* Component for Enter URL and Check button */}
-      <Stack marginLeft="35vw" spacing="2vw" direction="row">
+      <Stack spacing="2vw" direction="row" className="stack">
         <TextField
           id="outlined-basic"
-          label="Enter URL"
+          label="Enter an URL: https://www.example.com"
           variant="outlined"
-          style={{
-            maxWidth: "500px",
-            maxHeight: "30px",
-            minWidth: "500px",
-            minHeight: "30px",
-          }}
+          className="textField"
         />
         <Button
           startIcon={<CheckOutlinedIcon />}
           variant="contained"
-          size="large"
-          style={{
-            maxWidth: "110px",
-            maxHeight: "56px",
-            minWidth: "110px",
-            minHeight: "56px",
-          }}
+          size={matches ? "large" : "small"}
+          onClick={handleClick}
         >
           Check
         </Button>
@@ -99,8 +109,8 @@ function PhishingDetector(props) {
       <br></br>
       <br></br>
       <br></br>
-      {/* Component for Common signs of Phshing button and text animation*/}
-      <Stack marginLeft="20vw">
+      {/* Component for Common signs of Phshing button and text animation */}
+      {/* <Stack marginLeft="20vw">
         <Button
           startIcon={<WarningAmberOutlinedIcon />}
           variant="contained"
@@ -130,14 +140,22 @@ function PhishingDetector(props) {
           consectetur, neque doloribus, cupiditate numquam dignissimos laborum
           fugiat deleniti? Eum quasi quidem quibusdam.
         </Typography>
-      </Slide>
-      <br></br>
+      </Slide> */}
+      {/* <br></br>
       <br></br>
       <br></br>
 
       {/* Component for Report a scam and Chat with us buttons*/}
-      <ReportScamButton />
+      {/* <ReportScamButton /> */}
 
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>

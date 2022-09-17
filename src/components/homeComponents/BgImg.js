@@ -27,7 +27,7 @@ function BgImg() {
     <>
       <video src={video} autoPlay loop muted />
       <h1>Think before you click!</h1>
-      <p>Reduce scams in Australia</p>
+      <p className="subtitle">Reduce scams in Australia</p>
 
       {/* <h1>Think before you click!</h1>
         <p>Reduce scams in Australia</p> */}
@@ -52,8 +52,8 @@ function BgImg() {
                   <SegmentItem
                     src={detector}
                     text="Phishing Detector"
-                    label="Visualisation"
-                    path="/pastData"
+                    label="Detect"
+                    path="/phishingDetector"
                   />
                   <SegmentItem
                     src={report}
