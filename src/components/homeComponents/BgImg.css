@@ -21,7 +21,7 @@ video {
     }
   }
   
-   p {
+   .subtitle {
     margin-top: 8px;
     text-align: center;
     color: #fff;
@@ -68,6 +68,7 @@ video {
   }
   
 }
+
   
 
     @media screen and (max-width: 390px) {

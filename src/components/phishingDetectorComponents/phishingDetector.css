@@ -1,0 +1,95 @@
+.box {
+    background-image: url("../../images/robotHand.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+background-image{
+    object-fit: fill;
+}
+
+.textField{
+    width:500px;
+}
+.stack{
+    margin-left: 35vw;
+}
+
+@media screen and (max-width: 1400px) {
+    .textField{
+        width:450px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .stack{
+        margin-left: 33vw;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .stack{
+        margin-left: 31vw;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .stack{
+        margin-left: 30vw;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .textField{
+        width:400px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .stack{
+        margin-left: 29vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .stack{
+        margin-left: 28vw;
+    }
+}
+@media screen and (max-width: 950px) {
+    .stack{
+        margin-left: 27vw;
+    }
+    .textField{
+        width:350px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .stack{
+        margin-left: 26vw;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .stack{
+        margin-left: 24vw;
+    }
+    
+}
+@media screen and (max-width: 750px) {
+    .textField{
+        width:300px;
+    }
+    
+}
+@media screen and (max-width: 650px) {
+    .stack{
+        margin-left: 22vw;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .stack{
+        margin-left: 22vw;
+    }
+    .textField{
+        width:200px;
+    }
+}

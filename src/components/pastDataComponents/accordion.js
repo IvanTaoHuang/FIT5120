@@ -37,7 +37,7 @@ export default function SimpleAccordion() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography color={"black"}>
               It is done by scammers to get access of your personal information
               usually through mail disguised as it is sent from a trusted
               source. The access to the victim’s device is gained when this
@@ -45,7 +45,11 @@ export default function SimpleAccordion() {
               <br />
               <br />
               To know more visit:{" "}
-              <a href="https://ovic.vic.gov.au/privacy/phishing-attacks-and-how-to-protect-against-them/#:~:text=WHAT%20IS%20PHISHING%3F,or%20to%20make%20it%20unavailable.">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://ovic.vic.gov.au/privacy/phishing-attacks-and-how-to-protect-against-them/#:~:text=WHAT%20IS%20PHISHING%3F,or%20to%20make%20it%20unavailable."
+              >
                 Phishing Attacks and How to Protect Against Them -
                 (ovic.vic.gov.au)
               </a>
@@ -69,14 +73,18 @@ export default function SimpleAccordion() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography color={"black"}>
               It involves using another individual’s personal information for
               own benefit. It often utilizes public information such as name,
               birth date, social media etc.
               <br />
               <br />
               To know more visit:{" "}
-              <a href="https://www.oaic.gov.au/privacy/data-breaches/identity-fraud">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.oaic.gov.au/privacy/data-breaches/identity-fraud"
+              >
                 Identity fraud - Home (oaic.gov.au)
               </a>
               .
@@ -99,7 +107,7 @@ export default function SimpleAccordion() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography color={"black"}>
               It occurs when someone uses your card to make a purchase without
               your consent or authorization. This illegal purchase can be done
               through your lost or stolen physical card or through your bank
@@ -107,7 +115,11 @@ export default function SimpleAccordion() {
               <br />
               <br />
               To know more visit:{" "}
-              <a href="https://www.commbank.com.au/support/security/card-fraud.html#:~:text=Card%20fraud%20occurs%20when%20someone,hold%20of%20without%20your%20knowledge.">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.commbank.com.au/support/security/card-fraud.html#:~:text=Card%20fraud%20occurs%20when%20someone,hold%20of%20without%20your%20knowledge."
+              >
                 Card fraud - CommBank
               </a>
               .
