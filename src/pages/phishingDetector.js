@@ -81,8 +81,8 @@ function PhishingDetector() {
           // console.log("invalid");
           setResult("invalid");
         }
-        setPhishRate(parseFloat(phishRate1.toFixed(4)) * 100);
-        setLegitRate(parseFloat(legitRate1.toFixed(4)) * 100);
+        setPhishRate(parseFloat((phishRate1 * 100).toFixed(3)));
+        setLegitRate(parseFloat((legitRate1 * 100).toFixed(3)));
       })
 
       .catch((error) => {
