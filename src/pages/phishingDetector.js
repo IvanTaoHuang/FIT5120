@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
+import { Button, OutlinedInput } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
@@ -16,16 +16,41 @@ import RobotHand from "../images/robotHand.png";
 import "../components/phishingDetectorComponents/phishingDetector.css";
 import { Helmet } from "react-helmet";
 import { useMediaQuery } from "@mui/material";
+import Alert from "@mui/material/Alert";
+import ClearIcon from "@mui/icons-material/Clear";
+import IconButton from "@mui/material/IconButton";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import LoadingButton from "@mui/lab/LoadingButton";
 
-function PhishingDetector(props) {
+function PhishingDetector() {
   const matches = useMediaQuery("(min-width:575px)");
+  const [loading, setLoading] = React.useState(false);
+
   const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
+  const [phishRate, setPhishRate] = useState(0);
+
+  const [legitRate, setLegitRate] = useState(0);
+
+  const [url, setUrl] = useState("");
+  const [result, setResult] = useState("");
+  let phishRate1 = 0;
+  let legitRate1 = 0;
+
+  const handleChange = (event) => {
+    setUrl(event.target.value);
+  };
+  const handleClear = () => {
+    setUrl("");
+  };
+
+  const handleClick = async () => {
     // setIsActive((current) => !current);
     console.log("hi");
-    // const data = { url: `{props.url}` };
-    const data = { url: "https//:www.catchphish.org" };
-    fetch("https://api.isitphish.com/v2/query", {
+    setLoading(true);
+    const data = { url: url };
+    await fetch("https://api.isitphish.com/v2/query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,13 +59,38 @@ function PhishingDetector(props) {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
+
       .then((data) => {
-        console.log("Success:", data);
+        // console.log("Success:", data);
+
+        phishRate1 = data.body.phish;
+        legitRate1 = data.body.legit;
+
+        if (phishRate1 < legitRate1) {
+          // console.log("legitimate");
+          setResult("legit");
+        }
+        if (phishRate1 > legitRate1) {
+          // console.log("phish");
+          setResult("phish");
+        }
+        if (
+          phishRate1 === (0 || undefined) &&
+          legitRate1 === (0 || undefined)
+        ) {
+          // console.log("invalid");
+          setResult("invalid");
+        }
+        setPhishRate(parseFloat(phishRate1.toFixed(4)) * 100);
+        setLegitRate(parseFloat(legitRate1.toFixed(4)) * 100);
       })
+
       .catch((error) => {
         console.error("Error:", error);
       });
+    setLoading(false);
   };
+
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: theme.palette.background.paper,
@@ -64,6 +114,7 @@ function PhishingDetector(props) {
         <meta name="description" content="Detector" />
       </Helmet>
       <Breadcrumb page="Phishing Detector" />
+
       {/* Component for About Detector and text animation */}
       <Zoom in={true} timeout={1000}>
         <Div>{"Phishing Detector"}</Div>
@@ -91,23 +142,85 @@ function PhishingDetector(props) {
       <br></br>
       {/* Component for Enter URL and Check button */}
       <Stack spacing="2vw" direction="row" className="stack">
-        <TextField
-          id="outlined-basic"
-          label="Enter an URL: https://www.example.com"
-          variant="outlined"
-          className="textField"
-        />
-        <Button
-          startIcon={<CheckOutlinedIcon />}
+        <FormControl variant="outlined">
+          <InputLabel htmlFor="outlined-basic">
+            Enter an URL: https://www.example.com
+          </InputLabel>
+          <OutlinedInput
+            id="outlined-basic"
+            label="Enter an URL: https://www.example.com"
+            type="text"
+            className="textField"
+            onChange={handleChange}
+            value={url}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClear}
+                  // onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  <ClearIcon />
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+
+        <LoadingButton
+          endIcon={<CheckOutlinedIcon />}
           variant="contained"
           size={matches ? "large" : "small"}
           onClick={handleClick}
+          loading={loading}
+          loadingPosition="end"
         >
           Check
-        </Button>
+        </LoadingButton>
       </Stack>
-      <br></br>
-      <br></br>
+
+      <Stack
+        spacing={2}
+        className="stack1"
+        display={result === "legit" ? "block" : "none"}
+      >
+        <br />
+        <Alert severity="success">
+          This URL is safe!
+          <br />
+          {legitRate}% legitimate
+          <br />
+          {phishRate}% phishing
+        </Alert>
+
+        <br />
+      </Stack>
+      <Stack
+        spacing={2}
+        className="stack1"
+        display={result === "phish" ? "block" : "none"}
+      >
+        <br />
+
+        <Alert severity="error">
+          This URL has a high risk of being phishing!
+          <br />
+          {legitRate}% legitimate
+          <br />
+          {phishRate}% phishing
+        </Alert>
+        <br />
+      </Stack>
+      <Stack
+        spacing={2}
+        className="stack1"
+        display={result === "invalid" ? "block" : "none"}
+      >
+        <br />
+        <Alert severity="warning">This is an invalid URL ！！</Alert>
+        <br />
+      </Stack>
       <br></br>
       {/* Component for Common signs of Phshing button and text animation */}
       {/* <Stack marginLeft="20vw">
@@ -149,6 +262,11 @@ function PhishingDetector(props) {
       {/* <ReportScamButton /> */}
 
       <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
       <br></br>
       <br></br>
       <br></br>
