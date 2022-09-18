@@ -15,9 +15,16 @@ background-image{
 .stack{
     margin-left: 35vw;
 }
+.stack1{
+    margin-left: 35vw;
+    width:500px;
+}
 
 @media screen and (max-width: 1400px) {
     .textField{
+        width:450px;
+    }
+    .stack1{
         width:450px;
     }
 }
@@ -26,9 +33,16 @@ background-image{
     .stack{
         margin-left: 33vw;
     }
+    .stack1{
+        margin-left: 33vw;
+        
+    }
 }
 @media screen and (max-width: 1300px) {
     .stack{
+        margin-left: 31vw;
+    }
+    .stack1{
         margin-left: 31vw;
     }
 }
@@ -36,9 +50,15 @@ background-image{
     .stack{
         margin-left: 30vw;
     }
+    .stack1{
+        margin-left: 30vw;
+    }
 }
 @media screen and (max-width: 1150px) {
     .textField{
+        width:400px;
+    }
+    .stack1{       
         width:400px;
     }
 }
@@ -46,9 +66,15 @@ background-image{
     .stack{
         margin-left: 29vw;
     }
+    .stack1{
+        margin-left: 29vw;
+    }
 }
 @media screen and (max-width: 1000px) {
     .stack{
+        margin-left: 28vw;
+    }
+    .stack1{
         margin-left: 28vw;
     }
 }
@@ -59,9 +85,16 @@ background-image{
     .textField{
         width:350px;
     }
+    .stack1{
+        margin-left: 27vw;
+        width:350px;
+    }
 }
 @media screen and (max-width: 850px) {
     .stack{
+        margin-left: 26vw;
+    }
+    .stack1{
         margin-left: 26vw;
     }
     
@@ -70,16 +103,25 @@ background-image{
     .stack{
         margin-left: 24vw;
     }
+    .stack1{
+        margin-left: 24vw;
+    }
     
 }
 @media screen and (max-width: 750px) {
     .textField{
         width:300px;
     }
+    .stack1{
+        width:300px;
+    }
     
 }
 @media screen and (max-width: 650px) {
     .stack{
+        margin-left: 22vw;
+    }
+    .stack1{
         margin-left: 22vw;
     }
     
@@ -90,6 +132,10 @@ background-image{
         margin-left: 22vw;
     }
     .textField{
+        width:200px;
+    }
+    .stack1{
+        margin-left: 22vw;
         width:200px;
     }
 }
