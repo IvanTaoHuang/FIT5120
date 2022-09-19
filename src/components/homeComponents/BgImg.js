@@ -6,136 +6,268 @@ import "./BgImg.css";
 import video from "../../videos/video.mp4";
 import "./segment.css";
 import SegmentItem from "./segmentItem";
-import identify from "../../images/identify.jpg";
-import detector from "../../images/detector.jpg";
-import report from "../../images/report.jpg";
-import dataVisual from "../../images/dataVisual.jpeg";
-import { Card } from "@mui/material";
+import identify from "../../images/identify.png";
+import detector from "../../images/detector.png";
+import report from "../../images/report.png";
+import dataVisual from "../../images/graph.png";
+import { Card, IconButton } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { useMediaQuery } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
 import Typography from "@mui/material/Typography";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 function BgImg() {
   const smMatches = useMediaQuery("(min-width:1000px)");
-  const mMatches = useMediaQuery("(min-width:550px)");
+  const mMatches = useMediaQuery("(min-width:1335px)");
+  const ref = useRef(null);
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      <video src={video} autoPlay loop muted />
-      <h1>Think before you click!</h1>
-      <p className="subtitle">Reduce scams in Australia</p>
+      <div className="hero-container">
+        <video src={video} autoPlay loop muted />
 
-      {/* <h1>Think before you click!</h1>
-        <p>Reduce scams in Australia</p> */}
-      <div className="segments">
-        <div className="segments__container">
-          <div className="segments__wrapper">
-            <ul className="segments__items">
-              <Stack>
-                <Stack direction={smMatches ? "row" : "column"}>
-                  <SegmentItem
-                    src={identify}
-                    text="Identify various scams"
-                    label="Identify"
-                    path="/identify"
-                  />
-                  {/* <SegmentItem
-                src={detector}
-                text="Phishing Detector"
-                label="Detect"
-                path="/phishingDetector"
-              /> */}
-                  <SegmentItem
-                    src={detector}
-                    text="Phishing Detector"
-                    label="Detect"
-                    path="/phishingDetector"
-                  />
-                  <SegmentItem
-                    src={report}
-                    text="Report scams"
-                    label="Report"
-                    path="/report"
-                  />
-                </Stack>
-                <Box sx={{ height: "3vw" }}></Box>
-                <Stack direction={"row"}>
-                  <Box
-                    sx={{
-                      display: smMatches ? "block" : "none",
-                      // width: if(mMatches){ "30vw" : "28vw"},
-                    }}
-                    className="margin_box"
-                  ></Box>
-                  <Card
-                    sx={{
-                      width: mMatches ? 350 : 320,
-                      height: mMatches ? 300 : 300,
-                    }}
-                  >
-                    <CardMedia
-                      component="img"
-                      image={dataVisual}
-                      alt="Data Visualisation"
-                      className="data_img"
-                    />
-
-                    {/* <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                      </Typography> */}
-                    {/* <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography> */}
-
-                    <CardActions>
-                      <Button size="small" variant="contained">
-                        Share
-                      </Button>
-                    </CardActions>
-                  </Card>
-                  {/* <div>
-                    <Card
-                      sx={{
-                        width: "500px",
-                        height: "400px",
-                        marginLeft: "20vw",
-                      }}
-                      onClick={() => alert("Hello from here")}
-                    >
-                      <img src={dataVisual} className="data_img"></img>
-                      <Button>Test</Button>
-                    </Card>
-                  </div> */}
-                </Stack>
-              </Stack>
-            </ul>
-          </div>
-        </div>
+        <h1>Think before you click!</h1>
+        <Box sx={{ height: "220px" }}></Box>
+        <p className="subtitle">Reduce scams in Australia</p>
+        {/* IconButton to scroll down */}
+        <IconButton
+          style={{
+            color: "white",
+            width: "100px",
+            height: "100px",
+          }}
+          sx={{
+            "&:hover": {
+              background: "white",
+            },
+          }}
+          onClick={handleClick}
+        >
+          <KeyboardDoubleArrowDownIcon
+            sx={{
+              fontSize: "100px",
+              "&:hover": {
+                color: "black",
+              },
+            }}
+          />
+        </IconButton>
       </div>
 
-      {/* <div className="bg-btns">
-        <Button
-          className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
+      <div ref={ref}></div>
+
+      {/* Cards to different pages */}
+      <Box sx={{ backgroundColor: "black", width: "100%" }}>
+        {/* margin box */}
+        <Box sx={{ height: "100px" }}></Box>
+        <Stack
+          direction={mMatches ? "row" : "column"}
+          justifyContent="center"
+          alignItems="center"
+          spacing={6}
         >
-          KNOW MORE
-        </Button>
-        <Button
-          className="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={console.log("hey")}
-        >
-          WATCH TRAILER <i className="far fa-play-circle" />
-        </Button> 
-      </div> */}
+          {/* card for Identify page */}
+          <Box
+            border={4}
+            justifyContent="center"
+            borderColor="#A36F09"
+            sx={{
+              width: "300px",
+              height: "300px",
+            }}
+          >
+            <Link to="/identify">
+              <Box
+                className="picBox1"
+                sx={{
+                  width: "100%",
+                  height: "80%",
+                }}
+              ></Box>
+            </Link>
+            <Typography
+              align="center"
+              sx={{
+                color: "white",
+                fontSize: "35px",
+                fontFamily: "Montserrat",
+              }}
+              variant="h1"
+            >
+              Identify
+            </Typography>
+          </Box>
+          <Stack direction="column" justifyContent="center">
+            <KeyboardDoubleArrowRightOutlinedIcon
+              sx={{
+                fontSize: "100px",
+                color: "white",
+                display: mMatches ? "block" : "none",
+              }}
+            />
+            <KeyboardDoubleArrowDownIcon
+              sx={{
+                fontSize: "100px",
+                color: "white",
+                display: mMatches ? "none" : "block",
+              }}
+            />
+          </Stack>
+
+          {/* card for Detect page */}
+          <Box
+            alignContent="center"
+            border={4}
+            borderColor="#A36F09"
+            sx={{
+              width: "300px",
+              height: "300px",
+            }}
+          >
+            <Link to="/phishingDetector">
+              <Box
+                className="picBox2"
+                sx={{
+                  margin: "13px",
+                  width: "90%",
+                  height: "75%",
+                }}
+              ></Box>
+            </Link>
+            <Typography
+              align="center"
+              sx={{
+                color: "white",
+                fontSize: "35px",
+                fontFamily: "Montserrat",
+              }}
+              variant="h1"
+            >
+              Detect
+            </Typography>
+          </Box>
+          <Stack direction="column" justifyContent="center">
+            <KeyboardDoubleArrowRightOutlinedIcon
+              sx={{
+                fontSize: "100px",
+                color: "white",
+                display: mMatches ? "block" : "none",
+              }}
+            />
+            <KeyboardDoubleArrowDownIcon
+              sx={{
+                fontSize: "100px",
+                color: "white",
+                display: mMatches ? "none" : "block",
+              }}
+            />
+          </Stack>
+
+          {/* card for Report  */}
+          <Box
+            border={4}
+            borderColor="#A36F09"
+            sx={{
+              width: "300px",
+              height: "300px",
+            }}
+          >
+            <Link to="/report">
+              <Box
+                className="picBox3"
+                sx={{
+                  margin: "13px",
+                  width: "90%",
+                  height: "75%",
+                }}
+              ></Box>
+            </Link>
+            <Typography
+              align="center"
+              sx={{
+                color: "white",
+                fontSize: "35px",
+                fontFamily: "Montserrat",
+              }}
+              variant="h1"
+            >
+              Report
+            </Typography>
+          </Box>
+        </Stack>
+
+        {/* margin box */}
+        <Box sx={{ height: "200px" }}></Box>
+
+        {/* card for data Visualisation */}
+        <Stack justifyContent="center" alignItems="center" direction="column">
+          <Box
+            // border={4}
+            justifyContent="center"
+            // borderColor="#A36F09"
+            sx={{
+              width: "300px",
+              height: "300px",
+            }}
+            onClick
+          >
+            <Link to="/pastData">
+              <Box
+                className="picBox4"
+                sx={{
+                  marginTop: "14px",
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                  width: "100%",
+                  height: "100%",
+                }}
+              ></Box>
+            </Link>
+          </Box>
+          <Typography
+            variant="h1"
+            sx={{
+              color: "#FFFFFF",
+              fontFamily: "Montserrat Alternates",
+              // fontSize: "40px",
+              marginTop: "30px",
+            }}
+          >
+            8,292
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#A36F09",
+              fontFamily: "Montserrat",
+              fontSize: "50px",
+              marginTop: "30px",
+            }}
+          >
+            Graduates have fallen to phishing mails
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#A36F09",
+              fontFamily: "Montserrat",
+              fontSize: "50px",
+            }}
+          >
+            during job seeking
+          </Typography>
+        </Stack>
+      </Box>
     </>
   );
 }

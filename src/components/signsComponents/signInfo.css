@@ -1,0 +1,40 @@
+.sign1{
+    background-image: url("../../images/firstSign.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  .sign2{
+    background-image: url("../../images/secondSign.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  .sign3{
+    background-image: url("../../images/thirdSign.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  .sign4{
+    background-image: url("../../images/fourthSign.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  .sign5{
+    background-image: url("../../images/fifthSign.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  img.animated-gif{
+    width: 40%;
+    height: 30%;
+    margin-top: -3.5vw;
+  }
