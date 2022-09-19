@@ -15,13 +15,16 @@ import { useMediaQuery } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Helmet } from "react-helmet";
 import Zoom from "@mui/material/Zoom";
+import { Link } from "react-router-dom";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
   const smatches = useMediaQuery("(min-width:575px)");
+  const lMatches = useMediaQuery("(min-width:1150px)");
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "black",
+    color: "white",
     padding: theme.spacing(1),
     fontSize: smatches ? "40px" : "25px",
     // marginLeft: smatches ? "10vw" : "4vw",
@@ -30,7 +33,7 @@ export default function ImageAvatars() {
   return (
     <>
       <Zoom in={true} timeout={1000}>
-        <Div>{"Identify"}</Div>
+        <Div>{"Identify Scams before you fall for them"}</Div>
       </Zoom>
       <Box sx={{ flexGrow: 1, marginTop: "80px" }}>
         <Helmet>
@@ -40,20 +43,55 @@ export default function ImageAvatars() {
           <meta name="description" content="identify" />
         </Helmet>
 
+        <Stack direction="row" marginLeft="100px">
+          <Box
+            justifyContent="center"
+            sx={{
+              width: "180px",
+              height: "50px",
+            }}
+          >
+            <Box
+              className="picBox5"
+              sx={{
+                width: "30%",
+                height: "80%",
+                marginLeft: "10px",
+                marginTop: "5px",
+              }}
+            ></Box>
+
+            <Box
+              sx={{
+                width: "70%",
+                height: "20%",
+                marginLeft: "50px",
+                marginTop: "-28px",
+              }}
+            >
+              <Typography
+                align="center"
+                sx={{
+                  color: "white",
+                  fontSize: "15px",
+                  fontFamily: "Montserrat",
+                }}
+                variant="h1"
+              >
+                5 mins read
+              </Typography>
+            </Box>
+          </Box>
+        </Stack>
+
+        <Box height="50px"></Box>
+
         <Stack
           direction={matches ? "row" : "column"}
           spacing={12}
           alignItems="center"
           justifyContent={matches ? "center" : "center"}
         >
-          {/* <Grid item xs={4}> */}
-          {/* <Button>
-          <Avatar
-            alt="Phishing Fraud"
-            src={phishingEmail}
-            sx={{ width: 200, height: 200 }}
-          />
-        </Button> */}
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
@@ -90,37 +128,6 @@ export default function ImageAvatars() {
             </CardActions>
           </Card>
 
-          {/* <Grid item xs={6}>
-        <Box sx={{ width: "50%" }}>
-          <Typography color={"black"}>
-            It is done by scammers to get access of your personal information
-            usually through mail disguised as it is sent from a trusted source.
-            The access to the victim’s device is gained when this malicious
-            content is opened.
-            <br />
-            <br />
-            To know more visit:{" "}
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://ovic.vic.gov.au/privacy/phishing-attacks-and-how-to-protect-against-them/#:~:text=WHAT%20IS%20PHISHING%3F,or%20to%20make%20it%20unavailable."
-            >
-              Phishing Attacks and How to Protect Against Them -
-              (ovic.vic.gov.au)
-            </a>
-            .
-          </Typography>
-        </Box>
-      
-
-        
-        {/* <Button>
-          <Avatar
-            alt="Identity Fraud"
-            src={identity}
-            sx={{ width: 200, height: 200 }}
-          />
-        </Button> */}
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
@@ -157,34 +164,6 @@ export default function ImageAvatars() {
             </CardActions>
           </Card>
 
-          {/* <Box sx={{ width: "50%" }}>
-          <Typography color={"black"}>
-            <br />
-            <br />
-            It involves using another individual’s personal information for own
-            benefit. It often utilizes public information such as name, birth
-            date, social media etc.
-            <br />
-            <br />
-            To know more visit:{" "}
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.oaic.gov.au/privacy/data-breaches/identity-fraud"
-            >
-              Identity fraud - Home (oaic.gov.au)
-            </a>
-            .
-          </Typography>
-        </Box> */}
-
-          {/* <Button>
-          <Avatar
-            alt="Debit Card Fraud"
-            src={creditCard}
-            sx={{ width: 200, height: 200 }}
-          />
-        </Button> */}
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
@@ -221,29 +200,151 @@ export default function ImageAvatars() {
               </Button>
             </CardActions>
           </Card>
-          {/* </Grid> */}
         </Stack>
-        {/* <Grid item xs={6}>
-        <Box sx={{ width: "50%" }}>
-          <Typography color={"black"}>
-            It occurs when someone uses your card to make a purchase without
-            your consent or authorization. This illegal purchase can be done
-            through your lost or stolen physical card or through your bank
-            details they have obtained.
-            <br />
-            <br />
-            To know more visit:{" "}
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.commbank.com.au/support/security/card-fraud.html#:~:text=Card%20fraud%20occurs%20when%20someone,hold%20of%20without%20your%20knowledge."
+      </Box>
+
+      <Box height="100px" backgroundColor="black"></Box>
+      <Box sx={{ width: "100%", backgroundColor: "black" }}>
+        <Stack
+          direction={lMatches ? "row" : "column"}
+          spacing={lMatches ? "60vw" : "30px"}
+          alignItems="center"
+        >
+          <Stack
+            marginLeft={lMatches ? "5vw" : "0px"}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "180px",
+                height: "50px",
+              }}
             >
-              Card fraud - CommBank
-            </a>
-            .
-          </Typography>
-        </Box>
-      </Grid> */}
+              <Link to="/phishingDetector">
+                <Box
+                  className="picBox2"
+                  sx={{
+                    width: "30%",
+                    height: "80%",
+                    marginLeft: "10px",
+                    marginTop: "5px",
+                  }}
+                ></Box>
+              </Link>
+              <Box
+                sx={{
+                  width: "70%",
+                  height: "20%",
+                  marginLeft: "50px",
+                  marginTop: "-28px",
+                }}
+              >
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "15px",
+                    fontFamily: "Montserrat",
+                  }}
+                  variant="h1"
+                >
+                  Scam Detector
+                </Typography>
+              </Box>
+            </Box>
+          </Stack>
+          <Stack>
+            <Box
+              border={4}
+              justifyContent="center"
+              borderColor="#A36F09"
+              sx={{
+                width: "180px",
+                height: "50px",
+              }}
+            >
+              <Link to="/report">
+                <Box
+                  className="picBox3"
+                  sx={{
+                    width: "30%",
+                    height: "80%",
+                    marginLeft: "10px",
+                    marginTop: "5px",
+                  }}
+                ></Box>
+              </Link>
+              <Box
+                sx={{
+                  width: "70%",
+                  height: "20%",
+                  marginLeft: "50px",
+                  marginTop: "-28px",
+                }}
+              >
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "15px",
+                    fontFamily: "Montserrat",
+                  }}
+                  variant="h1"
+                >
+                  Report a scam
+                </Typography>
+              </Box>
+            </Box>
+            <Box height="20px"></Box>
+
+            <Box
+              border={4}
+              justifyContent="center"
+              borderColor="#A36F09"
+              sx={{
+                width: "180px",
+                height: "50px",
+              }}
+            >
+              <Link to="/identify">
+                <Box
+                  className="picBox4"
+                  sx={{
+                    width: "30%",
+                    height: "80%",
+                    marginLeft: "10px",
+                    marginTop: "5px",
+                  }}
+                ></Box>
+              </Link>
+              <Box
+                sx={{
+                  width: "70%",
+                  height: "20%",
+                  marginLeft: "50px",
+                  marginTop: "-28px",
+                }}
+              >
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "15px",
+                    fontFamily: "Montserrat",
+                  }}
+                  variant="h1"
+                >
+                  Check Past Data
+                </Typography>
+              </Box>
+            </Box>
+          </Stack>
+        </Stack>
+        <Box height="200px"></Box>
       </Box>
     </>
   );

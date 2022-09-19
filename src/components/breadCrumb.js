@@ -11,15 +11,10 @@ import { useMediaQuery } from "@mui/material";
 export default function Breadcrumb(props) {
   const matches = useMediaQuery("(min-width:450px)");
   const breadcrumbs = [
-    <Link to="/" className="breadcrumb" sx={{ color: props.color }}>
+    <Link to="/" className="breadcrumb">
       Home
     </Link>,
-    <Typography
-      key="3"
-      color="text.primary"
-      variant="h5"
-      fontSize={matches ? 24 : 18}
-    >
+    <Typography key="3" color="white" variant="h5" fontSize={matches ? 24 : 18}>
       {props.page}
     </Typography>,
   ];
@@ -30,6 +25,7 @@ export default function Breadcrumb(props) {
           separator={<NavigateNextIcon fontSize="large" />}
           aria-label="breadcrumb"
           sx={{ margin: "30px" }}
+          color="white"
         >
           {breadcrumbs}
         </Breadcrumbs>

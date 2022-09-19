@@ -68,11 +68,11 @@ function Navbar() {
             </li> */}
             <li className="nav-item">
               <Link
-                to="/pastData"
+                to="/phishingDetector"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Know More
+                Detector
               </Link>
             </li>
           </ul>

@@ -14,7 +14,6 @@ import ThirdGif from "../images/thirdSign.gif";
 import FourthGif from "../images/fourthSign.gif";
 import FifthGif from "../images/fifthSign.gif";
 import { Link } from "react-router-dom";
-import "../components/reportComponents/report.css";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -35,96 +34,75 @@ export default function Signs() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
-          position: "fixed",
-          top: "70px",
-          left: "0",
-          bottom: "0",
-          right: "0",
-          overflow: "auto",
         }}
       >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Report</title>
-          <link rel="canonical" href="http://catchphish.org/report" />
-          <meta name="description" content="Report" />
+          <title>Detector</title>
+          <link rel="canonical" href="http://catchphish.org/phishingDetector" />
+          <meta name="description" content="Detector" />
         </Helmet>
-        <Breadcrumb page="Report" />
+        <Breadcrumb page="Signs to look for" />
 
         {/* Component for About Detector and text animation */}
         <Zoom in={true} timeout={1000}>
-          <Div>{"Report and cut the spread of Scams"}</Div>
+          <Div>{"Signs of Phishing you can notice in your mail"}</Div>
         </Zoom>
 
-        <Box height="50px"></Box>
-        {/* introduction */}
-        <Box width="80%" marginLeft="10vw">
-          <Stack direction="column">
-            <Typography
+        {/* clock */}
+        <Stack direction="row" marginLeft="100px">
+          <Box
+            justifyContent="center"
+            sx={{
+              width: "180px",
+              height: "50px",
+            }}
+          >
+            <Box
+              className="picBox5"
               sx={{
-                fontSize: "36px",
-                fontFamily: "Montserrat",
-                color: "#A36F09",
+                width: "30%",
+                height: "80%",
+                marginLeft: "10px",
+                marginTop: "5px",
               }}
-            >
-              Report a scam
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontSize: "27px",
-                fontFamily: "Montserrat",
-              }}
-            >
-              The Australian Competition and Consumer Commision (ACCC) uses
-              ScamWatch to help consumers and organisations in countering scams
-              conducted in Australia.
-            </Typography>
-          </Stack>
-        </Box>
+            ></Box>
 
-        <Box height="75px"></Box>
-        {/* Report Button */}
-        <Box backgroundColor="black" height="100px">
-          <Stack alignItems="center">
-            <button className="reportButton">
-              Complete ScamWatch report form
-            </button>
-          </Stack>
-        </Box>
-
-        {/* steps */}
-        <Box width="80%" marginLeft="10vw">
-          <Stack direction="column">
-            <Typography
+            <Box
               sx={{
-                fontSize: "36px",
-                fontFamily: "Montserrat",
-                color: "#A36F09",
+                width: "70%",
+                height: "20%",
+                marginLeft: "50px",
+                marginTop: "-60px",
               }}
             >
-              Required details to be provided
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontSize: "27px",
-                fontFamily: "Montserrat",
-              }}
-            >
-              1. Type of Scam
-              <br />
-              2. How the contact was made by scammer
-              <br />
-              3. When was the event of scam <br />
-              4. Brief summary of the experience
-            </Typography>
-          </Stack>
-        </Box>
+              <Typography
+                align="center"
+                sx={{
+                  color: "#FFFFFF",
+                  fontFamily: "Montserrat Alternates",
+                  marginTop: "30px",
+                }}
+              >
+                5 mins read
+              </Typography>
+            </Box>
+          </Box>
+        </Stack>
 
-        <Box height="180px"></Box>
-        {/* three buttons */}
+        <Box height="100px"></Box>
+        {/* GIF with signs */}
+        <Stack direction="row" justifyContent="center">
+          <SignInfo
+            number="1"
+            name="Unusual tone"
+            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            gif={require("../images/firstSign.gif")}
+          />
+        </Stack>
+
+        <Box height="100px"></Box>
+
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack
             direction={lMatches ? "row" : "column"}
@@ -178,8 +156,50 @@ export default function Signs() {
                 </Box>
               </Box>
             </Stack>
-
             <Stack>
+              <Box
+                border={4}
+                justifyContent="center"
+                borderColor="#A36F09"
+                sx={{
+                  width: "180px",
+                  height: "50px",
+                }}
+              >
+                <Link to="/report">
+                  <Box
+                    className="picBox3"
+                    sx={{
+                      width: "30%",
+                      height: "80%",
+                      marginLeft: "10px",
+                      marginTop: "5px",
+                    }}
+                  ></Box>
+                </Link>
+                <Box
+                  sx={{
+                    width: "70%",
+                    height: "20%",
+                    marginLeft: "50px",
+                    marginTop: "-28px",
+                  }}
+                >
+                  <Typography
+                    align="center"
+                    sx={{
+                      color: "white",
+                      fontSize: "15px",
+                      fontFamily: "Montserrat",
+                    }}
+                    variant="h1"
+                  >
+                    Report a scam
+                  </Typography>
+                </Box>
+              </Box>
+              <Box height="20px"></Box>
+
               <Box
                 border={4}
                 justifyContent="center"
@@ -223,8 +243,8 @@ export default function Signs() {
               </Box>
             </Stack>
           </Stack>
-          <Box height="180px"></Box>
         </Box>
+        <Box height="100px"></Box>
       </Box>
     </>
   );

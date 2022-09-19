@@ -44,8 +44,19 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AgeAnalysis from "./ageAnalysis";
 import Radio from "@mui/material/Radio";
 import { Card } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function ControlledCheckbox() {
+  //Breadcrumbs
+  const breadcrumbs = [
+    <Link to="/" className="breadcrumb">
+      Home
+    </Link>,
+    <Typography key="3" color="text.primary" variant="h5">
+      Identify
+    </Typography>,
+  ];
+
   //Breakpoints
   const theme = useTheme();
   const matches = useMediaQuery("(min-width:1000px)");

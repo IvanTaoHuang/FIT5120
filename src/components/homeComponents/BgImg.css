@@ -1,10 +1,57 @@
 video {
-    object-fit: cover;
+    object-fit: fill;
     width: 100%;
     height: 100%;
     position: fixed;
     z-index: -1;
   }
+  .picBox1{
+    background-image: url("../../images/identify.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+  }
+  .picBox2{
+    background-image: url("../../images/detector.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 90%;
+  }
+  .picBox3{
+    background-image: url("../../images/report.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 90%;
+  }
+  .picBox4{
+    background-image: url("../../images/graph.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:90% 90%;
+  }
+  
+  .picBox1:hover{
+
+transform: scale(1.1);
+    cursor: pointer;
+  }
+  .picBox2:hover{
+
+    transform: scale(1.1);
+        cursor: pointer;
+      }
+
+  .picBox3:hover{
+
+        transform: scale(1.1);
+            cursor: pointer;
+          }
+  .picBox4:hover{
+
+            transform: scale(1.1);
+                cursor: pointer;
+              }
 
   h1 {
     color: #fff;
@@ -20,6 +67,18 @@ video {
       30px;
     }
   }
+  .hero-container {
+    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+  }
+  
   
    .subtitle {
     margin-top: 8px;
@@ -28,6 +87,7 @@ video {
     font-size: 32px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
+    padding-top: "100px";
   }
   
   .bg-btns {

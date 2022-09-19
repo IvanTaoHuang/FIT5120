@@ -14,7 +14,7 @@
     flex-flow: column;
     align-items: center;
     max-width: 2400px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     
   }
@@ -33,7 +33,7 @@
     flex: 1;
     margin:0 2rem;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: "black";
     
   }
   
@@ -73,10 +73,10 @@
     margin-left: 0.01vw;
     padding: 6px 8px;
     max-width: calc((100%) - 60px);
-    font-size: 1.2vw;
+    font-size: 40px;
     font-weight: 700;
-    color: #fff;
-    background-color: #0475cb;
+    color: "black";
+    background-color: "white";
     box-sizing: border-box;
     border-radius: 10px;
     
@@ -108,9 +108,10 @@
   }
   
   .segments__item__text {
-    color: #252e48;
-    font-size: 2.3vw;
-    line-height: 3vw;
+    color: "black";
+    font-size: 18px;
+    line-height: 40px;
+    
   }
   
   @media only screen and (min-width: 1200px) {
