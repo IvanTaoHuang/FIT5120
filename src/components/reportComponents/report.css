@@ -11,11 +11,12 @@
     color:#FFF
   }
   .reportButton:hover {
-    position: absolute;
+    
     /* right: 0;
     top : 5px; */
     height: 60px;
     background-color: #FFF;
     border-color:  #A36F09;
     color:#A36F09;
+    cursor: pointer;
   }
