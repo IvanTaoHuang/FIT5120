@@ -88,9 +88,11 @@ export default function Signs() {
         {/* Report Button */}
         <Box backgroundColor="black" height="100px">
           <Stack alignItems="center">
-            <button className="reportButton">
-              Complete ScamWatch report form
-            </button>
+            <a href="https://google.com" target="_blank" rel="noreferrer">
+              <button className="reportButton">
+                Complete ScamWatch report form
+              </button>
+            </a>
           </Stack>
         </Box>
 
