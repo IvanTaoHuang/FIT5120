@@ -13,6 +13,7 @@ import SecondGif from "../images/secondSign.gif";
 import ThirdGif from "../images/thirdSign.gif";
 import FourthGif from "../images/fourthSign.gif";
 import FifthGif from "../images/fifthSign.gif";
+import FirstPic from "../images/Picture1.png";
 import { Link } from "react-router-dom";
 
 export default function Signs() {
@@ -92,17 +93,56 @@ export default function Signs() {
 
         <Box height="100px"></Box>
         {/* GIF with signs */}
-        <Stack direction="row" justifyContent="center">
+        <Stack direction="column" alignItems="center">
           <SignInfo
             number="1"
             name="Unusual tone"
             information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
-            gif={require("../images/firstSign.gif")}
+            gif={require("../images/Picture1.png")}
+            left="33vw"
+            width="60vw"
+          />
+          <Box height="50px"></Box>
+          <SignInfo
+            number="1"
+            name="Unusual tone"
+            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            gif={require("../images/Picture2.png")}
+            left="25vw"
+            width="50vw"
+          />
+          <Box height="50px"></Box>
+          <SignInfo
+            number="1"
+            name="Unusual tone"
+            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            gif={require("../images/Picture3.png")}
+            left="25vw"
+            width="50vw"
+          />
+          <Box height="50px"></Box>
+          <SignInfo
+            number="1"
+            name="Unusual tone"
+            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            gif={require("../images/Picture4.png")}
+            left="40vw"
+            width="80vw"
+          />
+          <Box height="50px"></Box>
+          <SignInfo
+            number="1"
+            name="Unusual tone"
+            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            gif={require("../images/Picture5.png")}
+            left="40vw"
+            width="80vw"
           />
         </Stack>
 
         <Box height="100px"></Box>
 
+        {/* three buttons */}
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack
             direction={lMatches ? "row" : "column"}
