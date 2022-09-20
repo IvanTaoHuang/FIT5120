@@ -310,7 +310,7 @@ export default function ImageAvatars() {
                 height: "50px",
               }}
             >
-              <Link to="/identify">
+              <Link to="/pastData">
                 <Box
                   className="picBox4"
                   sx={{

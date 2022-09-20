@@ -95,45 +95,56 @@ export default function Signs() {
         {/* GIF with signs */}
         <Stack direction="column" alignItems="center">
           <SignInfo
-            number="1"
+            number="1."
             name="Unusual tone"
             information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
             gif={require("../images/Picture1.png")}
             left="33vw"
             width="60vw"
           />
+
           <Box height="50px"></Box>
           <SignInfo
-            number="1"
-            name="Unusual tone"
-            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            number="2."
+            name="Grammar and Spelling"
+            information="One most used sign to identify phishing scams is to check for the grammatical 
+            errors including spelling mistakes. All recruitment agencies used third party tools 
+            to verify their content before they send any mail. "
             gif={require("../images/Picture2.png")}
             left="25vw"
             width="50vw"
           />
           <Box height="50px"></Box>
           <SignInfo
-            number="1"
-            name="Unusual tone"
-            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            number="3."
+            name="The mail ID, domain name and website"
+            information="Checking the mail ID of the sender is another easy way to detect scam. Usually, 
+            the scammers use suspicious ID or the website link they provide would hint some 
+            suspicious activity."
             gif={require("../images/Picture3.png")}
             left="25vw"
             width="50vw"
           />
           <Box height="50px"></Box>
           <SignInfo
-            number="1"
-            name="Unusual tone"
-            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            number="4."
+            name="Making you respond fast"
+            information="As a job seeker, patience is a virtue to follow. Phishing mails would target you to 
+            open the external URL provided quickly so that you would fall into their trap. It is 
+            never too late to confirm with the agent you received the mail from, if the action 
+            needs to be done immediately."
             gif={require("../images/Picture4.png")}
             left="40vw"
             width="80vw"
           />
           <Box height="50px"></Box>
           <SignInfo
-            number="1"
-            name="Unusual tone"
-            information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
+            number="5."
+            name="Providing your payment details"
+            information="The objective of conducting scams is to obtain your information and money. 
+            Therefore, you must be cautious on the details you provide. Most recruiters in 
+            Australia will not ask for payment when searching for a job. If they do so, you 
+            can always pay in person or after receiving your job. "
             gif={require("../images/Picture5.png")}
             left="40vw"
             width="80vw"
@@ -249,7 +260,7 @@ export default function Signs() {
                   height: "50px",
                 }}
               >
-                <Link to="/identify">
+                <Link to="/pastData">
                   <Box
                     className="picBox4"
                     sx={{
