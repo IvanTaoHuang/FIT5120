@@ -50,10 +50,11 @@ export default function SignInfo(props) {
           </Typography>
         </Stack>
       </Stack>
-      <Box width="80vw">
-        {" "}
-        <img className="animated-gif" src={props.gif} alt={props.gitName} />
-      </Box>
+      <Stack direction="column" alignItems="center">
+        <Box width={props.width} marginLeft={props.left}>
+          <img className="animated-gif" src={props.gif} alt={props.gitName} />
+        </Box>
+      </Stack>
     </Box>
   );
 }
