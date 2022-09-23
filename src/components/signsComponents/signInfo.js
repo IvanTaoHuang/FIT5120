@@ -13,7 +13,8 @@ export default function SignInfo(props) {
       borderColor="#A36F09"
       sx={{
         width: "80vw",
-        height: "300px",
+        minHeight: "300px",
+        maxHeight: "600px",
       }}
     >
       <Stack direction="row">
@@ -51,9 +52,20 @@ export default function SignInfo(props) {
         </Stack>
       </Stack>
       <Stack direction="column" alignItems="center">
-        <Box width={props.width} marginLeft={props.left}>
+        <div
+          // width={props.width}
+          // marginLeft={props.left}
+          // className={`${props.sign}`}
+          // className="sign1"
+          // backgroundImage={props.img}
+          style={{
+            // backgroundImage: props.img,
+            width: "80%",
+            // height: "10%",
+          }}
+        >
           <img className="animated-gif" src={props.gif} alt={props.gitName} />
-        </Box>
+        </div>
       </Stack>
     </Box>
   );

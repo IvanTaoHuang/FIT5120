@@ -99,8 +99,6 @@ export default function Signs() {
             name="Unusual tone"
             information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
             gif={require("../images/Picture1.png")}
-            left="33vw"
-            width="60vw"
           />
 
           <Box height="50px"></Box>
@@ -111,8 +109,6 @@ export default function Signs() {
             errors including spelling mistakes. All recruitment agencies used third party tools 
             to verify their content before they send any mail. "
             gif={require("../images/Picture2.png")}
-            left="25vw"
-            width="50vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -122,8 +118,6 @@ export default function Signs() {
             the scammers use suspicious ID or the website link they provide would hint some 
             suspicious activity."
             gif={require("../images/Picture3.png")}
-            left="25vw"
-            width="50vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -134,8 +128,6 @@ export default function Signs() {
             never too late to confirm with the agent you received the mail from, if the action 
             needs to be done immediately."
             gif={require("../images/Picture4.png")}
-            left="40vw"
-            width="80vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -146,8 +138,6 @@ export default function Signs() {
             Australia will not ask for payment when searching for a job. If they do so, you 
             can always pay in person or after receiving your job. "
             gif={require("../images/Picture5.png")}
-            left="40vw"
-            width="80vw"
           />
         </Stack>
 
