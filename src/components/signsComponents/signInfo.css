@@ -1,40 +1,54 @@
 .sign1{
-    background-image: url("../../images/firstSign.gif");
+    background-image:url("../../images/Picture1.png");
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 100%;
     
+    
+    
   }
   .sign2{
-    background-image: url("../../images/secondSign.gif");
+    background-image: url("../../images/Picture2.png");
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 100%;
     
   }
   .sign3{
-    background-image: url("../../images/thirdSign.gif");
+    background-image: url("../../images/Picture3.png");
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 100%;
     
   }
   .sign4{
-    background-image: url("../../images/fourthSign.gif");
+    background-image: url("../../images/Picture4.png");
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 100%;
     
   }
   .sign5{
-    background-image: url("../../images/fifthSign.gif");
+    background-image: url("../../images/Picture5.png");
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 100%;
     
   }
-  img.animated-gif{
-    width: 50%;
-    height: 30%;
-    margin-top: 0px;
+  
+  .animated-gif{
+    /* position: absolute; */
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block; */
+    /* width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%; */
+    object-fit: fill;
+    height: 100%;
+  width: 100%;
+    /* transition: all 0.2s linear; */
   }
