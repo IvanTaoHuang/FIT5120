@@ -43,7 +43,9 @@ function PhishingDetector() {
   const handleChange = (event) => {
     setUrl(event.target.value);
   };
-  const handleClear = () => {
+  const handleClear = (event) => {
+    event.preventDefault();
+    setResult("");
     setUrl("");
   };
   const [closeAlert, setCloseAlert] = useState(false);
@@ -55,6 +57,7 @@ function PhishingDetector() {
   const handleClick = async () => {
     // setIsActive((current) => !current);
     console.log("hi");
+    await setResult("");
     setLoading(true);
     const data = { url: url };
     await fetch("https://api.isitphish.com/v2/query", {
@@ -110,6 +113,61 @@ function PhishingDetector() {
 
     textAlign: "center",
   }));
+
+  const handleKeyPress = async (event) => {
+    // on enter run this function
+    if (event.key === "Enter") {
+      event.preventDefault();
+      await setResult("");
+      console.log("hi");
+      setLoading(true);
+      const data = { url: url };
+      await fetch("https://api.isitphish.com/v2/query", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "7bViEf9asD8trUVHmhFRc7g5j048cMqH8CZBO8Cn",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+
+        .then((data) => {
+          // console.log("Success:", data);
+
+          phishRate1 = data.body.phish;
+          legitRate1 = data.body.legit;
+
+          if (phishRate1 < legitRate1) {
+            // console.log("legitimate");
+            setResult("legit");
+            setCloseAlert(true);
+          }
+          if (phishRate1 > legitRate1) {
+            // console.log("phish");
+            setResult("phish");
+            setCloseAlert(true);
+          }
+          if (
+            phishRate1 === (0 || undefined) &&
+            legitRate1 === (0 || undefined)
+          ) {
+            // console.log("invalid");
+            setResult("invalid");
+            setCloseAlert(true);
+          }
+          setPhishRate(parseFloat((phishRate1 * 100).toFixed(3)));
+          setLegitRate(parseFloat((legitRate1 * 100).toFixed(3)));
+        })
+
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      setLoading(false);
+    } else {
+      console.log("Failure");
+    }
+  };
 
   return (
     <>
@@ -182,20 +240,17 @@ function PhishingDetector() {
           />
         </FormControl> */}
             <div className="field">
-              <form>
-                <label>
-                  Enter your name:
-                  <input
-                    type="text"
-                    value={url}
-                    label="Enter an URL: https://www.example.com"
-                    onChange={handleChange}
-                    border={4}
-                    placeholder="Enter an URL: https://www.example.com"
-                    borderColor="green"
-                  />
-                  <button onClick={handleClear}>{<ClearIcon />}</button>
-                </label>
+              <form onKeyPress={(e) => handleKeyPress(e)}>
+                <input
+                  type="text"
+                  value={url}
+                  label="Enter an URL: https://www.example.com"
+                  onChange={handleChange}
+                  border={4}
+                  placeholder="Enter an URL: https://www.example.com"
+                  borderColor="green"
+                />
+                <button onClick={handleClear}>{<ClearIcon />}</button>
               </form>
             </div>
             <button className="submit" onClick={handleClick}>
@@ -219,7 +274,22 @@ function PhishingDetector() {
             direction="row"
             width="100%"
             alignitems="center"
+            align="center"
           >
+            <div
+              style={{
+                width: "500px",
+                height: "200px",
+                marginTop: "40px",
+                display: loading ? "block" : "none",
+              }}
+            >
+              <img
+                className="loading"
+                src={require("../images/loading.gif")}
+                alt="Loading"
+              />
+            </div>
             <Stack
               spacing={2}
               className="stack1"
@@ -349,7 +419,8 @@ function PhishingDetector() {
                 look out in your mail
               </Typography>
             </Stack>
-            <Stack>
+
+            <Stack justifyContent="flex-end">
               <Box
                 border={4}
                 justifyContent="center"
@@ -369,27 +440,28 @@ function PhishingDetector() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Report a scam
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Report a scam
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
               <Box height="20px"></Box>
 
@@ -412,27 +484,28 @@ function PhishingDetector() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Check Past Data
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Check Past Data
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
             </Stack>
           </Stack>

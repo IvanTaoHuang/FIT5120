@@ -8,12 +8,6 @@ import { useMediaQuery } from "@mui/material";
 import { Stack } from "@mui/system";
 import Typography from "@mui/material/Typography";
 import SignInfo from "../components/signsComponents/signInfo.js";
-import FirstGif from "../images/firstSign.gif";
-import SecondGif from "../images/secondSign.gif";
-import ThirdGif from "../images/thirdSign.gif";
-import FourthGif from "../images/fourthSign.gif";
-import FifthGif from "../images/fifthSign.gif";
-import FirstPic from "../images/Picture1.png";
 import { Link } from "react-router-dom";
 
 export default function Signs() {
@@ -91,14 +85,15 @@ export default function Signs() {
           </Box>
         </Stack>
 
-        <Box height="100px"></Box>
+        <Box height="50px"></Box>
         {/* GIF with signs */}
         <Stack direction="column" alignItems="center">
           <SignInfo
             number="1."
             name="Unusual tone"
             information="If your recruiter is too informal with his/her greeting or content of mail then it is a red flag. Mails sent are documented therefore they would ensure that it is official and legitimate."
-            gif={require("../images/Picture1.png")}
+            gif={require("../images/firstSign.gif")}
+            margin="-8vw"
           />
 
           <Box height="50px"></Box>
@@ -108,7 +103,8 @@ export default function Signs() {
             information="One most used sign to identify phishing scams is to check for the grammatical 
             errors including spelling mistakes. All recruitment agencies used third party tools 
             to verify their content before they send any mail. "
-            gif={require("../images/Picture2.png")}
+            gif={require("../images/secondSign.gif")}
+            margin="8vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -117,7 +113,8 @@ export default function Signs() {
             information="Checking the mail ID of the sender is another easy way to detect scam. Usually, 
             the scammers use suspicious ID or the website link they provide would hint some 
             suspicious activity."
-            gif={require("../images/Picture3.png")}
+            gif={require("../images/thirdSign.gif")}
+            margin="-8vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -127,7 +124,8 @@ export default function Signs() {
             open the external URL provided quickly so that you would fall into their trap. It is 
             never too late to confirm with the agent you received the mail from, if the action 
             needs to be done immediately."
-            gif={require("../images/Picture4.png")}
+            gif={require("../images/fourthSign.gif")}
+            margin="8vw"
           />
           <Box height="50px"></Box>
           <SignInfo
@@ -137,7 +135,8 @@ export default function Signs() {
             Therefore, you must be cautious on the details you provide. Most recruiters in 
             Australia will not ask for payment when searching for a job. If they do so, you 
             can always pay in person or after receiving your job. "
-            gif={require("../images/Picture5.png")}
+            gif={require("../images/fifthSign.gif")}
+            margin="-8vw"
           />
         </Stack>
 
@@ -174,27 +173,28 @@ export default function Signs() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Scam Detector
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Scam Detector
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
             </Stack>
             <Stack>
@@ -217,27 +217,28 @@ export default function Signs() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Report a scam
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Report a scam
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
               <Box height="20px"></Box>
 
@@ -260,27 +261,28 @@ export default function Signs() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Check Past Data
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Check Past Data
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
             </Stack>
           </Stack>
