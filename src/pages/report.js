@@ -161,27 +161,28 @@ export default function Signs() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Scam Detector
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Scam Detector
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
             </Stack>
 
@@ -205,27 +206,28 @@ export default function Signs() {
                       marginTop: "5px",
                     }}
                   ></Box>
-                </Link>
-                <Box
-                  sx={{
-                    width: "70%",
-                    height: "20%",
-                    marginLeft: "50px",
-                    marginTop: "-28px",
-                  }}
-                >
-                  <Typography
-                    align="center"
+
+                  <Box
                     sx={{
-                      color: "white",
-                      fontSize: "15px",
-                      fontFamily: "Montserrat",
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-28px",
                     }}
-                    variant="h1"
                   >
-                    Check Past Data
-                  </Typography>
-                </Box>
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Check Past Data
+                    </Typography>
+                  </Box>
+                </Link>
               </Box>
             </Stack>
           </Stack>
