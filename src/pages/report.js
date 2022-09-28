@@ -7,18 +7,13 @@ import Zoom from "@mui/material/Zoom";
 import { useMediaQuery } from "@mui/material";
 import { Stack } from "@mui/system";
 import Typography from "@mui/material/Typography";
-import SignInfo from "../components/signsComponents/signInfo.js";
-import FirstGif from "../images/firstSign.gif";
-import SecondGif from "../images/secondSign.gif";
-import ThirdGif from "../images/thirdSign.gif";
-import FourthGif from "../images/fourthSign.gif";
-import FifthGif from "../images/fifthSign.gif";
+
 import { Link } from "react-router-dom";
 import "../components/reportComponents/report.css";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:1150px)");
+  const lMatches = useMediaQuery("(min-width:655px)");
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: "black",
@@ -130,106 +125,122 @@ export default function Signs() {
         </Box>
 
         <Box height="180px"></Box>
+
         {/* three buttons */}
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
-          <Stack
-            direction={lMatches ? "row" : "column"}
-            spacing={lMatches ? "60vw" : "30px"}
-            alignItems="center"
-          >
-            <Stack
-              marginLeft={lMatches ? "5vw" : "0px"}
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+          <Stack direction={lMatches ? "row" : "column"}>
+            <Box
+              sx={{
+                width: lMatches ? "50%" : "100%",
+                backgroundColor: "black",
+              }}
             >
-              <Box
-                border={4}
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
+              <Stack
+                marginLeft={lMatches ? "5vw" : "0px"}
+                direction="row"
+                justifyContent={lMatches ? "flex-start" : "center"}
+                alignItems="center"
               >
-                <Link to="/phishingDetector">
-                  <Box
-                    className="picBox2"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
+                <Box
+                  border={4}
+                  borderColor="#A36F09"
+                  sx={{
+                    width: "180px",
+                    height: "50px",
+                  }}
+                >
+                  <Link to="/phishingDetector">
+                    <Box
+                      className="picBox2"
                       sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
+                        width: "30%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "5px",
                       }}
-                      variant="h1"
-                    >
-                      Scam Detector
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-            </Stack>
+                    ></Box>
 
-            <Stack>
-              <Box
-                border={4}
-                justifyContent="center"
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
+                    <Box
+                      sx={{
+                        width: "70%",
+                        height: "20%",
+                        marginLeft: "50px",
+                        marginTop: "-28px",
+                      }}
+                    >
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "15px",
+                          fontFamily: "Montserrat",
+                        }}
+                        variant="h1"
+                      >
+                        Scam Detector
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+              </Stack>
+            </Box>
+
+            <Box height={lMatches ? "0px" : "20px"}></Box>
+
+            <Box
+              sx={{
+                width: lMatches ? "50%" : "100%",
+                backgroundColor: "black",
+              }}
+            >
+              <Stack
+                alignItems={lMatches ? "flex-end" : "center"}
+                marginRight={lMatches ? "5vw" : "0px"}
               >
-                <Link to="/pastData">
-                  <Box
-                    className="picBox4"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
+                <Box
+                  border={4}
+                  justifyContent="center"
+                  borderColor="#A36F09"
+                  sx={{
+                    width: "180px",
+                    height: "50px",
+                  }}
+                >
+                  <Link to="/pastData">
+                    <Box
+                      className="picBox4"
                       sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
+                        width: "30%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "5px",
                       }}
-                      variant="h1"
+                    ></Box>
+
+                    <Box
+                      sx={{
+                        width: "70%",
+                        height: "20%",
+                        marginLeft: "50px",
+                        marginTop: "-28px",
+                      }}
                     >
-                      Check Past Data
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-            </Stack>
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "15px",
+                          fontFamily: "Montserrat",
+                        }}
+                        variant="h1"
+                      >
+                        Check Past Data
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+              </Stack>
+            </Box>
           </Stack>
           <Box height="180px"></Box>
         </Box>

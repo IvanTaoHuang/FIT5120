@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
 
 function PhishingDetector() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:1150px)");
+  const lMatches = useMediaQuery("(min-width:655px)");
   const [loading, setLoading] = React.useState(false);
 
   const [isActive, setIsActive] = useState(false);
@@ -373,141 +373,158 @@ function PhishingDetector() {
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack
             direction={lMatches ? "row" : "column"}
-            spacing={lMatches ? "60vw" : "30px"}
-            alignItems="center"
+            // spacing={lMatches ? "60vw" : "30px"}
+            // alignItems="center"
           >
-            <Stack
-              marginLeft={lMatches ? "5vw" : "0px"}
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+            <Box
+              sx={{
+                width: lMatches ? "50%" : "100%",
+                backgroundColor: "black",
+              }}
             >
-              <Box
-                // border={4}
-                justifyContent="center"
-                // borderColor="#A36F09"
-                sx={{
-                  width: "100px",
-                  height: "100px",
-                }}
+              <Stack
+                marginLeft={lMatches ? "5vw" : "0px"}
+                direction="row"
+                justifyContent={lMatches ? "flex-start" : "center"}
+                alignItems="center"
               >
-                <Link to="/signs">
-                  <Box
-                    className="picBox6"
-                    sx={{
-                      marginTop: "14px",
-                      marginLeft: "20px",
-                      marginBottom: "20px",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  ></Box>
-                </Link>
-              </Box>
-              <Box width="30px"></Box>
-              <Typography
-                sx={{
-                  color: "white",
-                  fontFamily: "Montserrat Alternates",
-                  fontSize: "18px",
-                }}
-              >
-                <br />
-                <br />
-                Phishing signs to
-                <br />
-                look out in your mail
-              </Typography>
-            </Stack>
-
-            <Stack justifyContent="flex-end">
-              <Box
-                border={4}
-                justifyContent="center"
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
-              >
-                <Link to="/report">
-                  <Box
-                    className="picBox3"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
+                <Box
+                  // border={4}
+                  justifyContent="center"
+                  // borderColor="#A36F09"
+                  sx={{
+                    width: "100px",
+                    height: "100px",
+                  }}
+                >
+                  <Link to="/signs">
+                    <Box
+                      className="picBox6"
                       sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
+                        marginTop: "14px",
+                        marginLeft: "20px",
+                        marginBottom: "20px",
+                        width: "100%",
+                        height: "100%",
                       }}
-                      variant="h1"
-                    >
-                      Report a scam
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-              <Box height="20px"></Box>
-
-              <Box
-                border={4}
-                justifyContent="center"
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
+                    ></Box>
+                  </Link>
+                </Box>
+                <Box width="30px"></Box>
+                <Typography
+                  sx={{
+                    color: "white",
+                    fontFamily: "Montserrat Alternates",
+                    fontSize: "18px",
+                  }}
+                >
+                  <br />
+                  <br />
+                  Phishing signs to
+                  <br />
+                  look out in your mail
+                </Typography>
+              </Stack>
+            </Box>
+            <Box height={lMatches ? "0px" : "30px"}></Box>
+            <Box
+              sx={{
+                width: lMatches ? "50%" : "100%",
+                backgroundColor: "black",
+              }}
+            >
+              <Stack
+                alignItems={lMatches ? "flex-end" : "center"}
+                marginRight={lMatches ? "5vw" : "0px"}
               >
-                <Link to="/pastData">
-                  <Box
-                    className="picBox4"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
+                <Box
+                  border={4}
+                  justifyContent="center"
+                  borderColor="#A36F09"
+                  sx={{
+                    width: "180px",
+                    height: "50px",
+                  }}
+                >
+                  <Link to="/report">
+                    <Box
+                      className="picBox3"
                       sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
+                        width: "30%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "5px",
                       }}
-                      variant="h1"
+                    ></Box>
+
+                    <Box
+                      sx={{
+                        width: "70%",
+                        height: "20%",
+                        marginLeft: "50px",
+                        marginTop: "-28px",
+                      }}
                     >
-                      Check Past Data
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-            </Stack>
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "15px",
+                          fontFamily: "Montserrat",
+                        }}
+                        variant="h1"
+                      >
+                        Report a scam
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+                <Box height="20px"></Box>
+
+                <Box
+                  border={4}
+                  justifyContent="center"
+                  borderColor="#A36F09"
+                  sx={{
+                    width: "180px",
+                    height: "50px",
+                  }}
+                >
+                  <Link to="/pastData">
+                    <Box
+                      className="picBox4"
+                      sx={{
+                        width: "30%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "5px",
+                      }}
+                    ></Box>
+
+                    <Box
+                      sx={{
+                        width: "70%",
+                        height: "20%",
+                        marginLeft: "50px",
+                        marginTop: "-28px",
+                      }}
+                    >
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "15px",
+                          fontFamily: "Montserrat",
+                        }}
+                        variant="h1"
+                      >
+                        Check Past Data
+                      </Typography>
+                    </Box>
+                  </Link>
+                </Box>
+              </Stack>
+            </Box>
           </Stack>
           <Box height="350px"></Box>
         </Box>
