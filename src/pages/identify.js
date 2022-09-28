@@ -2,6 +2,7 @@ import React from "react";
 import ImageAvatars from "../components/identityComponents/avatar.js";
 import Breadcrumb from "../components/breadCrumb.js";
 import { Box } from "@mui/system";
+import IconTopic from "../components/iconTopic";
 export default function Identify() {
   return (
     <>
@@ -18,6 +19,11 @@ export default function Identify() {
         }}
       >
         <Breadcrumb page="Identify" />
+        {/* Identify Icon on the top */}
+        <IconTopic
+          icon={require("../images/identify.png")}
+          iconName="Detector icon"
+        />
         <ImageAvatars />
       </Box>
     </>

@@ -7,9 +7,9 @@ import Zoom from "@mui/material/Zoom";
 import { useMediaQuery } from "@mui/material";
 import { Stack } from "@mui/system";
 import Typography from "@mui/material/Typography";
-
 import { Link } from "react-router-dom";
 import "../components/reportComponents/report.css";
+import IconTopic from "../components/iconTopic";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -46,6 +46,12 @@ export default function Signs() {
           <meta name="description" content="Report" />
         </Helmet>
         <Breadcrumb page="Report" />
+
+        {/* Report Icon on the top */}
+        <IconTopic
+          icon={require("../images/report.png")}
+          iconName="Detector icon"
+        />
 
         {/* Component for About Detector and text animation */}
         <Zoom in={true} timeout={1000}>
