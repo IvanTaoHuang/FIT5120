@@ -218,6 +218,7 @@ export default function ImageAvatars() {
               justifyContent={lMatches ? "flex-start" : "center"}
               alignItems="center"
             >
+
               <Box
                 border={4}
                 borderColor="#A36F09"
@@ -362,6 +363,7 @@ export default function ImageAvatars() {
               </Box>
             </Stack>
           </Box>
+          
         </Stack>
         <Box height="200px"></Box>
       </Box>
