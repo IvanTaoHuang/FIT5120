@@ -12,9 +12,9 @@ import { Button } from "@mui/material";
 
 const StatisticDialog = () => {
   // Transition for dialog
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+  // const Transition = React.forwardRef(function Transition(props, ref) {
+  //   return <Slide direction="up" ref={ref} {...props} />;
+  // });
   // Open state for dialog
   const [open, setOpen] = React.useState(false);
 
@@ -32,7 +32,7 @@ const StatisticDialog = () => {
       </IconButton>
       <Dialog
         open={open}
-        TransitionComponent={Transition}
+        // TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
