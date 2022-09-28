@@ -55,15 +55,8 @@ export default function SignInfo(props) {
       <Box height="20px"></Box>
       <Stack direction="column" alignItems="center">
         <div
-          // width={props.width}
-          // marginLeft={props.left}
-          // className={`${props.sign}`}
-          // className="sign1"
-          // backgroundImage={props.img}
           style={{
-            // backgroundImage: props.img,
             width: "90%",
-            // height: "10%",
           }}
         >
           <img className="animated-gif" src={props.gif} alt={props.gitName} />

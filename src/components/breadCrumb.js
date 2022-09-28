@@ -1,5 +1,4 @@
 import React from "react";
-import ImageAvatars from "../components/identityComponents/avatar.js";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";

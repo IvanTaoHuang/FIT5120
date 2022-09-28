@@ -1,8 +1,8 @@
 .box {
-    background-image: url("../../images/robotHand.png");
-    object-fit: fill;
+    /* background-image: url("../../images/robotHand.png"); */
+    /* object-fit: fill;
     background-repeat: no-repeat;
-    background-size:100% 100%;
+    background-size:100% 100%; */
 }
 .animated-gif{
     
