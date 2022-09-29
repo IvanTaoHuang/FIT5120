@@ -14,7 +14,7 @@ export default function SignInfo(props) {
       sx={{
         width: "80vw",
         minHeight: "300px",
-        maxHeight: "700px",
+        maxHeight: "3000px",
         marginLeft: props.margin,
       }}
     >
