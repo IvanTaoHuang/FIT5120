@@ -1,13 +1,4 @@
-.avatars{
-    position:fixeds;
-}
-
-a {
-    text-decoration: none; 
-    color: aliceblue;
-}
-
-.quizButton{
+.simulationButton{
     color:#FFFF;
     background-color: #A36F09;
     font-size: 30px;
@@ -17,10 +8,9 @@ a {
     border-radius: 8px;
 }
 
-.quizButton:hover{
+.simulationButton:hover{
     color:#A36F09;
     background-color: #FFFF;
     font-size: 35px;
     cursor: pointer;
 }
-

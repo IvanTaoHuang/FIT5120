@@ -1,0 +1,6 @@
+.picBox5{
+    background-image: url("../images/clock.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+  }
