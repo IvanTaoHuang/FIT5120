@@ -16,6 +16,8 @@ import { styled } from "@mui/material/styles";
 import { Helmet } from "react-helmet";
 import Zoom from "@mui/material/Zoom";
 import { Link } from "react-router-dom";
+import SignInfo from "../signsComponents/signInfo";
+import TimeToRead from "../timeToRead";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
@@ -43,46 +45,7 @@ export default function ImageAvatars() {
           <meta name="description" content="identify" />
         </Helmet>
 
-        <Stack direction="row" marginLeft="100px">
-          <Box
-            justifyContent="center"
-            sx={{
-              width: "180px",
-              height: "50px",
-            }}
-          >
-            <Box
-              className="picBox5"
-              sx={{
-                width: "30%",
-                height: "80%",
-                marginLeft: "10px",
-                marginTop: "5px",
-              }}
-            ></Box>
-
-            <Box
-              sx={{
-                width: "70%",
-                height: "20%",
-                marginLeft: "50px",
-                marginTop: "-28px",
-              }}
-            >
-              <Typography
-                align="center"
-                sx={{
-                  color: "white",
-                  fontSize: "15px",
-                  fontFamily: "Montserrat",
-                }}
-                variant="h1"
-              >
-                5 mins read
-              </Typography>
-            </Box>
-          </Box>
-        </Stack>
+        <TimeToRead time="5 mins read"></TimeToRead>
 
         <Box height="50px"></Box>
 
@@ -203,6 +166,46 @@ export default function ImageAvatars() {
         </Stack>
       </Box>
 
+      {/* Steps to do if I fail into a scam */}
+      <Box sx={{ height: "80px" }}></Box>
+      <Box sx={{ marginLeft: "100px" }}>
+        <Typography
+          sx={{ color: "white", fontFamily: "Montserrat", fontSize: "30px" }}
+        >
+          What to do if I fall into a scam?
+        </Typography>
+      </Box>
+
+      <Box sx={{ height: "40px" }}></Box>
+      <TimeToRead time="10 mins read"></TimeToRead>
+      <Box sx={{ height: "20px" }}></Box>
+      <SignInfo margin="6vw"></SignInfo>
+      <Box sx={{ height: "60px" }}></Box>
+      <SignInfo margin="12vw"></SignInfo>
+      <Box sx={{ height: "60px" }}></Box>
+      <SignInfo margin="6vw"></SignInfo>
+
+      {/* Quiz link */}
+      <Box sx={{ height: "100px" }}></Box>
+      <Box>
+        <Stack alignItems="center">
+          <Typography
+            sx={{
+              fontFamily: "Montserrat",
+              color: "white",
+              fontSize: lMatches ? "30px" : "25px",
+              textAlign: "center",
+            }}
+          >
+            Test your knowledge with a short questionaire
+          </Typography>
+          <Box sx={{ height: "50px" }}></Box>
+
+          <button className="quizButton"> Quiz</button>
+        </Stack>
+      </Box>
+
+      {/* Three buttons */}
       <Box height="100px" backgroundColor="black"></Box>
       <Box sx={{ width: "100%", backgroundColor: "black" }}>
         <Stack direction={lMatches ? "row" : "column"}>
@@ -218,7 +221,6 @@ export default function ImageAvatars() {
               justifyContent={lMatches ? "flex-start" : "center"}
               alignItems="center"
             >
-
               <Box
                 border={4}
                 borderColor="#A36F09"
@@ -363,7 +365,6 @@ export default function ImageAvatars() {
               </Box>
             </Stack>
           </Box>
-          
         </Stack>
         <Box height="200px"></Box>
       </Box>

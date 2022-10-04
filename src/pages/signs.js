@@ -9,6 +9,8 @@ import { Stack } from "@mui/system";
 import Typography from "@mui/material/Typography";
 import SignInfo from "../components/signsComponents/signInfo.js";
 import { Link } from "react-router-dom";
+import TimeToRead from "../components/timeToRead.js";
+import "../components/signsComponents/signs.css";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -45,45 +47,7 @@ export default function Signs() {
         </Zoom>
 
         {/* clock */}
-        <Stack direction="row" marginLeft="100px">
-          <Box
-            justifyContent="center"
-            sx={{
-              width: "180px",
-              height: "50px",
-            }}
-          >
-            <Box
-              className="picBox5"
-              sx={{
-                width: "30%",
-                height: "80%",
-                marginLeft: "10px",
-                marginTop: "5px",
-              }}
-            ></Box>
-
-            <Box
-              sx={{
-                width: "70%",
-                height: "20%",
-                marginLeft: "50px",
-                marginTop: "-60px",
-              }}
-            >
-              <Typography
-                align="center"
-                sx={{
-                  color: "#FFFFFF",
-                  fontFamily: "Montserrat Alternates",
-                  marginTop: "30px",
-                }}
-              >
-                5 mins read
-              </Typography>
-            </Box>
-          </Box>
-        </Stack>
+        <TimeToRead time="5 mins read"></TimeToRead>
 
         <Box height="50px"></Box>
         {/* GIF with signs */}
@@ -141,6 +105,26 @@ export default function Signs() {
         </Stack>
 
         <Box height="100px"></Box>
+
+        {/* Simulation link */}
+
+        <Box>
+          <Stack alignItems="center">
+            <Typography
+              sx={{
+                fontFamily: "Montserrat",
+                color: "white",
+                fontSize: lMatches ? "30px" : "25px",
+                textAlign: "center",
+              }}
+            >
+              Practice these techniques with our simulation
+            </Typography>
+            <Box sx={{ height: "50px" }}></Box>
+            <button className="simulationButton"> Enter Simulation</button>
+          </Stack>
+        </Box>
+        <Box sx={{ height: "100px" }}></Box>
 
         {/* three buttons */}
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
