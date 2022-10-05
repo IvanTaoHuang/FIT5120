@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import "../components/reportComponents/report.css";
 import IconTopic from "../components/iconTopic";
+import ScrollToTop from "../components/scroll.js";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -26,6 +27,7 @@ export default function Signs() {
 
   return (
     <>
+      <ScrollToTop />
       <Box
         sx={{
           width: "100%",

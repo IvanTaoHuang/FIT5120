@@ -7,6 +7,11 @@ import { Stack } from "@mui/system";
 import SendIcon from "@mui/icons-material/Send";
 import Fade from "@mui/material/Fade";
 import { Helmet } from "react-helmet";
+import { styled } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
+import Breadcrumb from "../components/breadCrumb";
+import IconTopic from "../components/iconTopic";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,32 +21,34 @@ import ScrollTop from "../components/scrollTop";
 import TitleTheme from "../components/titleTheme";
 import ReportScamButton from "../components/reportChatButton";
 
-//To scroll to top
-ScrollTop.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func,
-};
+function PhishingSimulation() {
+  const matches = useMediaQuery("(min-width:575px)");
+  const mMatches = useMediaQuery("(min-width:670px)");
+  const Div = styled("div")(({ theme }) => ({
+    ...theme.typography.button,
+    backgroundColor: "black",
+    padding: theme.spacing(1),
+    fontSize: matches ? "40px" : "25px",
+    color: "white",
 
-function PhishingSimulation(props) {
-  const Div = TitleTheme();
+    textAlign: "center",
+  }));
   return (
     <Box
       sx={{
         width: "100%",
-        maxWidth: "90%",
-        marginTop: "5vh",
+        backgroundColor: "black",
+        height: "100%",
+        position: "fixed",
+        top: "70px",
+        left: "0",
+        bottom: "0",
+        right: "0",
+        overflow: "auto",
       }}
     >
-      {/* Component for scroll to top button */}
-      <Toolbar id="back-to-top-anchor" />
-      <React.Fragment>
-        <CssBaseline />
-        <ScrollTop {...props}>
-          <Fab color="secondary" size="large" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </React.Fragment>
+      {/* Breadcrumb */}
+      <Breadcrumb page="Phishing Simulator" />
 
       {/* To change the title of page on browser */}
       <Helmet>
@@ -51,71 +58,86 @@ function PhishingSimulation(props) {
         <meta name="description" content="Phishing Simulation" />
       </Helmet>
 
+      {/* Icon Title */}
+      <IconTopic
+        icon={require("../images/detector.png")}
+        iconName="Detector icon"
+      />
+
       {/* Component for About Simulation and text animation */}
       <Fade in={true} timeout={1000}>
-        <Div>{"About Simulation"}</Div>
+        <Div>{"Phishing Simulator"}</Div>
       </Fade>
 
-      <br></br>
-      <br></br>
-      <Fade in={true} timeout={3000}>
-        <Typography
-          variant="body1"
-          gutterBottom
-          fontSize={"30px"}
-          marginLeft="15vw"
-        >
-          Experience is own’s on teacher. Learning about phishing scams by get a
-          first hand experience will increase awareness and which will make you
-          cautious in entering any unknown links. We created a small simulation
-          which provides an usual phishing mail content in the mail ID you
-          provide. This exercise will help you determine on how to segregate a
-          fake mail from the real one.
-        </Typography>
-      </Fade>
-
-      <br></br>
-      <br></br>
-      <br></br>
-      {/* Component for Enter Email Address text field and Submit button */}
-      <Stack marginLeft="35vw" spacing="2vw" direction="row">
-        <TextField
-          id="outlined-basic"
-          label="Enter Email Address"
-          variant="outlined"
-          style={{
-            maxWidth: "500px",
-            maxHeight: "30px",
-            minWidth: "500px",
-            minHeight: "30px",
-          }}
-        />
-        <Button
-          startIcon={<SendIcon />}
-          variant="contained"
-          size="large"
-          style={{
-            maxWidth: "110px",
-            maxHeight: "56px",
-            minWidth: "110px",
-            minHeight: "56px",
+      {/* Two Buttons for different simulators */}
+      <Box sx={{ height: "100px" }}></Box>
+      <Stack direction={mMatches ? "row" : "column"} alignItems="center">
+        <Box
+          sx={{
+            width: "50%",
+            backgroundColor: "black",
           }}
         >
-          Submit
-        </Button>
+          <Stack alignItems="center">
+            <Box
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "320px",
+                height: "60px",
+              }}
+            >
+              <Link to="/firstSimulator">
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "30px",
+                    fontFamily: "Montserrat Alternates",
+                    marginTop: "12px",
+                  }}
+                  variant="h1"
+                >
+                  First-Hand Simulator
+                </Typography>
+              </Link>
+            </Box>
+          </Stack>
+        </Box>
+        <Box sx={{ height: mMatches ? "0px" : "30px" }}></Box>
+        <Box
+          sx={{
+            width: "50%",
+            backgroundColor: "black",
+          }}
+        >
+          <Stack alignItems="center">
+            <Box
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "320px",
+                height: "60px",
+              }}
+            >
+              <Link to="/report">
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "30px",
+                    fontFamily: "Montserrat Alternates",
+                    marginTop: "12px",
+                  }}
+                  variant="h1"
+                >
+                  Quick Experience
+                </Typography>
+              </Link>
+            </Box>
+          </Stack>
+        </Box>
       </Stack>
-
-      <br></br>
-      <br></br>
-      <br></br>
-
-      {/* Component for Report a scam and Chat with us buttons*/}
-      <ReportScamButton />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
     </Box>
   );
 }
