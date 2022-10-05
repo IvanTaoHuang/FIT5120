@@ -12,9 +12,30 @@ import { Link } from "react-router-dom";
 import TimeToRead from "../components/timeToRead.js";
 import "../components/signsComponents/signs.css";
 
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
   const lMatches = useMediaQuery("(min-width:655px)");
+  const sMatches = useMediaQuery("(min-width:660px)");
+  const breadcrumbs = [
+    <Link to="/" className="breadcrumb">
+      Home
+    </Link>,
+    <Link to="/phishingDetector" className="breadcrumb1">
+      Phishing Detector
+    </Link>,
+    <Typography
+      key="3"
+      color="white"
+      variant="h5"
+      fontSize={sMatches ? 24 : 18}
+    >
+      Signs of Phishing
+    </Typography>,
+  ];
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: "black",
@@ -35,11 +56,22 @@ export default function Signs() {
       >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Detector</title>
-          <link rel="canonical" href="http://catchphish.org/phishingDetector" />
-          <meta name="description" content="Detector" />
+          <title>Signs of Phishing</title>
+          <link rel="canonical" href="http://catchphish.org/signs" />
+          <meta name="description" content="Signs" />
         </Helmet>
-        <Breadcrumb page="Signs to look for" />
+
+        {/* Breadcrumb */}
+        <Stack spacing={1}>
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="large" />}
+            aria-label="breadcrumb"
+            sx={{ margin: "30px" }}
+            color="white"
+          >
+            {breadcrumbs}
+          </Breadcrumbs>
+        </Stack>
 
         {/* Component for About Detector and text animation */}
         <Zoom in={true} timeout={1000}>
@@ -121,7 +153,9 @@ export default function Signs() {
               Practice these techniques with our simulation
             </Typography>
             <Box sx={{ height: "50px" }}></Box>
-            <button className="simulationButton"> Enter Simulation</button>
+            <Link to="/phishingSimulation">
+              <button className="simulationButton"> Enter Simulation</button>
+            </Link>
           </Stack>
         </Box>
         <Box sx={{ height: "100px" }}></Box>

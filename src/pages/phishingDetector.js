@@ -250,13 +250,9 @@ function PhishingDetector() {
                 display: loading ? "block" : "none",
               }}
             >
-              {/* <img
-                className="loading"
-                src={require("../images/loading.gif")}
-                alt="Loading"
-              /> */}
               <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
             </div>
+
             <Stack
               spacing={2}
               className="stack1"
@@ -273,13 +269,13 @@ function PhishingDetector() {
 
               <br />
             </Stack>
+
             <Stack
               spacing={2}
               className="stack1"
               display={result === "phish" ? "block" : "none"}
             >
               <br />
-
               <Alert severity="error">
                 This URL has a high risk of being phishing!
                 <br />
@@ -289,6 +285,7 @@ function PhishingDetector() {
               </Alert>
               <br />
             </Stack>
+
             <Stack
               spacing={2}
               className="stack1"
@@ -298,6 +295,7 @@ function PhishingDetector() {
               <Alert severity="warning">This is an invalid URL ！！</Alert>
               <br />
             </Stack>
+
             <IconButton
               variant="contained"
               size="large"
@@ -315,9 +313,9 @@ function PhishingDetector() {
               />
             </IconButton>
           </Stack>
-          <br></br>
         </Box>
 
+        <Box sx={{ height: "70px" }}></Box>
         <Stack direction={lMatches ? "row" : "column"}>
           <Box
             sx={{
