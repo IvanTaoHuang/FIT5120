@@ -13,6 +13,8 @@ import { useState } from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 function FirstSimulator() {
   const sMatches = useMediaQuery("(min-width:660px)");
@@ -52,13 +54,44 @@ function FirstSimulator() {
     // setResult("");
     setEmail("");
   };
-
+  const form = useRef();
   const handleKeyPress = async (event) => {
     if (event.key === "Enter") {
+      event.preventDefault();
+      emailjs
+        .sendForm(
+          "service_t9vx6ao",
+          "template_3q2ngq4",
+          form.current,
+          "YxOK-qh-YoAG4eSrF"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
       console.log("Success");
     }
   };
   const handleClick = async () => {
+    emailjs
+      .sendForm(
+        "service_t9vx6ao",
+        "template_3q2ngq4",
+        form.current,
+        "YxOK-qh-YoAG4eSrF"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     console.log("Success");
   };
   return (
@@ -135,9 +168,10 @@ function FirstSimulator() {
       >
         {/* Input field */}
         <div className="field">
-          <form onKeyPress={(e) => handleKeyPress(e)}>
+          <form ref={form} onKeyPress={(e) => handleKeyPress(e)}>
             <input
-              type="text"
+              type="email"
+              name="user_email"
               value={email}
               label="Enter an email address"
               onChange={handleChange}
