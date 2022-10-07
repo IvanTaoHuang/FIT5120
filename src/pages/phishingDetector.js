@@ -166,13 +166,13 @@ function PhishingDetector() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          // height: "100%",
-          // position: "fixed",
-          // top: "70px",
-          // left: "0",
-          // bottom: "0",
-          // right: "0",
-          // overflow: "auto",
+          height: "100%",
+          position: "fixed",
+          top: "70px",
+          left: "0",
+          bottom: "0",
+          right: "0",
+          overflow: "auto",
         }}
       >
         <Box
@@ -220,10 +220,10 @@ function PhishingDetector() {
                 <input
                   type="text"
                   value={url}
-                  label="Enter an URL: https://www.example.com"
+                  label="Enter an URL starting with https://"
                   onChange={handleChange}
                   border={4}
-                  placeholder="Enter an URL: https://www.example.com"
+                  placeholder="Enter an URL starting with https://"
                   borderColor="green"
                 />
                 <button onClick={handleClear}>{<ClearIcon />}</button>
@@ -293,7 +293,7 @@ function PhishingDetector() {
             >
               <br />
               <Alert severity="warning">
-                This is an invalid URL ！！
+                This is an invalid URL ！
                 <br /> Please include https:// at the beginning.{" "}
               </Alert>
               <br />

@@ -57,7 +57,7 @@ transform: scale(1.1);
     color: #fff;
     font-size: 100px;
     margin-top: 
-    30px;
+    20px;
   }
   @media screen and (max-width: 1130px) {
     h1 {
@@ -83,10 +83,9 @@ transform: scale(1.1);
    .subtitle {
     margin-top: 8px;
     text-align: center;
-    color: #fff;
+    color: #BDB39F;
     font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
+    font-family: "Montserrat Alternates";
     padding-top: "100px";
   }
   

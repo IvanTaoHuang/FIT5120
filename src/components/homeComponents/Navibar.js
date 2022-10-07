@@ -40,14 +40,18 @@ function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+                HOME
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
-                About
+            <li className="nav-item">
+              <Link
+                to="/identify"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                IDENTIFY SCAMS
               </Link>
-            </li> */}
+            </li>
             {/* <li className="nav-item">
               <Link
                 to="/phishingSimulation"
@@ -72,7 +76,25 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Detector
+                DETECTOR
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/report"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                REPORT TO SCAMWATCH
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/phishingSimulation"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                SIMULATION
               </Link>
             </li>
           </ul>

@@ -1,21 +1,11 @@
 import React from "react";
 import "../../App.css";
-// import { Button } from "./Button";
-import Button from "@mui/material/Button";
 import "./BgImg.css";
 import video from "../../videos/video.mp4";
 import "./segment.css";
-import SegmentItem from "./segmentItem";
-import identify from "../../images/identify.png";
-import detector from "../../images/detector.png";
-import report from "../../images/report.png";
-import dataVisual from "../../images/graph.png";
-import { Card, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { useMediaQuery } from "@mui/material";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
@@ -35,9 +25,20 @@ function BgImg() {
       <div className="hero-container">
         <video src={video} autoPlay loop muted />
 
-        <h1>Think before you click!</h1>
-        <Box sx={{ height: "220px" }}></Box>
-        <p className="subtitle">Reduce scams in Australia</p>
+        <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
+        <h1
+          style={{
+            fontFamily: "Almarai",
+            fontSize: "60px",
+            color: "#A36F09",
+          }}
+        >
+          CatchPhish
+        </h1>
+        <Box sx={{ height: "300px" }}>
+          <img src={require("../../images/logo.png")} width="200px"></img>
+        </Box>
+        <p className="subtitle">Reduce scams done to graduates in Australia</p>
         {/* IconButton to scroll down */}
         <IconButton
           style={{
