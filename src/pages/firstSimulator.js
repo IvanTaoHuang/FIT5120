@@ -15,6 +15,10 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import CircularProgress from "@mui/material/CircularProgress";
+import Alert from "@mui/material/Alert";
 
 function FirstSimulator() {
   const sMatches = useMediaQuery("(min-width:660px)");
@@ -46,19 +50,24 @@ function FirstSimulator() {
     textAlign: "center",
   }));
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [result, setResult] = useState("");
+
   const handleChange = (event) => {
     setEmail(event.target.value);
   };
   const handleClear = (event) => {
     event.preventDefault();
-    // setResult("");
+    setResult("");
     setEmail("");
   };
   const form = useRef();
   const handleKeyPress = async (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      emailjs
+      await setResult("");
+      setLoading(true);
+      await emailjs
         .sendForm(
           "service_t9vx6ao",
           "template_3q2ngq4",
@@ -68,16 +77,21 @@ function FirstSimulator() {
         .then(
           (result) => {
             console.log(result.text);
+            setResult(result.text);
           },
           (error) => {
             console.log(error.text);
+            setResult(error.text);
           }
         );
       console.log("Success");
     }
+    setLoading(false);
   };
   const handleClick = async () => {
-    emailjs
+    await setResult("");
+    setLoading(true);
+    await emailjs
       .sendForm(
         "service_t9vx6ao",
         "template_3q2ngq4",
@@ -87,19 +101,27 @@ function FirstSimulator() {
       .then(
         (result) => {
           console.log(result.text);
+          setResult(result.text);
         },
         (error) => {
           console.log(error.text);
+          setResult(error.text);
         }
       );
     console.log("Success");
+    setLoading(false);
+  };
+  const [closeAlert, setCloseAlert] = useState(false);
+  const handleCloseAlert = () => {
+    setCloseAlert(false);
+    setResult("");
   };
   return (
     <Box
       sx={{
         width: "100%",
         backgroundColor: "black",
-        height: "100%",
+        // height: "100%",
         position: "fixed",
         top: "70px",
         left: "0",
@@ -186,6 +208,82 @@ function FirstSimulator() {
           Submit
         </button>
       </Stack>
+
+      <Stack
+        justifyContent="center"
+        direction="row"
+        width="100%"
+        alignitems="center"
+        align="center"
+      >
+        {/* Progress */}
+        <div
+          style={{
+            width: "500px",
+            height: "100px",
+            marginTop: "40px",
+            display: loading ? "block" : "none",
+          }}
+        >
+          <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
+        </div>
+
+        <Stack
+          spacing={2}
+          className="stack1"
+          display={result === "OK" ? "block" : "none"}
+        >
+          <br />
+          <Alert severity="success">
+            The email has been succssfully sent to your email address.
+          </Alert>
+
+          <br />
+        </Stack>
+
+        <Stack
+          spacing={2}
+          className="stack1"
+          display={
+            result === "The recipient address is empty" ? "block" : "none"
+          }
+        >
+          <br />
+          <Alert severity="warning">This is an invalid Email address！！</Alert>
+          <br />
+        </Stack>
+        <Stack
+          spacing={2}
+          className="stack1"
+          display={
+            result === "Gmail_API: Recipient address required"
+              ? "block"
+              : "none"
+          }
+        >
+          <br />
+          <Alert severity="warning">This is an invalid Email address！！</Alert>
+          <br />
+        </Stack>
+
+        <IconButton
+          variant="contained"
+          size="large"
+          sx={{
+            height: "45px",
+            marginTop: "38px",
+            marginLeft: "2vw",
+            display: closeAlert ? "block" : "none",
+          }}
+          onClick={handleCloseAlert}
+          display={closeAlert ? "block" : "none"}
+        >
+          <CloseIcon
+            sx={{ width: "40px", height: "40px", marginBottom: "25px" }}
+          />
+        </IconButton>
+      </Stack>
+      <Box sx={{ height: "100px" }}></Box>
     </Box>
   );
 }
