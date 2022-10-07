@@ -166,13 +166,13 @@ function PhishingDetector() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
-          position: "fixed",
-          top: "70px",
-          left: "0",
-          bottom: "0",
-          right: "0",
-          overflow: "auto",
+          // height: "100%",
+          // position: "fixed",
+          // top: "70px",
+          // left: "0",
+          // bottom: "0",
+          // right: "0",
+          // overflow: "auto",
         }}
       >
         <Box
@@ -292,7 +292,10 @@ function PhishingDetector() {
               display={result === "invalid" ? "block" : "none"}
             >
               <br />
-              <Alert severity="warning">This is an invalid URL ！！</Alert>
+              <Alert severity="warning">
+                This is an invalid URL ！！
+                <br /> Please include https:// at the beginning.{" "}
+              </Alert>
               <br />
             </Stack>
 
@@ -467,6 +470,7 @@ function PhishingDetector() {
             </Stack>
           </Box>
         </Stack>
+        <Box sx={{ height: "100px" }}></Box>
       </Box>
     </>
   );
