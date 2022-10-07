@@ -246,27 +246,20 @@ function BgImg() {
             8,292
           </Typography>
 
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#A36F09",
-              fontFamily: "Montserrat",
-              fontSize: "50px",
-              marginTop: "30px",
-            }}
-          >
-            Graduates have fallen to phishing mails
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#A36F09",
-              fontFamily: "Montserrat",
-              fontSize: "50px",
-            }}
-          >
-            during job seeking
-          </Typography>
+          <Box sx={{ width: "60%" }}>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#A36F09",
+                fontFamily: "Montserrat",
+                fontSize: "50px",
+                marginTop: "30px",
+                textAlign: "center",
+              }}
+            >
+              Graduates have fallen to phishing mails during job seeking
+            </Typography>
+          </Box>
         </Stack>
       </Box>
     </>
