@@ -19,16 +19,16 @@ background-image{
 } */
 .stack1{
     /* margin-left: 35vw; */
-    width:500px;
+    width:340px;
 }
 
 @media screen and (max-width: 1400px) {
     .textField{
         width:450px;
     }
-    .stack1{
+    /* .stack1{
         width:450px;
-    }
+    } */
 }
 
 @media screen and (max-width: 1500px) {
@@ -136,10 +136,7 @@ background-image{
     .textField{
         width:200px;
     }
-    .stack1{
-        /* margin-left: 22vw; */
-        width:200px;
-    }
+    
 }
 
 .field{

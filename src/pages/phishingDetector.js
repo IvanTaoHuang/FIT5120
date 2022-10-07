@@ -261,10 +261,10 @@ function PhishingDetector() {
               <br />
               <Alert severity="success">
                 This URL is safe!
-                <br />
+                {/* <br />
                 {legitRate}% legitimate
                 <br />
-                {phishRate}% phishing
+                {phishRate}% phishing */}
               </Alert>
 
               <br />
@@ -278,10 +278,10 @@ function PhishingDetector() {
               <br />
               <Alert severity="error">
                 This URL has a high risk of being phishing!
-                <br />
+                {/* <br />
                 {legitRate}% legitimate
                 <br />
-                {phishRate}% phishing
+                {phishRate}% phishing */}
               </Alert>
               <br />
             </Stack>
@@ -299,7 +299,7 @@ function PhishingDetector() {
               <br />
             </Stack>
 
-            <IconButton
+            {/* <IconButton
               variant="contained"
               size="large"
               sx={{
@@ -314,7 +314,7 @@ function PhishingDetector() {
               <CloseIcon
                 sx={{ width: "40px", height: "40px", marginBottom: "25px" }}
               />
-            </IconButton>
+            </IconButton> */}
           </Stack>
         </Box>
 
