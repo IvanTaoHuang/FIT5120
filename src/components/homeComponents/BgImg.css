@@ -5,6 +5,19 @@ video {
     position: fixed;
     z-index: -1;
   }
+  .button1{
+    width: 100%;
+                    font-size: 30px;
+                    background-color: #a36f09;
+                    color: #FFF;
+                    border: 0;
+                    border-radius: 10px;
+  }
+  .button1:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color:black;
+  }
   .picBox1{
     background-image: url("../../images/identify.png");
     object-fit: fill;

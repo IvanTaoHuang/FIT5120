@@ -13,6 +13,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 function BgImg() {
+  const sMatches = useMediaQuery("(min-width:825px)");
   const smMatches = useMediaQuery("(min-width:1000px)");
   const mMatches = useMediaQuery("(min-width:1335px)");
   const ref = useRef(null);
@@ -22,47 +23,139 @@ function BgImg() {
 
   return (
     <>
-      <div className="hero-container">
-        <video src={video} autoPlay loop muted />
+      {/* <div className="hero-container"> */}
+      <video src={video} autoPlay loop muted />
 
-        <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
-        <h1
-          style={{
-            fontFamily: "Almarai",
-            fontSize: "60px",
-            color: "#A36F09",
-          }}
+      <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
+
+      <Box
+        sx={{
+          width: "100%",
+
+          height: "100%",
+          // position: "fixed",
+          top: "70px",
+          left: "0",
+          bottom: "0",
+          right: "0",
+          overflow: "auto",
+        }}
+      >
+        <Stack
+          direction={sMatches ? "row" : "column"}
+          spacing={sMatches ? 24 : 6}
+          alignItems="center"
+          justifyContent="center"
         >
-          CatchPhish
-        </h1>
-        <Box sx={{ height: "300px" }}>
-          <img src={require("../../images/logo.png")} width="200px"></img>
-        </Box>
-        <p className="subtitle">Reduce scams done to graduates in Australia</p>
-        {/* IconButton to scroll down */}
-        <IconButton
-          style={{
-            color: "white",
-            width: "100px",
-            height: "100px",
-          }}
-          sx={{
-            "&:hover": {
-              background: "white",
-            },
-          }}
-          onClick={handleClick}
-        >
-          <KeyboardDoubleArrowDownIcon
+          <Box
             sx={{
-              fontSize: "100px",
+              width: "300px",
+              height: "260px",
+              backgroundColor: "rgba(163,111,9,0.5)",
+              // opacity: "0.2",
+            }}
+            className="box1"
+          >
+            <Typography
+              sx={{ color: "#a36f09", fontSize: "70px", textAlign: "center" }}
+            >
+              58%
+            </Typography>
+            <Typography
+              sx={{ color: "#FFFF", fontSize: "28px", textAlign: "center" }}
+            >
+              Have reported phishing mails compared to other scams
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: "300px",
+              height: "260px",
+              backgroundColor: "rgba(163,111,9,0.5)",
+            }}
+          >
+            <Stack direction="column" alignItems="center">
+              <Typography
+                sx={{
+                  fontFamily: "Montserrat",
+                  color: "#FFF",
+                  fontSize: "30px",
+                }}
+              >
+                Navigation Panel
+              </Typography>
+              <Box sx={{ height: "20px" }}></Box>
+              <Link to="/phishingDetector" style={{ width: "50%" }}>
+                <button className="button1">Detector</button>
+              </Link>
+              <Box sx={{ height: "30px" }}></Box>
+              <Link to="/report" style={{ width: "50%" }}>
+                <button className="button1">Report</button>
+              </Link>
+              <Box sx={{ height: "30px" }}></Box>
+              <Link to="/phishingSimulation" style={{ width: "50%" }}>
+                <button className="button1">Simulation</button>
+              </Link>
+            </Stack>
+          </Box>
+        </Stack>
+        <Stack alignItems="center">
+          <Box sx={{ height: "60px" }}></Box>
+          <Typography className="subtitle">
+            Reduce scams done to graduates in Australia
+          </Typography>
+          <Box sx={{ height: "50px" }}></Box>
+          <IconButton
+            style={{
+              color: "white",
+              width: "100px",
+              height: "100px",
+            }}
+            sx={{
               "&:hover": {
-                color: "black",
+                background: "white",
               },
             }}
-          />
-        </IconButton>
-      </div>
+            onClick={handleClick}
+          >
+            <KeyboardDoubleArrowDownIcon
+              sx={{
+                fontSize: "100px",
+                "&:hover": {
+                  color: "black",
+                },
+              }}
+            />
+          </IconButton>
+        </Stack>
+        <Box sx={{ height: "50px" }}></Box>
+      </Box>
+
+      {/* <p className="subtitle">Reduce scams done to graduates in Australia</p> */}
+      {/* IconButton to scroll down */}
+      {/* <IconButton
+        style={{
+          color: "white",
+          width: "100px",
+          height: "100px",
+        }}
+        sx={{
+          "&:hover": {
+            background: "white",
+          },
+        }}
+        onClick={handleClick}
+      >
+        <KeyboardDoubleArrowDownIcon
+          sx={{
+            fontSize: "100px",
+            "&:hover": {
+              color: "black",
+            },
+          }}
+        />
+      </IconButton> */}
+      {/* </div> */}
 
       <div ref={ref}></div>
 
