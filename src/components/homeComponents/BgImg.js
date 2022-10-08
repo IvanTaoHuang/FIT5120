@@ -100,11 +100,11 @@ function BgImg() {
           </Box>
         </Stack>
         <Stack alignItems="center">
-          <Box sx={{ height: "60px" }}></Box>
+          <Box sx={{ height: "45px" }}></Box>
           <Typography className="subtitle">
             Reduce scams done to graduates in Australia
           </Typography>
-          <Box sx={{ height: "50px" }}></Box>
+          <Box sx={{ height: "20px" }}></Box>
           <IconButton
             style={{
               color: "white",
