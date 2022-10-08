@@ -45,62 +45,70 @@ export default function ImageAvatars() {
   }));
   const [sliderValue, setSliderValue] = useState(0);
   const [data, setData] = useState(Second2018);
+  const [title, setTitle] = useState("Cyber incident breaches");
   const handleChange = async (event, sliderValue) => {
     await setSliderValue(sliderValue);
 
     // await setData("");
-    // console.log(sliderValue);
+    console.log(sliderValue);
     if (sliderValue === 0) {
       setData(Second2018);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 16.66667) {
       setData(First2019);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 33.33333) {
       setData(Second2019);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 50) {
       setData(First2020);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 66.66668) {
       setData(Second2020);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 83.33335) {
       setData(First2021);
+      setTitle("Cyber incident breaches");
     }
     if (sliderValue === 100) {
       setData(Second2021);
+      setTitle("Cyber incident breaches");
     }
   };
 
   const marks = [
     {
       value: 0,
-      label: ssmatches ? "01/01/2019" : "",
+      label: ssmatches ? "2nd half-2018" : "",
     },
     {
       value: 16.66667,
-      label: "01/06/2019",
+      label: "1st half-2019",
     },
     {
       value: 33.33333,
-      label: ssmatches ? "01/01/2020" : "",
+      label: ssmatches ? "2nd half-2019" : "",
     },
     {
       value: 50,
-      label: "01/06/2020",
+      label: "1st half-2020",
     },
     {
       value: 66.66668,
-      label: ssmatches ? "01/01/2021" : "",
+      label: ssmatches ? "2nd half-2020" : "",
     },
     {
       value: 83.33335,
-      label: "01/06/2021",
+      label: "1st half-2021",
     },
     {
       value: 100,
-      label: ssmatches ? "01/01/2022" : "",
+      label: ssmatches ? "2nd half-2021" : "",
     },
   ];
 
@@ -245,8 +253,19 @@ export default function ImageAvatars() {
         </Stack>
       </Box>
 
-      {/* Date slider */}
       <Box sx={{ height: "80px" }}></Box>
+
+      {/* DonutChart */}
+      <Stack alignItems="center">
+        <Box sx={{ width: "90%" }}>
+          <Box display="block">
+            <DonutChart data={data} title={title} />
+          </Box>
+        </Box>
+      </Stack>
+      <Box sx={{ height: "40px" }}></Box>
+      {/* Date slider */}
+
       <Stack alignItems="center">
         <Box
           sx={{
@@ -256,6 +275,7 @@ export default function ImageAvatars() {
         >
           <Stack alignItems="center">
             <Slider
+              size="medium"
               aria-label="Restricted values"
               defaultValue={0}
               valueLabelFormat={valueLabelFormat}
@@ -268,34 +288,6 @@ export default function ImageAvatars() {
               onChange={handleChange}
             />
           </Stack>
-        </Box>
-      </Stack>
-      <Box sx={{ height: "40px" }}></Box>
-
-      {/* DonutChart */}
-      <Stack alignItems="center">
-        <Box sx={{ width: "90%" }}>
-          <Box display="block">
-            <DonutChart data={data} />
-          </Box>
-          {/* <Box display={sliderValue === 83.33335 ? "block" : "none"}>
-          <DonutChart data={First2021} />
-        </Box> */}
-          {/* <Box display={sliderValue === 66.66668 ? "block" : "none"}>
-          <DonutChart data={Second2020} />
-        </Box>
-        <Box display={sliderValue === 50 ? "block" : "none"}>
-          <DonutChart data={First2020} />
-        </Box>
-        <Box display={sliderValue === 33.33333 ? "block" : "none"}>
-          <DonutChart data={Second2019} />
-        </Box>
-        <Box display={sliderValue === 16.66667 ? "block" : "none"}>
-          <DonutChart data={First2019} />
-        </Box>
-        <Box display={sliderValue === 0 ? "block" : "none"}>
-          <DonutChart data={Second2018} />
-        </Box> */}
         </Box>
       </Stack>
 
@@ -333,8 +325,9 @@ export default function ImageAvatars() {
             Test your knowledge with a short questionaire
           </Typography>
           <Box sx={{ height: "50px" }}></Box>
-
-          <button className="quizButton"> Quiz</button>
+          <Link to="/hack">
+            <button className="quizButton"> Quiz</button>
+          </Link>
         </Stack>
       </Box>
 
