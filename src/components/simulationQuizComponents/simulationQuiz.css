@@ -1,0 +1,41 @@
+.answerButton{
+    color:#FFFF;
+    background-color: #A36F09;
+    font-size: 25px;
+    font-family: Montserrat;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.answerButton:hover{
+    color:#A36F09;
+    background-color: #FFFF;
+    font-size: 30px;
+    cursor: pointer;
+}
+.questionButton{
+    color:#FFFF;
+    background-color: #A36F09;
+    font-size: 25px;
+    font-family: Montserrat;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.questionButton:hover{
+    color:#A36F09;
+    background-color: #FFFF;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.img1 {
+    width:100%;
+    height:100%;
+  }
+  
+
+  

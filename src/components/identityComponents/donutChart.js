@@ -21,7 +21,7 @@ class DonutChart extends React.Component {
         palette="Soft Pastel"
         dataSource={this.props.data}
       >
-        <Title text="The Population of Continents and Regions">
+        <Title text={this.props.title}>
           <Font color="white"></Font>
         </Title>
         <Series argumentField="region">

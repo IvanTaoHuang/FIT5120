@@ -10,6 +10,8 @@ import Report from "./pages/report";
 import ScrollToTop from "./components/scroll";
 import Signs from "./pages/signs";
 import FirstSimulator from "./pages/firstSimulator";
+import Hack from "./pages/hack";
+import SimulationQuiz from "./pages/simulationQuiz";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
         <Route exact path="/identify" element={<Identify />} />
         <Route exact path="/report" element={<Report />} />
         <Route exact path="/signs" element={<Signs />} />
+        <Route exact path="/hack" element={<Hack />} />
+        <Route exact path="/simulationQuiz" element={<SimulationQuiz />} />
         <Route
           exact
           path="/firstSimulator"
