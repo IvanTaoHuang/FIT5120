@@ -266,13 +266,15 @@ function SimulationQuiz() {
           </Stack>
         </Box>
         <Box height="20px"></Box>
-        <button className="questionButton" onClick={handleNextQuestion}>
-          Next Question
-        </button>
-        <Box height="20px"></Box>
-        <button className="questionButton" onClick={handleLastQuestion}>
-          Last Question
-        </button>
+        <Stack direction="row" spacing={18}>
+          <button className="questionButton" onClick={handleNextQuestion}>
+            Next Question
+          </button>
+          <Box height="20px"></Box>
+          <button className="questionButton" onClick={handleLastQuestion}>
+            Last Question
+          </button>
+        </Stack>
         <Box height="50px"></Box>
       </Stack>
     </Box>
