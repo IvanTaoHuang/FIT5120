@@ -31,6 +31,10 @@ function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            CatchPhish &nbsp;
+            <img src={require("../../images/logo.png")} width="35px"></img>
+          </Link>
           <ul
             className={click ? "nav-menu1 active" : "nav-menu1"}
             style={{ display: click ? "block" : "none" }}
