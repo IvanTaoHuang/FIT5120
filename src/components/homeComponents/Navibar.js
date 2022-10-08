@@ -44,7 +44,7 @@ function Navbar() {
                 HOME
               </Link>
             </li>
-            <li className="nav-item1">
+            <li className="nav-item1" style={{ marginTop: "-20px" }}>
               <Link
                 to="/identify"
                 className="nav-links1"
@@ -53,7 +53,7 @@ function Navbar() {
                 IDENTIFY SCAMS
               </Link>
             </li>
-            <li className="nav-item2">
+            <li className="nav-item2" style={{ marginTop: "-20px" }}>
               <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
                 Types of Scam
               </Link>
@@ -69,7 +69,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className="nav-item1" style={{ marginTop: "20px" }}>
+            <li className="nav-item1" style={{ marginTop: "10px" }}>
               <Link
                 to="/phishingDetector"
                 className="nav-links1"
@@ -79,7 +79,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className="nav-item2">
+            <li className="nav-item2" style={{ marginTop: "-20px" }}>
               <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
                 Detector
               </Link>
@@ -98,7 +98,7 @@ function Navbar() {
                 REPORT SCAMS
               </Link>
             </li>
-            <li className="nav-item2">
+            <li className="nav-item2" style={{ marginTop: "-20px" }}>
               <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
                 About ScamWatch
               </Link>
@@ -122,7 +122,7 @@ function Navbar() {
                 SIMULATION
               </Link>
             </li>
-            <li className="nav-item2" style={{ marginTop: "-10px" }}>
+            <li className="nav-item2" style={{ marginTop: "-20px" }}>
               <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
                 Number of Reported Scams
               </Link>
