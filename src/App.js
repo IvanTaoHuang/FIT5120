@@ -12,6 +12,8 @@ import Signs from "./pages/signs";
 import FirstSimulator from "./pages/firstSimulator";
 import Hack from "./pages/hack";
 import SimulationQuiz from "./pages/simulationQuiz";
+import QuickExperience from "./pages/quickExperience";
+import SimulationFeedback from "./pages/simulationFeedback";
 
 export default function App() {
   return (
@@ -29,6 +31,12 @@ export default function App() {
         <Route exact path="/signs" element={<Signs />} />
         <Route exact path="/hack" element={<Hack />} />
         <Route exact path="/simulationQuiz" element={<SimulationQuiz />} />
+        <Route exact path="/quickExperience" element={<QuickExperience />} />
+        <Route
+          exact
+          path="/simulationFeedback"
+          element={<SimulationFeedback />}
+        />
         <Route
           exact
           path="/firstSimulator"

@@ -170,6 +170,7 @@ export default function ImageAvatars() {
             <CardActions>
               <Button variant="contained" size="small">
                 <a
+                  className="cardLink"
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://ovic.vic.gov.au/privacy/phishing-attacks-and-how-to-protect-against-them/#:~:text=WHAT%20IS%20PHISHING%3F,or%20to%20make%20it%20unavailable."
@@ -206,6 +207,7 @@ export default function ImageAvatars() {
             <CardActions>
               <Button variant="contained" size="small">
                 <a
+                  className="cardLink"
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://www.oaic.gov.au/privacy/data-breaches/identity-fraud"
@@ -243,6 +245,7 @@ export default function ImageAvatars() {
             <CardActions>
               <Button variant="contained" size="small">
                 <a
+                  className="cardLink"
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://www.commbank.com.au/support/security/card-fraud.html#:~:text=Card%20fraud%20occurs%20when%20someone,hold%20of%20without%20your%20knowledge."
@@ -326,8 +329,13 @@ export default function ImageAvatars() {
       <Steps
         margin="6vw"
         information1="Reporting to the concerned authorities: Not every phishing scams would target your money. Most scams done to graduates are with the objective of getting their personal information which can be used for identity theft, blackmail and other violent cyber abuse. The Australian government provide agencies to take action for you."
-        information2="If you have your identity stolen, please contact IDCARE on 1800 595 160 or use their cyber tools on IDCARE."
-        information3="Our website is linked with ScamWatch and assists in reducing scams done in Australia. Please click here and report your experience caused by phishing to help elimination the chances happening to another graduate."
+        information2="If you have your identity stolen, please contact IDCARE on 1800 595 160 or use their cyber tools on "
+        link="https://www.idcare.org/learning-centre/apps-and-tools"
+        linkName="IDCARE"
+        information3="Our website is linked with ScamWatch and assists in reducing scams done in Australia. Please "
+        link1="https://www.catchphish.org/report/"
+        linkName1="click here"
+        information4=" and report your experience caused by phishing to help elimination the chances happening to another graduate."
       ></Steps>
 
       {/* Quiz link */}

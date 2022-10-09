@@ -1,0 +1,69 @@
+.simulationButton{
+    color:#FFFF;
+    background-color: #A36F09;
+    font-size: 30px;
+    font-family: Montserrat;
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.simulationButton:hover{
+    color:#A36F09;
+    background-color: #FFFF;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.breadcrumb {
+    color: grey;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: x-large;
+  }
+  .breadcrumb:hover {
+    border-bottom: 2px solid white;
+    
+  }
+
+  .breadcrumb1 {
+    color: grey;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: x-large;
+  }
+  .breadcrumb1:hover {
+    border-bottom: 2px solid white;
+    
+  }
+
+  @media screen and (max-width: 660px) {
+    
+    .breadcrumb {
+      color: grey;
+      text-decoration: none;
+      margin-left: 5px;
+      font-size: large;
+
+    }
+    .breadcrumb1 {
+      color: grey;
+      text-decoration: none;
+      margin-left: 5px;
+      font-size: large;
+    }
+}
+
+.boxLink:visited,.boxLink:link{
+    color:lightskyblue
+}
+.boxLink{
+    color:lightskyblue;
+    text-decoration: underline;
+}
+
+.boxLink:hover {
+    color: #A36F09;
+    background-color: transparent;
+    text-decoration: underline;
+  }
