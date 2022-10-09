@@ -28,6 +28,8 @@ import { Second2019 } from "../../Data/2019Second";
 import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
+import ButtonsOnBot from "../buttonOnBot";
+import ScrollToTop from "../scroll";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
@@ -123,6 +125,7 @@ export default function ImageAvatars() {
   }
   return (
     <>
+      <ScrollToTop />
       <Zoom in={true} timeout={1000}>
         <Div>{"Identify Scams before you fall for them"}</Div>
       </Zoom>
@@ -257,9 +260,7 @@ export default function ImageAvatars() {
           </Card>
         </Stack>
       </Box>
-
       <Box sx={{ height: "80px" }}></Box>
-
       {/* DonutChart */}
       <Stack alignItems="center">
         <Box sx={{ width: "90%" }}>
@@ -274,12 +275,11 @@ export default function ImageAvatars() {
       </Stack>
       <Box sx={{ height: "40px" }}></Box>
       {/* Date slider */}
-
       <Stack alignItems="center">
         <Box
           sx={{
             width: ssmatches ? "80vw" : "340px",
-            backgroundColor: "#A36F09",
+            backgroundColor: "#FFF",
           }}
         >
           <Stack alignItems="center">
@@ -295,11 +295,11 @@ export default function ImageAvatars() {
               style={{ width: ssmatches ? "80%" : "300px" }}
               value={sliderValue}
               onChange={handleChange}
+              sx={{ color: "black" }}
             />
           </Stack>
         </Box>
       </Stack>
-
       {/* Steps to do if I fail into a scam */}
       <Box sx={{ height: "80px" }}></Box>
       <Box sx={{ marginLeft: "100px" }}>
@@ -309,7 +309,6 @@ export default function ImageAvatars() {
           What to do if I fall into a scam?
         </Typography>
       </Box>
-
       <Box sx={{ height: "40px" }}></Box>
       <TimeToRead time="10 mins read"></TimeToRead>
       <Box sx={{ height: "20px" }}></Box>
@@ -337,191 +336,9 @@ export default function ImageAvatars() {
         linkName1="click here"
         information4=" and report your experience caused by phishing to help elimination the chances happening to another graduate."
       ></Steps>
-
-      {/* Quiz link */}
-      <Box sx={{ height: "100px" }}></Box>
-      <Box>
-        <Stack alignItems="center">
-          <Typography
-            sx={{
-              fontFamily: "Montserrat",
-              color: "white",
-              fontSize: lMatches ? "30px" : "25px",
-              textAlign: "center",
-            }}
-          >
-            Test your knowledge with a short questionaire
-          </Typography>
-          <Box sx={{ height: "50px" }}></Box>
-          <Link to="/hack">
-            <button className="quizButton"> Quiz</button>
-          </Link>
-        </Stack>
-      </Box>
-
-      {/* Three buttons */}
-      <Box height="100px" backgroundColor="black"></Box>
-      <Box sx={{ width: "100%", backgroundColor: "black" }}>
-        <Stack direction={lMatches ? "row" : "column"}>
-          <Box
-            sx={{
-              width: lMatches ? "50%" : "100%",
-              backgroundColor: "black",
-            }}
-          >
-            <Stack
-              marginLeft={lMatches ? "5vw" : "0px"}
-              direction="row"
-              justifyContent={lMatches ? "flex-start" : "center"}
-              alignItems="center"
-            >
-              <Box
-                border={4}
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
-              >
-                <Link to="/phishingDetector">
-                  <Box
-                    className="picBox2"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
-                      sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
-                      }}
-                      variant="h1"
-                    >
-                      Scam Detector
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-            </Stack>
-          </Box>
-
-          <Box height={lMatches ? "0px" : "20px"}></Box>
-
-          <Box
-            sx={{
-              width: lMatches ? "50%" : "100%",
-              backgroundColor: "black",
-            }}
-          >
-            <Stack
-              alignItems={lMatches ? "flex-end" : "center"}
-              marginRight={lMatches ? "5vw" : "0px"}
-            >
-              <Box
-                border={4}
-                justifyContent="center"
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
-              >
-                <Link to="/report">
-                  <Box
-                    className="picBox3"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
-                      sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
-                      }}
-                      variant="h1"
-                    >
-                      Report a scam
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-              <Box height="20px"></Box>
-
-              <Box
-                border={4}
-                justifyContent="center"
-                borderColor="#A36F09"
-                sx={{
-                  width: "180px",
-                  height: "50px",
-                }}
-              >
-                <Link to="/pastData">
-                  <Box
-                    className="picBox4"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
-                      sx={{
-                        color: "white",
-                        fontSize: "15px",
-                        fontFamily: "Montserrat",
-                      }}
-                      variant="h1"
-                    >
-                      Check Past Data
-                    </Typography>
-                  </Box>
-                </Link>
-              </Box>
-            </Stack>
-          </Box>
-        </Stack>
-        <Box height="200px"></Box>
-      </Box>
+      <Box height="50px"></Box>
+      {/* Two buttons on bottom */}
+      <ButtonsOnBot />
     </>
   );
 }

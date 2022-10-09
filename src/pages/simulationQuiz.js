@@ -36,6 +36,9 @@ import question5 from "../images/question5.png";
 import "../components/simulationQuizComponents/simulationQuiz.css";
 import Quiz from "../components/simulationQuizComponents/quiz";
 import ButtonsOnBot from "../components/buttonOnBot";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 function SimulationQuiz() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -151,7 +154,7 @@ function SimulationQuiz() {
           border={4}
           borderColor="#A36F09"
           justifyContent="center"
-          sx={{ width: "700px", height: "500px" }}
+          sx={{ maxWidth: "600px", height: "450px" }}
         >
           {/* First quiz */}
           <Box
@@ -262,10 +265,10 @@ function SimulationQuiz() {
             justifyContent="center"
             marginTop="20px"
           >
-            <button className="answerButton" onClick={handleReal}>
+            <button className="answerButton1" onClick={handleReal}>
               Real
             </button>
-            <button className="answerButton" onClick={handleFake}>
+            <button className="answerButton2" onClick={handleFake}>
               Fake
             </button>
           </Stack>
@@ -273,11 +276,21 @@ function SimulationQuiz() {
         <Box height="20px"></Box>
         <Stack direction="row" spacing={18}>
           <button className="questionButton" onClick={handleLastQuestion}>
-            Last Question
+            <KeyboardArrowLeftIcon
+              sx={{
+                fontSize: "45px",
+                color: "black",
+              }}
+            />
           </button>
           <Box height="20px"></Box>
           <button className="questionButton" onClick={handleNextQuestion}>
-            Next Question
+            <ChevronRightIcon
+              sx={{
+                fontSize: "45px",
+                color: "black",
+              }}
+            />
           </button>
         </Stack>
         <Box height="50px"></Box>

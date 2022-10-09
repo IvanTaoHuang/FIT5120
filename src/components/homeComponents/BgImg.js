@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 function BgImg() {
   const sMatches = useMediaQuery("(min-width:825px)");
   const smMatches = useMediaQuery("(min-width:1000px)");
-  const mMatches = useMediaQuery("(min-width:1335px)");
+  const mMatches = useMediaQuery("(min-width:1180px)");
   const ref = useRef(null);
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -101,7 +101,10 @@ function BgImg() {
         </Stack>
         <Stack alignItems="center">
           <Box sx={{ height: "45px" }}></Box>
-          <Typography className="subtitle">
+          <Typography
+            className="subtitle"
+            sx={{ fontSize: "33px", fontFamily: "Montserrat Alternates" }}
+          >
             Reduce scams done to graduates in Australia
           </Typography>
           <Box sx={{ height: "20px" }}></Box>
@@ -175,7 +178,7 @@ function BgImg() {
             justifyContent="center"
             borderColor="#A36F09"
             sx={{
-              width: "300px",
+              width: "250px",
               height: "300px",
             }}
           >
@@ -223,7 +226,7 @@ function BgImg() {
             border={4}
             borderColor="#A36F09"
             sx={{
-              width: "300px",
+              width: "250px",
               height: "300px",
             }}
           >
@@ -231,18 +234,20 @@ function BgImg() {
               <Box
                 className="picBox2"
                 sx={{
-                  margin: "13px",
-                  width: "90%",
-                  height: "75%",
+                  // margin: "13px",
+                  width: "70%",
+                  height: "85%",
                 }}
               ></Box>
             </Link>
+
             <Typography
               align="center"
               sx={{
                 color: "white",
                 fontSize: "35px",
                 fontFamily: "Montserrat",
+                marginTop: "-40px",
               }}
               variant="h1"
             >
@@ -271,7 +276,7 @@ function BgImg() {
             border={4}
             borderColor="#A36F09"
             sx={{
-              width: "300px",
+              width: "250px",
               height: "300px",
             }}
           >
@@ -291,6 +296,7 @@ function BgImg() {
                 color: "white",
                 fontSize: "35px",
                 fontFamily: "Montserrat",
+                marginTop: "-15px",
               }}
               variant="h1"
             >
@@ -345,7 +351,7 @@ function BgImg() {
               sx={{
                 color: "#A36F09",
                 fontFamily: "Montserrat",
-                fontSize: "50px",
+                fontSize: "40px",
                 marginTop: "30px",
                 textAlign: "center",
               }}

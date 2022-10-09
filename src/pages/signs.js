@@ -42,7 +42,6 @@ export default function Signs() {
     padding: theme.spacing(1),
     fontSize: matches ? "40px" : "25px",
     color: "white",
-
     textAlign: "center",
   }));
 
@@ -81,7 +80,7 @@ export default function Signs() {
         {/* clock */}
         <TimeToRead time="5 mins read"></TimeToRead>
 
-        <Box height="50px"></Box>
+        <Box height="25px"></Box>
         {/* GIF with signs */}
         <Stack direction="column" alignItems="center">
           <SignInfo
@@ -198,7 +197,7 @@ export default function Signs() {
                       sx={{
                         width: "70%",
                         height: "20%",
-                        marginLeft: "50px",
+                        marginLeft: "55px",
                         marginTop: "-28px",
                       }}
                     >
@@ -211,7 +210,7 @@ export default function Signs() {
                         }}
                         variant="h1"
                       >
-                        Scam Detector
+                        Back to Detector
                       </Typography>
                     </Box>
                   </Link>
@@ -274,49 +273,6 @@ export default function Signs() {
                   </Link>
                 </Box>
                 <Box height="20px"></Box>
-
-                <Box
-                  border={4}
-                  justifyContent="center"
-                  borderColor="#A36F09"
-                  sx={{
-                    width: "180px",
-                    height: "50px",
-                  }}
-                >
-                  <Link to="/pastData">
-                    <Box
-                      className="picBox4"
-                      sx={{
-                        width: "30%",
-                        height: "80%",
-                        marginLeft: "10px",
-                        marginTop: "5px",
-                      }}
-                    ></Box>
-
-                    <Box
-                      sx={{
-                        width: "70%",
-                        height: "20%",
-                        marginLeft: "50px",
-                        marginTop: "-28px",
-                      }}
-                    >
-                      <Typography
-                        align="center"
-                        sx={{
-                          color: "white",
-                          fontSize: "15px",
-                          fontFamily: "Montserrat",
-                        }}
-                        variant="h1"
-                      >
-                        Check Past Data
-                      </Typography>
-                    </Box>
-                  </Link>
-                </Box>
               </Stack>
             </Box>
           </Stack>
