@@ -46,6 +46,17 @@ video {
     background-repeat: no-repeat;
     background-size:90% 90%;
   }
+  .picBox8{
+    background-image: url("../../images/simulation.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size:90% 90%;
+  }
+  .picBox8:hover{
+
+    transform: scale(1.1);
+        cursor: pointer;
+      }
   
   .picBox1:hover{
 

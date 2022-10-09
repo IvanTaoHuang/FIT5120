@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { HashLink } from "react-router-hash-link";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -64,19 +65,31 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item2" style={{ marginTop: "-20px" }}>
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <HashLink
+                to="/identify#typesOfScam"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Types of Scam
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <HashLink
+                to="/identify#phishingData"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Highlight of Past Phishing Scams
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <HashLink
+                to="/identify#steps"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 How to not fall for Scams
-              </Link>
+              </HashLink>
             </li>
 
             <li className="nav-item1" style={{ marginTop: "10px" }}>
@@ -90,12 +103,20 @@ function Navbar() {
             </li>
 
             <li className="nav-item2" style={{ marginTop: "-20px" }}>
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <Link
+                to="/phishingDetector"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Detector
               </Link>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <Link
+                to="/signs"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Common Signs of Phishing
               </Link>
             </li>
@@ -114,14 +135,22 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <HashLink
+                to="/report#reportButton"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Report to ScamWatch
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <HashLink
+                to="/report#reportButton"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 Details required
-              </Link>
+              </HashLink>
             </li>
             <li className="nav-item1" style={{ marginTop: "20px" }}>
               <Link
@@ -133,13 +162,30 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item2" style={{ marginTop: "-20px" }}>
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
-                Number of Reported Scams
+              <Link
+                to="/firstSimulator"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
+                First-Hand Simulator
               </Link>
             </li>
             <li className="nav-item2">
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
-                Scam Exposure
+              <Link
+                to="/quickExperience"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
+                Quick Experience
+              </Link>
+            </li>
+            <li className="nav-item2">
+              <Link
+                to="/simulationQuiz"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
+                Quiz
               </Link>
             </li>
           </ul>

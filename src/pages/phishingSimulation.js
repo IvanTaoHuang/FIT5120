@@ -50,7 +50,7 @@ function PhishingSimulation() {
 
       {/* Icon Title */}
       <IconTopic
-        icon={require("../images/detector.png")}
+        icon={require("../images/simulation.png")}
         iconName="Detector icon"
       />
 

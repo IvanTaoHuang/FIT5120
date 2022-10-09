@@ -43,7 +43,7 @@ import { hover } from "@testing-library/user-event/dist/hover";
 function SimulationQuiz() {
   const matches = useMediaQuery("(min-width:575px)");
   const sMatches = useMediaQuery("(min-width:660px)");
-  const mMatches = useMediaQuery("(min-width:670px)");
+  const mMatches = useMediaQuery("(min-width:700px)");
 
   const breadcrumbs = [
     <Link to="/" className="breadcrumb">
@@ -154,7 +154,7 @@ function SimulationQuiz() {
           border={4}
           borderColor="#A36F09"
           justifyContent="center"
-          sx={{ maxWidth: "600px", height: "450px" }}
+          sx={{ maxWidth: "600px", maxHeight: "500px" }}
         >
           {/* First quiz */}
           <Box
@@ -235,7 +235,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q3} width="80%" noOfQuiz="Third question - Answer" />
+            <Quiz img={Q3} width="97%" noOfQuiz="Third question - Answer" />
           </Box>
           {/* Fourth quiz - answer */}
           <Box
@@ -245,7 +245,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q4} width="98%" noOfQuiz="Fourth question - Answer" />
+            <Quiz img={Q4} width="100%" noOfQuiz="Fourth question - Answer" />
           </Box>
           {/* Fifth quiz - answer */}
           <Box
@@ -261,20 +261,27 @@ function SimulationQuiz() {
           {/* Buttons */}
           <Stack
             direction="row"
-            spacing={4}
+            spacing={10}
             justifyContent="center"
             marginTop="20px"
           >
-            <button className="answerButton1" onClick={handleReal}>
-              Real
-            </button>
-            <button className="answerButton2" onClick={handleFake}>
-              Fake
-            </button>
+            <Box display={answerReal || answerFake ? "none" : "block"}>
+              <button className="answerButton1" onClick={handleReal}>
+                Real
+              </button>
+
+              <button className="answerButton2" onClick={handleFake}>
+                Fake
+              </button>
+            </Box>
           </Stack>
+          <Box height="20px"></Box>
         </Box>
         <Box height="20px"></Box>
-        <Stack direction="row" spacing={18}>
+        <Stack
+          direction={mMatches ? "row" : "column"}
+          spacing={mMatches ? 18 : 1}
+        >
           <button className="questionButton" onClick={handleLastQuestion}>
             <KeyboardArrowLeftIcon
               sx={{
