@@ -1,4 +1,13 @@
-.answerButton{
+.answerButton1{
+    color:#FFFF;
+    background-color: #A36F09;
+    font-size: 25px;
+    font-family: Montserrat;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+}
+.answerButton2{
     color:#FFFF;
     background-color: #A36F09;
     font-size: 25px;
@@ -8,9 +17,15 @@
     border-radius: 8px;
 }
 
-.answerButton:hover{
-    color:#A36F09;
-    background-color: #FFFF;
+.answerButton1:hover{
+    color: #fff;
+    background-color: rgb(10, 253, 99);
+    font-size: 30px;
+    cursor: pointer;
+}
+.answerButton2:hover{
+    color:#fff;
+    background-color: rgb(242, 10, 10);
     font-size: 30px;
     cursor: pointer;
 }

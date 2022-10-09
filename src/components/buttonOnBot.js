@@ -15,6 +15,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Breadcrumb from "../components/breadCrumb";
 import IconTopic from "../components/iconTopic";
 import { Link } from "react-router-dom";
+import "./buttonOnBot.css";
 
 function ButtonsOnBot() {
   const lMatches = useMediaQuery("(min-width:655px)");
@@ -110,7 +111,7 @@ function ButtonsOnBot() {
               >
                 <Link to="/phishingDetector">
                   <Box
-                    className="picBox2"
+                    className="picBox7"
                     sx={{
                       width: "30%",
                       height: "80%",

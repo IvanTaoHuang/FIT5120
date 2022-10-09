@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -31,10 +31,20 @@ function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            CatchPhish &nbsp;
-            <img src={require("../../images/logo.png")} width="35px"></img>
-          </Link>
+          <Box width="30px"></Box>
+          <Box
+            sx={{
+              backgroundColor: "black",
+              height: "80px",
+            }}
+          >
+            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+              <Box sx={{ marginTop: "10px" }}>
+                CatchPhish &nbsp;
+                <img src={require("../../images/logo.png")} width="35px"></img>
+              </Box>
+            </Link>
+          </Box>
           <ul
             className={click ? "nav-menu1 active" : "nav-menu1"}
             style={{ display: click ? "block" : "none" }}

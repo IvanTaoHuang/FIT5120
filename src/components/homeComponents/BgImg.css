@@ -30,6 +30,9 @@ video {
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 90%;
+    margin-left: 38px;
+    margin-top: 13px;
+    margin-bottom: 13px;
   }
   .picBox3{
     background-image: url("../../images/report.png");
