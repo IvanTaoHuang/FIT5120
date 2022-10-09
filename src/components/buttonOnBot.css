@@ -3,4 +3,11 @@
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 90%;
+    margin-top: 5.5px;
+    margin-left: 5px;
   }
+  .picBox7:hover{
+
+    transform: scale(1.1);
+        cursor: pointer;
+      }

@@ -115,8 +115,8 @@ function ButtonsOnBot() {
                     sx={{
                       width: "30%",
                       height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
+                      //   marginLeft: "10px",
+                      //   marginTop: "5px",
                     }}
                   ></Box>
 
