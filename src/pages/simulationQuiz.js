@@ -257,22 +257,22 @@ function SimulationQuiz() {
             justifyContent="center"
             marginTop="20px"
           >
-            <button className="answerButton" onClick={handleReal}>
-              Real
-            </button>
             <button className="answerButton" onClick={handleFake}>
               Fake
+            </button>
+            <button className="answerButton" onClick={handleReal}>
+              Real
             </button>
           </Stack>
         </Box>
         <Box height="20px"></Box>
         <Stack direction="row" spacing={18}>
-          <button className="questionButton" onClick={handleNextQuestion}>
-            Next Question
-          </button>
-          <Box height="20px"></Box>
           <button className="questionButton" onClick={handleLastQuestion}>
             Last Question
+          </button>
+          <Box height="20px"></Box>
+          <button className="questionButton" onClick={handleNextQuestion}>
+            Next Question
           </button>
         </Stack>
         <Box height="50px"></Box>

@@ -32,8 +32,10 @@ class DonutChart extends React.Component {
         {/* <Export enabled={true} /> */}
         <Legend
           margin={0}
-          horizontalAlignment="right"
-          verticalAlignment="top"
+          horizontalAlignment="center"
+          orientation="horizontal"
+          verticalAlignment="bottom"
+          markerSize={this.props.markerSize}
         />
         <Tooltip enabled={true} customizeTooltip={this.customizeTooltip}>
           <Format type="percent" />
