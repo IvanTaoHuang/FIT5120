@@ -29,6 +29,7 @@ import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
 import ButtonsOnBot from "../buttonOnBot";
+import { HashLink } from "react-router-hash-link";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
@@ -134,7 +135,7 @@ export default function ImageAvatars() {
           <link rel="canonical" href="http://catchphish.org/identify" />
           <meta name="description" content="identify" />
         </Helmet>
-
+        <section id="typesOfScam"></section>
         <TimeToRead time="5 mins read"></TimeToRead>
 
         <Box height="50px"></Box>
@@ -258,7 +259,9 @@ export default function ImageAvatars() {
           </Card>
         </Stack>
       </Box>
+      <section id="phishingData"></section>
       <Box sx={{ height: "80px" }}></Box>
+
       {/* DonutChart */}
       <Stack alignItems="center">
         <Box sx={{ width: "90%" }}>
@@ -299,6 +302,7 @@ export default function ImageAvatars() {
         </Box>
       </Stack>
       {/* Steps to do if I fail into a scam */}
+      <section id="steps"></section>
       <Box sx={{ height: "80px" }}></Box>
       <Box sx={{ marginLeft: "100px" }}>
         <Typography
@@ -311,6 +315,7 @@ export default function ImageAvatars() {
       <TimeToRead time="10 mins read"></TimeToRead>
       <Box sx={{ height: "20px" }}></Box>
       <Steps
+        stepImg={require("../../images/step1.png")}
         margin="6vw"
         information1="Check the damage done: Scams would be traps to get yourn money in the bank or even worse, your personal information. The information the scammers obtain from the scam you fell would be used to conduct other scams. This can damage your identity and reputation. "
         information2="Therefore, note down all the information you provided when you accessed the phishing recruitment URL. It will include your bank details, address, National ID card, phone number etc. This can be used for conducting a follow up.
@@ -318,12 +323,14 @@ export default function ImageAvatars() {
       ></Steps>
       <Box sx={{ height: "60px" }}></Box>
       <Steps
+        stepImg={require("../../images/step2.png")}
         margin="12vw"
         information1="Contact your financial institution: Informing your bank about the scam and the information you provided during the scam is important. Chances of scams is less with credit cards when compared to debit cards. However, it is mandatory to convey it to your bank."
         information2="After providing them the necessary information they would act like blocking your card. If any of your card details were provided to your fake agent, it will be wise to do this step. The institution will provide you with your new card details after a while."
       ></Steps>
       <Box sx={{ height: "60px" }}></Box>
       <Steps
+        stepImg={require("../../images/step3.png")}
         margin="6vw"
         information1="Reporting to the concerned authorities: Not every phishing scams would target your money. Most scams done to graduates are with the objective of getting their personal information which can be used for identity theft, blackmail and other violent cyber abuse. The Australian government provide agencies to take action for you."
         information2="If you have your identity stolen, please contact IDCARE on 1800 595 160 or use their cyber tools on "

@@ -75,8 +75,9 @@ function ButtonsOnBot() {
                       align="center"
                       sx={{
                         color: "white",
-                        fontSize: "25px",
+                        fontSize: "20px",
                         fontFamily: "Montserrat",
+                        marginTop: "2px",
                       }}
                       variant="h1"
                     >
@@ -124,15 +125,15 @@ function ButtonsOnBot() {
                     sx={{
                       width: "70%",
                       height: "20%",
-                      marginLeft: "50px",
-                      marginTop: "-28px",
+                      marginLeft: "55px",
+                      marginTop: "-32px",
                     }}
                   >
                     <Typography
                       align="center"
                       sx={{
                         color: "white",
-                        fontSize: "15px",
+                        fontSize: "20px",
                         fontFamily: "Montserrat",
                       }}
                       variant="h1"

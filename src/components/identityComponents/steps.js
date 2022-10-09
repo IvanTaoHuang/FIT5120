@@ -11,12 +11,14 @@ export default function Steps(props) {
       borderColor="#A36F09"
       sx={{
         width: "80vw",
-
         maxHeight: "3000px",
         marginLeft: props.margin,
       }}
     >
       <Stack direction="row">
+        <Box maxWidth="40%" height="100%" marginLeft="20px">
+          <img src={props.stepImg}></img>
+        </Box>
         <Stack direction="column">
           <Typography
             sx={{

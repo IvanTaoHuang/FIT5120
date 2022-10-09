@@ -67,7 +67,7 @@ function BgImg() {
               Have reported phishing mails compared to other scams
             </Typography>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               width: "300px",
               height: "260px",
@@ -97,7 +97,7 @@ function BgImg() {
                 <button className="button1">Simulation</button>
               </Link>
             </Stack>
-          </Box>
+          </Box> */}
         </Stack>
         <Stack alignItems="center">
           <Box sx={{ height: "45px" }}></Box>
@@ -346,7 +346,6 @@ function BgImg() {
           >
             8,292
           </Typography>
-
           <Box sx={{ width: "60%" }}>
             <Typography
               variant="body1"
@@ -362,6 +361,59 @@ function BgImg() {
             </Typography>
           </Box>
         </Stack>
+        <Box sx={{ height: "200px" }}></Box>
+        <Stack justifyContent="center" alignItems="center" direction="column">
+          <Box
+            // border={4}
+            justifyContent="center"
+            // borderColor="#A36F09"
+            sx={{
+              width: "300px",
+              height: "300px",
+            }}
+            onClick
+          >
+            <Link to="/phishingSimulation">
+              <Box
+                className="picBox8"
+                sx={{
+                  marginTop: "14px",
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                  width: "100%",
+                  height: "100%",
+                }}
+              ></Box>
+            </Link>
+          </Box>
+          {/* <Typography
+            variant="h1"
+            sx={{
+              color: "#FFFFFF",
+              fontFamily: "Montserrat Alternates",
+              // fontSize: "40px",
+              marginTop: "30px",
+            }}
+          >
+            8,292
+          </Typography> */}
+
+          <Box sx={{ width: "60%" }}>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#A36F09",
+                fontFamily: "Montserrat",
+                fontSize: "40px",
+                marginTop: "30px",
+                textAlign: "center",
+              }}
+            >
+              Visit our Phishing Simulator and gain experience of scam emails
+            </Typography>
+          </Box>
+        </Stack>
+        <Box sx={{ height: "150px" }}></Box>
       </Box>
     </>
   );
