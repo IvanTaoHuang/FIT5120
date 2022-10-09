@@ -1,10 +1,7 @@
-import { Button } from "@mui/material";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
-import SendIcon from "@mui/icons-material/Send";
 import Fade from "@mui/material/Fade";
 import { Helmet } from "react-helmet";
 import { styled } from "@mui/material/styles";
@@ -12,14 +9,7 @@ import { useMediaQuery } from "@mui/material";
 import Breadcrumb from "../components/breadCrumb";
 import IconTopic from "../components/iconTopic";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ScrollTop from "../components/scrollTop";
-import TitleTheme from "../components/titleTheme";
-import ReportScamButton from "../components/reportChatButton";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 function PhishingSimulation() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -120,7 +110,7 @@ function PhishingSimulation() {
                 height: "60px",
               }}
             >
-              <Link to="/report">
+              <Link to="/quickExperience">
                 <Typography
                   align="center"
                   sx={{
@@ -138,6 +128,9 @@ function PhishingSimulation() {
           </Stack>
         </Box>
       </Stack>
+      <Box height="80px"></Box>
+      {/* Two buttons */}
+      <ButtonsOnBot />
     </Box>
   );
 }

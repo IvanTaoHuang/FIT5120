@@ -35,17 +35,22 @@ import question4 from "../images/question4.jpg";
 import question5 from "../images/question5.png";
 import "../components/simulationQuizComponents/simulationQuiz.css";
 import Quiz from "../components/simulationQuizComponents/quiz";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 function SimulationQuiz() {
   const matches = useMediaQuery("(min-width:575px)");
   const sMatches = useMediaQuery("(min-width:660px)");
   const mMatches = useMediaQuery("(min-width:670px)");
+
   const breadcrumbs = [
     <Link to="/" className="breadcrumb">
       Home
     </Link>,
     <Link to="/phishingSimulation" className="breadcrumb1">
       Phishing Simulator
+    </Link>,
+    <Link to="/simulationFeedback" className="breadcrumb1">
+      Simulation Feedback
     </Link>,
     <Typography
       key="3"
@@ -257,11 +262,11 @@ function SimulationQuiz() {
             justifyContent="center"
             marginTop="20px"
           >
-            <button className="answerButton" onClick={handleFake}>
-              Fake
-            </button>
             <button className="answerButton" onClick={handleReal}>
               Real
+            </button>
+            <button className="answerButton" onClick={handleFake}>
+              Fake
             </button>
           </Stack>
         </Box>
@@ -277,6 +282,9 @@ function SimulationQuiz() {
         </Stack>
         <Box height="50px"></Box>
       </Stack>
+
+      {/* Two buttons */}
+      <ButtonsOnBot />
     </Box>
   );
 }

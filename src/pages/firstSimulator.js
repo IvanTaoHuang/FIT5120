@@ -19,7 +19,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
-
+import ButtonsOnBot from "../components/buttonOnBot";
 function FirstSimulator() {
   const sMatches = useMediaQuery("(min-width:660px)");
   const breadcrumbs = [
@@ -145,9 +145,9 @@ function FirstSimulator() {
       {/* To change the title of page on browser */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Phishing Simulation</title>
-        <link rel="canonical" href="http://catchphish.org/PhishingSimulation" />
-        <meta name="description" content="Phishing Simulation" />
+        <title>First-Hand Simulator</title>
+        <link rel="canonical" href="http://catchphish.org/firstSimulator" />
+        <meta name="description" content="First-Hand Simulator" />
       </Helmet>
 
       {/* Icon Title */}
@@ -284,6 +284,8 @@ function FirstSimulator() {
         </IconButton>
       </Stack>
       <Box sx={{ height: "100px" }}></Box>
+      {/* Two buttons */}
+      <ButtonsOnBot />
     </Box>
   );
 }

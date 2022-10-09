@@ -11,37 +11,17 @@ export default function Steps(props) {
       borderColor="#A36F09"
       sx={{
         width: "80vw",
-        minHeight: "300px",
+
         maxHeight: "3000px",
         marginLeft: props.margin,
       }}
     >
       <Stack direction="row">
-        {/* <Typography
-          sx={{
-            color: "#FFFFFF",
-            fontSize: "50px",
-            fontFamily: "Montserrat Alternates",
-            marginLeft: "1vw",
-          }}
-        >
-          {props.number}
-        </Typography> */}
         <Stack direction="column">
-          {/* <Typography
-            sx={{
-              color: "#A36F09",
-              fontSize: "35px",
-              fontFamily: "Montserrat",
-              marginLeft: "1vw",
-            }}
-          >
-            {props.name}
-          </Typography> */}
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "27px",
+              fontSize: "15px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}
@@ -52,37 +32,44 @@ export default function Steps(props) {
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "27px",
+              fontSize: "15px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}
           >
             {props.information2}
+            <a
+              className="boxLink"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={props.link}
+            >
+              {props.linkName}
+            </a>
+            .
           </Typography>
           <br />
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "27px",
+              fontSize: "15px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}
           >
             {props.information3}
+            <a
+              className="boxLink"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={props.link1}
+            >
+              {props.linkName1}
+            </a>
+            {props.information4}
           </Typography>
         </Stack>
       </Stack>
-      {/* <Box height="20px"></Box> */}
-      {/* <Stack direction="column" alignItems="center">
-        <div
-          style={{
-            width: "90%",
-          }}
-        >
-          <img className="animated-gif" src={props.gif} alt={props.gitName} />
-        </div>
-        <Box height="20px"></Box>
-      </Stack> */}
     </Box>
   );
 }

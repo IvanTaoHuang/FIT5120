@@ -33,7 +33,7 @@ function Hack() {
           overflow: "auto",
         }}
       >
-        <Link to="/simulationQuiz">
+        <Link to="/simulationFeedback">
           <Stack alignItems="center">
             {/* <Box sx={{ height: "50%" }}></Box> */}
 
