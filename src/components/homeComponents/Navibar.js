@@ -130,7 +130,11 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item2" style={{ marginTop: "-20px" }}>
-              <Link to="/" className="nav-links2" onClick={closeMobileMenu}>
+              <Link
+                to="/report"
+                className="nav-links2"
+                onClick={closeMobileMenu}
+              >
                 About ScamWatch
               </Link>
             </li>
