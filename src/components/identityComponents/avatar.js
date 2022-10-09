@@ -29,7 +29,6 @@ import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
 import ButtonsOnBot from "../buttonOnBot";
-import ScrollToTop from "../scroll";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
@@ -125,7 +124,6 @@ export default function ImageAvatars() {
   }
   return (
     <>
-      <ScrollToTop />
       <Zoom in={true} timeout={1000}>
         <Div>{"Identify Scams before you fall for them"}</Div>
       </Zoom>

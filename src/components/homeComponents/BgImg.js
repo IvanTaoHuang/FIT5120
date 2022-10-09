@@ -173,16 +173,16 @@ function BgImg() {
           spacing={6}
         >
           {/* card for Identify page */}
-          <Box
-            border={4}
-            justifyContent="center"
-            borderColor="#A36F09"
-            sx={{
-              width: "250px",
-              height: "300px",
-            }}
-          >
-            <Link to="/identify">
+          <Link to="/identify">
+            <Box
+              border={4}
+              justifyContent="center"
+              borderColor="#A36F09"
+              sx={{
+                width: "250px",
+                height: "300px",
+              }}
+            >
               <Box
                 className="picBox1"
                 sx={{
@@ -190,19 +190,20 @@ function BgImg() {
                   height: "80%",
                 }}
               ></Box>
-            </Link>
-            <Typography
-              align="center"
-              sx={{
-                color: "white",
-                fontSize: "35px",
-                fontFamily: "Montserrat",
-              }}
-              variant="h1"
-            >
-              Identify
-            </Typography>
-          </Box>
+
+              <Typography
+                align="center"
+                sx={{
+                  color: "white",
+                  fontSize: "35px",
+                  fontFamily: "Montserrat",
+                }}
+                variant="h1"
+              >
+                Identify
+              </Typography>
+            </Box>
+          </Link>
           <Stack direction="column" justifyContent="center">
             <KeyboardDoubleArrowRightOutlinedIcon
               sx={{
@@ -221,16 +222,16 @@ function BgImg() {
           </Stack>
 
           {/* card for Detect page */}
-          <Box
-            alignContent="center"
-            border={4}
-            borderColor="#A36F09"
-            sx={{
-              width: "250px",
-              height: "300px",
-            }}
-          >
-            <Link to="/phishingDetector">
+          <Link to="/phishingDetector">
+            <Box
+              alignContent="center"
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "250px",
+                height: "300px",
+              }}
+            >
               <Box
                 className="picBox2"
                 sx={{
@@ -239,21 +240,21 @@ function BgImg() {
                   height: "85%",
                 }}
               ></Box>
-            </Link>
 
-            <Typography
-              align="center"
-              sx={{
-                color: "white",
-                fontSize: "35px",
-                fontFamily: "Montserrat",
-                marginTop: "-40px",
-              }}
-              variant="h1"
-            >
-              Detect
-            </Typography>
-          </Box>
+              <Typography
+                align="center"
+                sx={{
+                  color: "white",
+                  fontSize: "35px",
+                  fontFamily: "Montserrat",
+                  marginTop: "-40px",
+                }}
+                variant="h1"
+              >
+                Detect
+              </Typography>
+            </Box>
+          </Link>
           <Stack direction="column" justifyContent="center">
             <KeyboardDoubleArrowRightOutlinedIcon
               sx={{
@@ -272,15 +273,15 @@ function BgImg() {
           </Stack>
 
           {/* card for Report  */}
-          <Box
-            border={4}
-            borderColor="#A36F09"
-            sx={{
-              width: "250px",
-              height: "300px",
-            }}
-          >
-            <Link to="/report">
+          <Link to="/report">
+            <Box
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "250px",
+                height: "300px",
+              }}
+            >
               <Box
                 className="picBox3"
                 sx={{
@@ -289,20 +290,21 @@ function BgImg() {
                   height: "75%",
                 }}
               ></Box>
-            </Link>
-            <Typography
-              align="center"
-              sx={{
-                color: "white",
-                fontSize: "35px",
-                fontFamily: "Montserrat",
-                marginTop: "-15px",
-              }}
-              variant="h1"
-            >
-              Report
-            </Typography>
-          </Box>
+
+              <Typography
+                align="center"
+                sx={{
+                  color: "white",
+                  fontSize: "35px",
+                  fontFamily: "Montserrat",
+                  marginTop: "-15px",
+                }}
+                variant="h1"
+              >
+                Report
+              </Typography>
+            </Box>
+          </Link>
         </Stack>
 
         {/* margin box */}
