@@ -47,57 +47,28 @@ function BgImg() {
           alignItems="center"
           justifyContent="center"
         >
-          <Box
-            sx={{
-              width: "300px",
-              height: "260px",
-              backgroundColor: "rgba(163,111,9,0.5)",
-              // opacity: "0.2",
-            }}
-            className="box1"
-          >
-            <Typography
-              sx={{ color: "#a36f09", fontSize: "70px", textAlign: "center" }}
+          <Link to="/identify">
+            <Box
+              sx={{
+                width: "300px",
+                height: "260px",
+                backgroundColor: "rgba(163,111,9,0.5)",
+                // opacity: "0.2",
+              }}
+              className="box1"
             >
-              58%
-            </Typography>
-            <Typography
-              sx={{ color: "#FFFF", fontSize: "28px", textAlign: "center" }}
-            >
-              Have reported phishing mails compared to other scams
-            </Typography>
-          </Box>
-          {/* <Box
-            sx={{
-              width: "300px",
-              height: "260px",
-              backgroundColor: "rgba(163,111,9,0.5)",
-            }}
-          >
-            <Stack direction="column" alignItems="center">
               <Typography
-                sx={{
-                  fontFamily: "Montserrat",
-                  color: "#FFF",
-                  fontSize: "30px",
-                }}
+                sx={{ color: "#a36f09", fontSize: "70px", textAlign: "center" }}
               >
-                Navigation Panel
+                58%
               </Typography>
-              <Box sx={{ height: "20px" }}></Box>
-              <Link to="/phishingDetector" style={{ width: "50%" }}>
-                <button className="button1">Detector</button>
-              </Link>
-              <Box sx={{ height: "30px" }}></Box>
-              <Link to="/report" style={{ width: "50%" }}>
-                <button className="button1">Report</button>
-              </Link>
-              <Box sx={{ height: "30px" }}></Box>
-              <Link to="/phishingSimulation" style={{ width: "50%" }}>
-                <button className="button1">Simulation</button>
-              </Link>
-            </Stack>
-          </Box> */}
+              <Typography
+                sx={{ color: "#FFFF", fontSize: "28px", textAlign: "center" }}
+              >
+                Have reported phishing mails compared to other scams
+              </Typography>
+            </Box>
+          </Link>
         </Stack>
         <Stack alignItems="center">
           <Box sx={{ height: "45px" }}></Box>
