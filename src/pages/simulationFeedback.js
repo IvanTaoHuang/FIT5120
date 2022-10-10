@@ -83,6 +83,12 @@ function SimulationFeedback() {
         overflow: "auto",
       }}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Simulation Feedback</title>
+        <link rel="canonical" href="http://catchphish.org/phishingDetector" />
+        <meta name="description" content="Detector" />
+      </Helmet>
       {/* Breadcrumb */}
       <Stack spacing={1}>
         <Breadcrumbs

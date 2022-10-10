@@ -752,20 +752,21 @@ export default function ControlledCheckbox() {
         <Box sx={{ width: "5vw" }}></Box>
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               age2019 && age2020 === false && age2021 === false
                 ? "block"
                 : "none",
+            // backgroundColor: "white",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age2019 />
@@ -775,8 +776,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               age2020 && age2019 === false && age2021 === false
@@ -786,9 +787,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age2020 />
@@ -798,8 +799,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               age2021 && age2019 === false && age2020 === false
@@ -809,9 +810,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age2021 />
@@ -822,17 +823,17 @@ export default function ControlledCheckbox() {
         {/** Age 2019 2020 */}
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: age2019 && age2020 && age2021 === false ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age1920 />
@@ -843,17 +844,17 @@ export default function ControlledCheckbox() {
         {/** Age 2019 2021 */}
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: age2019 && age2021 && age2020 === false ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age1921 />
@@ -864,17 +865,17 @@ export default function ControlledCheckbox() {
         {/** Age 2020 2021 */}
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: age2020 && age2021 && age2019 === false ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age2120 />
@@ -885,17 +886,17 @@ export default function ControlledCheckbox() {
         {/** Age 2019 2020 2021 */}
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: age2019 && age2021 && age2020 ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Age192021 />
@@ -905,8 +906,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 && month2020 === false && month2021 === false
@@ -916,9 +917,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month2019 />
@@ -927,8 +928,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 === false && month2020 && month2021 === false
@@ -938,9 +939,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month2020 />
@@ -949,8 +950,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 === false && month2020 === false && month2021
@@ -960,9 +961,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month2021 />
@@ -1012,8 +1013,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 && month2020 && month2021 === false ? "block" : "none",
@@ -1021,9 +1022,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month1920 />
@@ -1032,8 +1033,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 && month2020 === false && month2021 ? "block" : "none",
@@ -1041,9 +1042,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month1921 />
@@ -1052,8 +1053,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               month2019 === false && month2020 && month2021 ? "block" : "none",
@@ -1061,9 +1062,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month2120 />
@@ -1072,17 +1073,17 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: month2019 && month2020 && month2021 ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <Month192021 />
@@ -1091,8 +1092,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 && state2020 === false && state2021 === false
@@ -1102,9 +1103,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State2019 />
@@ -1113,8 +1114,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 === false && state2020 && state2021 === false
@@ -1124,9 +1125,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State2020 />
@@ -1135,8 +1136,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 === false && state2020 === false && state2021
@@ -1146,9 +1147,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State2021 />
@@ -1157,8 +1158,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 && state2020 && state2021 === false ? "block" : "none",
@@ -1166,9 +1167,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State1920 />
@@ -1177,8 +1178,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 && state2020 === false && state2021 ? "block" : "none",
@@ -1186,9 +1187,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State1921 />
@@ -1197,8 +1198,8 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display:
               state2019 === false && state2020 && state2021 ? "block" : "none",
@@ -1206,9 +1207,9 @@ export default function ControlledCheckbox() {
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State2120 />
@@ -1217,17 +1218,17 @@ export default function ControlledCheckbox() {
 
         <Card
           sx={{
-            width: "50vw",
-            height: mMatches ? "58vw" : "68vw",
+            width: "58%",
+            height: mMatches ? "58%" : "58%",
             marginLeft: "7.5vw",
             display: state2019 && state2020 && state2021 ? "block" : "none",
           }}
         >
           <Box
             sx={{
-              width: "35vw",
-              height: "40vh",
-              marginLeft: "8vw",
+              width: "100%",
+              height: "100%",
+              // marginLeft: "8vw",
             }}
           >
             <State192021 />
