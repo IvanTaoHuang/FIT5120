@@ -136,7 +136,8 @@ function PhishingSimulation() {
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
-        width="60vw"
+        maxWidth="md"
+        fullWidth="true"
       >
         <DialogTitle id="responsive-dialog-title">
           {"Phishing Simulator Tutorial"}
