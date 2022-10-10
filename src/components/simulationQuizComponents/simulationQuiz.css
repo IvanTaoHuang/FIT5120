@@ -45,6 +45,22 @@
     font-size: 30px;
     cursor: pointer;
 }
+.feedbackButton{
+    color:#FFFF;
+    background-color: #A36F09;
+    font-size: 25px;
+    font-family: Montserrat;
+    width: 310px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.feedbackButton:hover{
+    color:#A36F09;
+    background-color: #FFFF;
+    font-size: 27px;
+    cursor: pointer;
+}
 
 
 .img1 {

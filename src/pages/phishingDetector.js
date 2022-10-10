@@ -17,11 +17,30 @@ import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import IconTopic from "../components/iconTopic";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+import tutVideo from "../images/detectorTut.mp4";
+import poster from "../images/poster.PNG";
+import { useTheme } from "@mui/material/styles";
 
 function PhishingDetector() {
   const matches = useMediaQuery("(min-width:575px)");
   const lMatches = useMediaQuery("(min-width:655px)");
   const [loading, setLoading] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+    console.log("open");
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const [phishRate, setPhishRate] = useState(0);
 
@@ -207,6 +226,95 @@ function PhishingDetector() {
 
           <br></br>
           <br></br>
+          {/* watch tutorial */}
+          <Stack
+            marginLeft={lMatches ? "5vw" : "0px"}
+            direction="row"
+            justifyContent={lMatches ? "flex-start" : "center"}
+            alignItems="center"
+          >
+            <Box
+              border={4}
+              borderColor="#A36F09"
+              sx={{
+                width: "180px",
+                height: "50px",
+              }}
+              onClick={handleClickOpen}
+              className="tutBox"
+            >
+              <Box
+                className="picBox10"
+                sx={{
+                  width: "20%",
+                  height: "80%",
+                  marginLeft: "10px",
+                  marginTop: "5px",
+                }}
+              ></Box>
+
+              <Box
+                sx={{
+                  width: "70%",
+                  height: "20%",
+                  marginLeft: "50px",
+                  marginTop: "-33px",
+                }}
+              >
+                <Typography
+                  align="center"
+                  sx={{
+                    color: "white",
+                    fontSize: "20px",
+                    fontFamily: "Montserrat",
+                  }}
+                  variant="h1"
+                >
+                  Watch Tutorial
+                </Typography>
+              </Box>
+            </Box>
+          </Stack>
+          {/* Dialog to show tutorial video */}
+          <Dialog
+            fullScreen={fullScreen}
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="responsive-dialog-title"
+          >
+            <DialogTitle id="responsive-dialog-title">
+              {"Phishing Detector Tutorial"}
+            </DialogTitle>
+            <Stack alignItems="center">
+              <Box width="90%" height="90%">
+                <video
+                  // autoPlay="false"
+                  loop
+                  controls={[
+                    "PlayPause",
+                    "Seek",
+                    "Time",
+                    "Volume",
+                    "Fullscreen",
+                  ]}
+                  poster={poster}
+                  src={tutVideo}
+                ></video>
+              </Box>
+            </Stack>
+
+            <DialogActions>
+              <Button autoFocus onClick={handleClose}>
+                CLOSE
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <br></br>
+          <br></br>
+          <div className="popup">
+            <div></div>
+          </div>
+
           {/* Component for Enter URL and Check button */}
 
           <Stack
@@ -330,7 +438,7 @@ function PhishingDetector() {
           >
             <Link to="/signs">
               <Stack
-                marginLeft={lMatches ? "5vw" : "0px"}
+                marginLeft={lMatches ? "3vw" : "0px"}
                 direction="row"
                 justifyContent={lMatches ? "flex-start" : "center"}
                 alignItems="center"
@@ -402,7 +510,7 @@ function PhishingDetector() {
                     <Box
                       className="picBox1"
                       sx={{
-                        width: "30%",
+                        width: "20%",
                         height: "80%",
                         marginLeft: "10px",
                         marginTop: "5px",
@@ -414,14 +522,14 @@ function PhishingDetector() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-28px",
+                        marginTop: "-33px",
                       }}
                     >
                       <Typography
                         align="center"
                         sx={{
                           color: "white",
-                          fontSize: "15px",
+                          fontSize: "20px",
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
@@ -459,7 +567,7 @@ function PhishingDetector() {
                     <Box
                       className="picBox3"
                       sx={{
-                        width: "30%",
+                        width: "25%",
                         height: "80%",
                         marginLeft: "10px",
                         marginTop: "5px",
@@ -468,17 +576,17 @@ function PhishingDetector() {
 
                     <Box
                       sx={{
-                        width: "70%",
+                        width: "75%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-28px",
+                        marginTop: "-33px",
                       }}
                     >
                       <Typography
                         align="center"
                         sx={{
                           color: "white",
-                          fontSize: "15px",
+                          fontSize: "20px",
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"

@@ -77,6 +77,12 @@ function SimulationQuiz() {
   const [questionState, setState] = React.useState(0);
   const [answerReal, setAnswerReal] = React.useState("");
   const [answerFake, setAnswerFake] = React.useState("");
+  const [feedback, setFeedback] = React.useState(false);
+  const handleFeedback = () => {
+    setAnswerReal(true);
+    setState(6);
+    setFeedback(true);
+  };
   const handleNextQuestion = () => {
     setAnswerReal("");
     setAnswerFake("");
@@ -93,7 +99,7 @@ function SimulationQuiz() {
     console.log(questionState);
   }, [questionState]);
   if (questionState === 5) {
-    setState(0);
+    setState(4);
   }
   if (questionState === -1) {
     setState(0);
@@ -140,8 +146,6 @@ function SimulationQuiz() {
           {breadcrumbs}
         </Breadcrumbs>
       </Stack>
-
-      <Box height="100px"></Box>
 
       {/* Title of the page */}
       <Stack alignItems="center">
@@ -215,7 +219,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q1} width="98%" noOfQuiz="First question - Answer" />
+            <Quiz img={Q1} width="98%" noOfQuiz="This is fake" />
           </Box>
           {/* Second quiz - answer */}
           <Box
@@ -225,7 +229,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q2} width="98%" noOfQuiz="Second question - Answer" />
+            <Quiz img={Q2} width="98%" noOfQuiz="This is fake" />
           </Box>
           {/* Third quiz - answer */}
           <Box
@@ -235,7 +239,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q3} width="97%" noOfQuiz="Third question - Answer" />
+            <Quiz img={Q3} width="97%" noOfQuiz="This is fake" />
           </Box>
           {/* Fourth quiz - answer */}
           <Box
@@ -245,7 +249,7 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q4} width="100%" noOfQuiz="Fourth question - Answer" />
+            <Quiz img={Q4} width="100%" noOfQuiz="This is fake" />
           </Box>
           {/* Fifth quiz - answer */}
           <Box
@@ -255,7 +259,24 @@ function SimulationQuiz() {
                 : "none"
             }
           >
-            <Quiz img={Q5} width="98%" noOfQuiz="Fifth question - Answer" />
+            <Quiz img={Q5} width="98%" noOfQuiz="This is legitimate" />
+          </Box>
+          {/* Quiz Feedback */}
+          <Box display={feedback ? "block" : "none"}>
+            <Typography
+              color="white"
+              fontFamily="Montserrat Subrayada"
+              fontSize="32px"
+            >
+              {" "}
+              All done. Thank you for taking part.
+              <br />
+              <br />
+              Hope you would reduce the interactions with phishing mails.
+              <br /> <br />
+              You can visit the common signs of phishing to understand what to
+              look for.{" "}
+            </Typography>
           </Box>
 
           {/* Buttons */}
@@ -277,29 +298,69 @@ function SimulationQuiz() {
           </Stack>
           <Box height="20px"></Box>
         </Box>
-        <Box height="20px"></Box>
-        <Stack
-          direction={mMatches ? "row" : "column"}
-          spacing={mMatches ? 18 : 1}
+        <Box height="60px"></Box>
+
+        <Box
+          display={
+            (questionState === 4 && (answerReal || answerFake)) || feedback
+              ? "none"
+              : "block"
+          }
         >
-          <button className="questionButton" onClick={handleLastQuestion}>
-            <KeyboardArrowLeftIcon
-              sx={{
-                fontSize: "45px",
-                color: "black",
-              }}
-            />
-          </button>
-          <Box height="20px"></Box>
-          <button className="questionButton" onClick={handleNextQuestion}>
-            <ChevronRightIcon
-              sx={{
-                fontSize: "45px",
-                color: "black",
-              }}
-            />
-          </button>
-        </Stack>
+          <Stack
+            direction={mMatches ? "row" : "column"}
+            spacing={mMatches ? 18 : 1}
+          >
+            <button className="questionButton" onClick={handleLastQuestion}>
+              <KeyboardArrowLeftIcon
+                sx={{
+                  fontSize: "45px",
+                  color: "black",
+                }}
+              />
+            </button>
+            <Box height="20px"></Box>
+            <button className="questionButton" onClick={handleNextQuestion}>
+              <ChevronRightIcon
+                sx={{
+                  fontSize: "45px",
+                  color: "black",
+                }}
+              />
+            </button>
+          </Stack>
+        </Box>
+        <Box
+          display={
+            questionState === 4 && (answerReal || answerFake) ? "block" : "none"
+          }
+        >
+          <Stack
+            direction={mMatches ? "row" : "column"}
+            spacing={mMatches ? 18 : 1}
+          >
+            <button className="questionButton" onClick={handleFeedback}>
+              Finish
+            </button>
+          </Stack>
+        </Box>
+        <Box display={feedback ? "block" : "none"}>
+          <Stack
+            direction={mMatches ? "row" : "column"}
+            spacing={mMatches ? 18 : 1}
+          >
+            <Link to="/phishingSimulation">
+              <button
+                className="feedbackButton"
+                onClick={handleFeedback}
+                width="500px"
+              >
+                Try the Simulation again
+              </button>
+            </Link>
+          </Stack>
+        </Box>
+
         <Box height="50px"></Box>
       </Stack>
 

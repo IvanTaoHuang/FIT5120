@@ -234,3 +234,19 @@ background-image{
     transform: scale(1.1);
         cursor: pointer;
       }
+
+      .picBox10{
+        background-image: url("../../images/hint.png");
+        object-fit: fill;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        
+      }
+      .picBox10:hover{
+
+        transform: scale(1.1);
+            cursor: pointer;
+          }
+.tutBox:hover{
+    cursor: pointer;
+}

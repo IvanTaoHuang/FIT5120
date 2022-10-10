@@ -162,7 +162,7 @@ export default function Signs() {
                     <Box
                       className="picBox7"
                       sx={{
-                        width: "30%",
+                        width: "20%",
                         height: "80%",
                         // marginLeft: "10px",
                         // marginTop: "5px",
@@ -174,14 +174,14 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-28px",
+                        marginTop: "-33px",
                       }}
                     >
                       <Typography
                         align="center"
                         sx={{
                           color: "white",
-                          fontSize: "15px",
+                          fontSize: "20px",
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
@@ -215,7 +215,7 @@ export default function Signs() {
                     height: "50px",
                   }}
                 >
-                  <Link to="/pastData">
+                  <Link to="/tutorial">
                     <Box
                       className="picBox4"
                       sx={{
@@ -231,19 +231,19 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-28px",
+                        marginTop: "-33px",
                       }}
                     >
                       <Typography
                         align="center"
                         sx={{
                           color: "white",
-                          fontSize: "15px",
+                          fontSize: "20px",
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
                       >
-                        Check Past Data
+                        Past Data
                       </Typography>
                     </Box>
                   </Link>

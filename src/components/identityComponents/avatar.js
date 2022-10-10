@@ -261,20 +261,16 @@ export default function ImageAvatars() {
       </Box>
       <section id="phishingData"></section>
       <Box sx={{ height: "80px" }}></Box>
-
-      {/* DonutChart */}
       <Stack alignItems="center">
-        <Box sx={{ width: "90%" }}>
-          <Box display="block">
-            <DonutChart
-              data={data}
-              title={title}
-              markerSize={ssmatches ? "25" : "15"}
-            />
-          </Box>
-        </Box>
+        <Typography
+          color="white"
+          fontFamily="Montserrat Subrayada"
+          fontSize="30px"
+        >
+          Cyber incident breaches
+        </Typography>
       </Stack>
-      <Box sx={{ height: "40px" }}></Box>
+      <Box sx={{ height: "30px" }}></Box>
       {/* Date slider */}
       <Stack alignItems="center">
         <Box
@@ -301,6 +297,21 @@ export default function ImageAvatars() {
           </Stack>
         </Box>
       </Stack>
+      <Box sx={{ height: "30px" }}></Box>
+      {/* DonutChart */}
+      <Stack alignItems="center">
+        <Box sx={{ width: "90%" }}>
+          <Box display="block">
+            <DonutChart
+              data={data}
+              title={title}
+              markerSize={ssmatches ? "25" : "15"}
+            />
+          </Box>
+        </Box>
+      </Stack>
+      <Box sx={{ height: "40px" }}></Box>
+
       {/* Steps to do if I fail into a scam */}
       <section id="steps"></section>
       <Box sx={{ height: "80px" }}></Box>

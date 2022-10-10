@@ -10,7 +10,7 @@ export default function Steps(props) {
       border={4}
       borderColor="#A36F09"
       sx={{
-        width: "80vw",
+        maxWidth: "80vw",
         maxHeight: "3000px",
         marginLeft: props.margin,
       }}
@@ -23,7 +23,7 @@ export default function Steps(props) {
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "15px",
+              fontSize: "20px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}
@@ -34,7 +34,7 @@ export default function Steps(props) {
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "15px",
+              fontSize: "20px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}
@@ -54,7 +54,7 @@ export default function Steps(props) {
           <Typography
             sx={{
               color: "#FFFFFF",
-              fontSize: "15px",
+              fontSize: "20px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",
             }}

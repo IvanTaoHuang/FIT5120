@@ -114,7 +114,7 @@ function ButtonsOnBot() {
                   <Box
                     className="picBox7"
                     sx={{
-                      width: "30%",
+                      width: "20%",
                       height: "80%",
                       //   marginLeft: "10px",
                       //   marginTop: "5px",
@@ -125,8 +125,8 @@ function ButtonsOnBot() {
                     sx={{
                       width: "70%",
                       height: "20%",
-                      marginLeft: "55px",
-                      marginTop: "-32px",
+                      marginLeft: "52px",
+                      marginTop: "-33px",
                     }}
                   >
                     <Typography

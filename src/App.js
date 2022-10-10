@@ -32,6 +32,7 @@ export default function App() {
         <Route exact path="/hack" element={<Hack />} />
         <Route exact path="/simulationQuiz" element={<SimulationQuiz />} />
         <Route exact path="/quickExperience" element={<QuickExperience />} />
+
         <Route
           exact
           path="/simulationFeedback"
