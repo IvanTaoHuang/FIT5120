@@ -65,6 +65,12 @@ function QuickExperience() {
         overflow: "auto",
       }}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Quick Experience</title>
+        <link rel="canonical" href="http://catchphish.org/quickExperience" />
+        <meta name="description" content="quickExperience" />
+      </Helmet>
       {/* Breadcrumb */}
       <Stack spacing={1}>
         <Breadcrumbs

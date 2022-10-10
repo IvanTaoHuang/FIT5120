@@ -215,7 +215,7 @@ export default function Signs() {
                     height: "50px",
                   }}
                 >
-                  <Link to="/tutorial">
+                  <Link to="/pastData">
                     <Box
                       className="picBox4"
                       sx={{
