@@ -277,10 +277,12 @@ function PhishingDetector() {
           </Stack>
           {/* Dialog to show tutorial video */}
           <Dialog
-            fullScreen={fullScreen}
+            // fullScreen={fullScreen}
             open={open}
             onClose={handleClose}
             aria-labelledby="responsive-dialog-title"
+            maxWidth="md"
+            fullWidth="true"
           >
             <DialogTitle id="responsive-dialog-title">
               {"Phishing Detector Tutorial"}
