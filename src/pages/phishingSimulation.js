@@ -132,13 +132,14 @@ function PhishingSimulation() {
       </Stack>
       {/* Dialog to show tutorial video */}
       <Dialog
-        fullScreen={fullScreen}
+        // fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
+        width="60vw"
       >
         <DialogTitle id="responsive-dialog-title">
-          {"Phishing Detector Tutorial"}
+          {"Phishing Simulator Tutorial"}
         </DialogTitle>
         <Stack alignItems="center">
           <Box width="90%" height="90%">

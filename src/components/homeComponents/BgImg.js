@@ -24,7 +24,7 @@ function BgImg() {
   return (
     <>
       {/* <div className="hero-container"> */}
-      <video src={video} autoPlay loop muted />
+      <video className="homeVideo" src={video} autoPlay loop muted />
 
       <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
 
