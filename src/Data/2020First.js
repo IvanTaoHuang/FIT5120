@@ -1,7 +1,7 @@
 export const First2020 = [
   {
     region: "Phishing (compromised credentials)",
-    val: 0.26,
+    val: 0.36,
   },
   {
     region: "Compromised or stolen credentials",
@@ -9,22 +9,22 @@ export const First2020 = [
   },
   {
     region: "Ransomware",
-    val: 0.17,
+    val: 0.15,
   },
   {
     region: "Hacking",
-    val: 0.14,
+    val: 0.13,
   },
   {
     region: "Brute-force attack",
-    val: 0.08,
+    val: 0.06,
   },
   {
     region: "Malware",
-    val: 0.07,
+    val: 0.04,
   },
   {
     region: "Other",
-    val: 0.03,
+    val: 0.01,
   },
 ];

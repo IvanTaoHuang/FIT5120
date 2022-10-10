@@ -21,9 +21,9 @@ class DonutChart extends React.Component {
         palette="Soft Pastel"
         dataSource={this.props.data}
       >
-        <Title text={this.props.title}>
+        {/* <Title text={this.props.title}>
           <Font color="white"></Font>
-        </Title>
+        </Title> */}
         <Series argumentField="region">
           <Label visible={true} format="percent">
             <Connector visible={true} />
