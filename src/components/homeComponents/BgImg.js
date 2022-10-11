@@ -24,23 +24,22 @@ function BgImg() {
   return (
     <>
       {/* <div className="hero-container"> */}
-      <video className="homeVideo" src={video} autoPlay loop muted />
-
-      <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
 
       <Box
         sx={{
           width: "100%",
-
           height: "100%",
           // position: "fixed",
-          top: "70px",
+          top: "0",
           left: "0",
           bottom: "0",
           right: "0",
           overflow: "auto",
         }}
       >
+        <video className="homeVideo" src={video} autoPlay loop muted />
+        <Box height="10px"></Box>
+        <h1 style={{ fontFamily: "Montserrat" }}>Think before you click!</h1>
         <Stack
           direction={sMatches ? "row" : "column"}
           spacing={sMatches ? 24 : 6}
@@ -58,7 +57,11 @@ function BgImg() {
               className="box1"
             >
               <Typography
-                sx={{ color: "#a36f09", fontSize: "70px", textAlign: "center" }}
+                sx={{
+                  color: "#a36f09",
+                  fontSize: "70px",
+                  textAlign: "center",
+                }}
               >
                 58%
               </Typography>
@@ -102,6 +105,7 @@ function BgImg() {
             />
           </IconButton>
         </Stack>
+
         <Box sx={{ height: "50px" }}></Box>
       </Box>
 

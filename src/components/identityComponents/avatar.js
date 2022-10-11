@@ -29,7 +29,7 @@ import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
 import ButtonsOnBot from "../buttonOnBot";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
