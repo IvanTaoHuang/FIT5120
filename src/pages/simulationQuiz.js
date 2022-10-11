@@ -158,7 +158,7 @@ function SimulationQuiz() {
         <Fade in={true} timeout={1000}>
           <Div>{"Pop-Quiz"}</Div>
         </Fade>
-        <Box height="50px"></Box>
+        <Box height="20px"></Box>
 
         <Box
           border={4}
@@ -280,9 +280,18 @@ function SimulationQuiz() {
               <br />
               Hope you would reduce the interactions with phishing mails.
               <br /> <br />
-              You can visit the{" "}
-              <Link to="/signs">common signs of phishing</Link> to understand
-              what to look for.{" "}
+              You can visit the:
+              <Link to="/signs">
+                <Typography
+                  color="skyblue"
+                  fontFamily="Montserrat Subrayada"
+                  fontSize="32px"
+                  sx={{ textDecoration: "underline" }}
+                >
+                  common signs of phishing
+                </Typography>
+              </Link>
+              to understand what to look for.{" "}
             </Typography>
           </Box>
 
