@@ -47,6 +47,7 @@ import { Card } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function ControlledCheckbox() {
+  const lMatches = useMediaQuery("(min-width:655px)");
   //Breadcrumbs
   const breadcrumbs = [
     <Link to="/" className="breadcrumb">
@@ -1345,6 +1346,125 @@ export default function ControlledCheckbox() {
           </Box>
         </Card>
       </Stack>
+      {/* three buttons */}
+      <Box height="50px"></Box>
+      <Box sx={{ width: "100%", backgroundColor: "black" }}>
+        <Stack direction={lMatches ? "row" : "column"}>
+          <Box
+            sx={{
+              width: lMatches ? "50%" : "100%",
+              backgroundColor: "black",
+            }}
+          >
+            <Stack
+              marginLeft={lMatches ? "5vw" : "0px"}
+              direction="row"
+              justifyContent={lMatches ? "flex-start" : "center"}
+              alignItems="center"
+            >
+              <Box
+                border={4}
+                borderColor="#A36F09"
+                sx={{
+                  width: "180px",
+                  height: "50px",
+                }}
+              >
+                <Link to="/phishingDetector">
+                  <Box
+                    className="picBox7"
+                    sx={{
+                      width: "20%",
+                      height: "80%",
+                      // marginLeft: "10px",
+                      // marginTop: "5px",
+                    }}
+                  ></Box>
+
+                  <Box
+                    sx={{
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-33px",
+                    }}
+                  >
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "20px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Scam Detector
+                    </Typography>
+                  </Box>
+                </Link>
+              </Box>
+            </Stack>
+          </Box>
+
+          <Box height={lMatches ? "0px" : "20px"}></Box>
+
+          <Box
+            sx={{
+              width: lMatches ? "50%" : "100%",
+              backgroundColor: "black",
+            }}
+          >
+            <Stack
+              alignItems={lMatches ? "flex-end" : "center"}
+              marginRight={lMatches ? "5vw" : "0px"}
+            >
+              <Box
+                border={4}
+                justifyContent="center"
+                borderColor="#A36F09"
+                sx={{
+                  width: "180px",
+                  height: "50px",
+                }}
+              >
+                <Link to="/pastData">
+                  <Box
+                    className="picBox8"
+                    sx={{
+                      width: "30%",
+                      height: "80%",
+                      marginLeft: "10px",
+                      marginTop: "5px",
+                    }}
+                  ></Box>
+
+                  <Box
+                    sx={{
+                      width: "70%",
+                      height: "20%",
+                      marginLeft: "50px",
+                      marginTop: "-33px",
+                    }}
+                  >
+                    <Typography
+                      align="center"
+                      sx={{
+                        color: "white",
+                        fontSize: "20px",
+                        fontFamily: "Montserrat",
+                      }}
+                      variant="h1"
+                    >
+                      Simulator
+                    </Typography>
+                  </Box>
+                </Link>
+              </Box>
+            </Stack>
+          </Box>
+        </Stack>
+        <Box height="180px"></Box>
+      </Box>
     </div>
   );
 }
