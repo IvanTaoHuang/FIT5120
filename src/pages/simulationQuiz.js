@@ -280,8 +280,9 @@ function SimulationQuiz() {
               <br />
               Hope you would reduce the interactions with phishing mails.
               <br /> <br />
-              You can visit the common signs of phishing to understand what to
-              look for.{" "}
+              You can visit the{" "}
+              <Link to="/signs">common signs of phishing</Link> to understand
+              what to look for.{" "}
             </Typography>
           </Box>
 
