@@ -120,7 +120,7 @@ function Navbar() {
                 Common Signs of Phishing
               </Link>
             </li>
-            <li className="nav-item1" style={{ marginTop: "20px" }}>
+            <li className="nav-item1" style={{ marginTop: "10px" }}>
               <Link
                 to="/report"
                 className="nav-links1"
@@ -156,7 +156,17 @@ function Navbar() {
                 Details required
               </HashLink>
             </li>
-            <li className="nav-item1" style={{ marginTop: "20px" }}>
+            <li className="nav-item1">
+              <Link
+                to="/pastData"
+                className="nav-links1"
+                onClick={closeMobileMenu}
+                style={{ marginTop: "5px" }}
+              >
+                PAST TRENDS
+              </Link>
+            </li>
+            <li className="nav-item1" style={{ marginTop: "-20px" }}>
               <Link
                 to="/phishingSimulation"
                 className="nav-links1"
@@ -165,7 +175,7 @@ function Navbar() {
                 SIMULATION
               </Link>
             </li>
-            <li className="nav-item2" style={{ marginTop: "-20px" }}>
+            <li className="nav-item2" style={{ marginTop: "-30px" }}>
               <Link
                 to="/firstSimulator"
                 className="nav-links2"

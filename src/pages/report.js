@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import "../components/reportComponents/report.css";
 import IconTopic from "../components/iconTopic";
 import ScrollToTop from "../components/scroll.js";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
