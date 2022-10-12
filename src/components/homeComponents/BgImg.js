@@ -152,7 +152,7 @@ function BgImg() {
             <Box
               border={4}
               justifyContent="center"
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
@@ -201,7 +201,7 @@ function BgImg() {
             <Box
               alignContent="center"
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
@@ -251,7 +251,7 @@ function BgImg() {
           <Link to="/report">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
@@ -325,7 +325,7 @@ function BgImg() {
             <Typography
               variant="body1"
               sx={{
-                color: "#A36F09",
+                color: "#59CE8F ",
                 fontFamily: "Montserrat",
                 fontSize: "40px",
                 marginTop: "30px",
@@ -377,7 +377,7 @@ function BgImg() {
             <Typography
               variant="body1"
               sx={{
-                color: "#A36F09",
+                color: "#59CE8F ",
                 fontFamily: "Montserrat",
                 fontSize: "40px",
                 marginTop: "30px",
