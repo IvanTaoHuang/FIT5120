@@ -18,7 +18,7 @@ export default function TimeToRead(props) {
           <Box
             className="picBox5"
             sx={{
-              width: "30%",
+              width: "20%",
               height: "80%",
               marginLeft: "10px",
               marginTop: "5px",

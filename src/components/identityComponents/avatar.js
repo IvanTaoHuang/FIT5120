@@ -153,11 +153,16 @@ export default function ImageAvatars() {
               image={phishingEmail}
               alt="green iguana"
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+            <CardContent style={{ backgroundColor: "black" }}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                color="#A36F09"
+              >
                 Phishing Fraud
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="white">
                 It is done by scammers to get access to your personal
                 information usually through mail disguised as it is sent from a
                 trusted source. The access to the victim’s device is gained when
@@ -169,8 +174,12 @@ export default function ImageAvatars() {
                 that you come out of your secure dome.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button variant="contained" size="small">
+            <CardActions style={{ backgroundColor: "black" }}>
+              <Button
+                variant="contained"
+                size="small"
+                style={{ backgroundColor: "#A36F09" }}
+              >
                 <a
                   className="cardLink"
                   rel="noopener noreferrer"
@@ -190,11 +199,16 @@ export default function ImageAvatars() {
               image={identity}
               alt="Identity Fraud"
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+            <CardContent style={{ backgroundColor: "black" }}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                color="#A36F09"
+              >
                 Identity Fraud
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="white">
                 It involves using another individual’s personal information for
                 their own benefit. It often utilizes public information such as
                 name, birth date, social media etc.
@@ -206,8 +220,12 @@ export default function ImageAvatars() {
                 reliable you can share your data.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button variant="contained" size="small">
+            <CardActions style={{ backgroundColor: "black" }}>
+              <Button
+                variant="contained"
+                size="small"
+                style={{ backgroundColor: "#A36F09" }}
+              >
                 <a
                   className="cardLink"
                   rel="noopener noreferrer"
@@ -227,11 +245,16 @@ export default function ImageAvatars() {
               image={creditCard}
               alt="Debit Card Fraud"
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+            <CardContent style={{ backgroundColor: "black" }}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                color="#A36F09"
+              >
                 Debit Card Fraud
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="white">
                 It occurs when someone uses your card to make a purchase without
                 your consent or authorization. This illegal purchase can be done
                 through your lost or stolen physical card or through your bank
@@ -244,8 +267,12 @@ export default function ImageAvatars() {
                 transaction later.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button variant="contained" size="small">
+            <CardActions style={{ backgroundColor: "black" }}>
+              <Button
+                variant="contained"
+                size="small"
+                style={{ backgroundColor: "#A36F09" }}
+              >
                 <a
                   className="cardLink"
                   rel="noopener noreferrer"
@@ -305,7 +332,7 @@ export default function ImageAvatars() {
             <DonutChart
               data={data}
               title={title}
-              markerSize={ssmatches ? "25" : "15"}
+              markerSize={ssmatches ? "30" : "15"}
             />
           </Box>
         </Box>
@@ -353,6 +380,22 @@ export default function ImageAvatars() {
         information4=" and report your experience caused by phishing to help elimination the chances happening to another graduate."
       ></Steps>
       <Box height="50px"></Box>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img
+              src={require("../../images/step3.jpg")}
+              alt="Avatar"
+              style={{ width: "500px", height: "500px" }}
+            />
+          </div>
+          <div className="flip-card-back">
+            <h1>John Doe</h1>
+            <p>Architect & Engineer</p>
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>
       {/* Two buttons on bottom */}
       <ButtonsOnBot />
     </>
