@@ -51,14 +51,14 @@ function BgImg() {
               sx={{
                 width: "300px",
                 height: "260px",
-                backgroundColor: "rgba(163,111,9,0.5)",
+                backgroundColor: "rgba(89,206,143,0.5)",
                 // opacity: "0.2",
               }}
               className="box1"
             >
               <Typography
                 sx={{
-                  color: "#a36f09",
+                  color: "#E8F9FD",
                   fontSize: "70px",
                   textAlign: "center",
                 }}
