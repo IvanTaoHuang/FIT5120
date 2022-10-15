@@ -162,7 +162,7 @@ function SimulationQuiz() {
 
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           justifyContent="center"
           sx={{ maxWidth: "600px", maxHeight: "500px" }}
         >

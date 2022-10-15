@@ -109,7 +109,7 @@ function SimulationFeedback() {
         <Box height="50px"></Box>
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           justifyContent="center"
           sx={{ minWidth: "320px", maxWidth: "700px", minHeight: "300px" }}
         >

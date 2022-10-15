@@ -69,7 +69,7 @@ export default function Signs() {
               sx={{
                 fontSize: "36px",
                 fontFamily: "Montserrat",
-                color: "#A36F09",
+                color: "#59CE8F",
               }}
             >
               Report a scam
@@ -111,7 +111,7 @@ export default function Signs() {
               sx={{
                 fontSize: "36px",
                 fontFamily: "Montserrat",
-                color: "#A36F09",
+                color: "#59CE8F",
               }}
             >
               Required details to be provided
@@ -152,11 +152,13 @@ export default function Signs() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/phishingDetector">
                     <Box
@@ -165,7 +167,7 @@ export default function Signs() {
                         width: "20%",
                         height: "80%",
                         // marginLeft: "10px",
-                        // marginTop: "5px",
+                        marginTop: "8px",
                       }}
                     ></Box>
 
@@ -174,7 +176,7 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-33px",
+                        marginTop: "-35px",
                       }}
                     >
                       <Typography
@@ -185,6 +187,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Scam Detector
                       </Typography>
@@ -209,11 +212,13 @@ export default function Signs() {
                 <Box
                   border={4}
                   justifyContent="center"
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="pastDataBox"
                 >
                   <Link to="/pastData">
                     <Box
@@ -231,7 +236,7 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-33px",
+                        marginTop: "-31px",
                       }}
                     >
                       <Typography
@@ -242,6 +247,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="pastDataText"
                       >
                         Past Data
                       </Typography>

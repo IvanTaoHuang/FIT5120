@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import tutVideo from "../images/simulatorTut.mp4";
 import poster from "../images/poster.PNG";
 import { useTheme } from "@mui/material/styles";
+import "../components/phishingSimulationComponents/phishingSimulation.css";
 
 function PhishingSimulation() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -90,13 +91,14 @@ function PhishingSimulation() {
       >
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           sx={{
             width: "180px",
             height: "50px",
           }}
           onClick={handleClickOpen}
           className="tutBox"
+          borderRadius="18px"
         >
           <Box
             className="picBox10"
@@ -124,6 +126,7 @@ function PhishingSimulation() {
                 fontFamily: "Montserrat",
               }}
               variant="h1"
+              className="watchTutorial"
             >
               Watch Tutorial
             </Typography>
@@ -175,11 +178,13 @@ function PhishingSimulation() {
           <Stack alignItems="center">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
                 width: "320px",
                 height: "60px",
               }}
+              borderRadius="18px"
+              className="firstHandBox"
             >
               <Link to="/firstSimulator">
                 <Typography
@@ -191,6 +196,7 @@ function PhishingSimulation() {
                     marginTop: "12px",
                   }}
                   variant="h1"
+                  className="firstHandText"
                 >
                   First-Hand Simulator
                 </Typography>
@@ -208,11 +214,13 @@ function PhishingSimulation() {
           <Stack alignItems="center">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
                 width: "320px",
                 height: "60px",
               }}
+              borderRadius="18px"
+              className="quickBox"
             >
               <Link to="/quickExperience">
                 <Typography
@@ -224,6 +232,7 @@ function PhishingSimulation() {
                     marginTop: "12px",
                   }}
                   variant="h1"
+                  className="quickText"
                 >
                   Quick Experience
                 </Typography>

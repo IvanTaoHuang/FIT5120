@@ -1,0 +1,13 @@
+.firstHandBox:hover {
+    background-color: #FFF;
+}
+.firstHandBox:hover .firstHandText {
+    color: #59CE8F;
+}
+
+.quickBox:hover {
+    background-color: #FFF;
+}
+.quickBox:hover .quickText {
+    color: #59CE8F;
+}

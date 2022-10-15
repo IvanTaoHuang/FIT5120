@@ -11,9 +11,7 @@ import SignInfo from "../components/signsComponents/signInfo.js";
 import { Link } from "react-router-dom";
 import TimeToRead from "../components/timeToRead.js";
 import "../components/signsComponents/signs.css";
-
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 export default function Signs() {
@@ -176,7 +174,7 @@ export default function Signs() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
@@ -233,7 +231,7 @@ export default function Signs() {
                 <Box
                   border={4}
                   justifyContent="center"
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",

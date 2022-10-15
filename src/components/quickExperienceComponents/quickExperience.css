@@ -1,6 +1,6 @@
 .quickButton{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 30px;
     font-family: Montserrat;
     width: 300px;
@@ -9,7 +9,7 @@
 }
 
 .quickButton:hover{
-    color:#A36F09;
+    color:#59CE8F;
     background-color: #FFFF;
     font-size: 31px;
     cursor: pointer;

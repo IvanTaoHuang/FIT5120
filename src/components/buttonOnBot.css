@@ -3,11 +3,24 @@
     object-fit: fill;
     background-repeat: no-repeat;
     background-size:100% 90%;
-    margin-top: 7px;
+    margin-top: 11px;
     margin-left: 12px;
+    
   }
   .picBox7:hover{
 
     transform: scale(1.1);
         cursor: pointer;
       }
+  .buttonBoxes:hover{
+background-color: white;
+
+      }
+
+      .buttonBoxes:hover .buttonIcons{
+        color: #59CE8F;
+              }
+
+              .buttonBoxes:hover .buttonText{
+                color: #59CE8F;
+                      }

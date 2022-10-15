@@ -235,13 +235,14 @@ function PhishingDetector() {
           >
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
                 width: "180px",
                 height: "50px",
               }}
               onClick={handleClickOpen}
               className="tutBox"
+              borderRadius="18px"
             >
               <Box
                 className="picBox10"
@@ -269,6 +270,7 @@ function PhishingDetector() {
                     fontFamily: "Montserrat",
                   }}
                   variant="h1"
+                  className="watchTutorial"
                 >
                   Watch Tutorial
                 </Typography>
@@ -361,7 +363,7 @@ function PhishingDetector() {
                 display: loading ? "block" : "none",
               }}
             >
-              <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
+              <CircularProgress size="75px" sx={{ color: "#59CE8F" }} />
             </div>
 
             <Stack
@@ -502,11 +504,13 @@ function PhishingDetector() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="identifyBox"
                 >
                   <Link to="/identify">
                     <Box
@@ -535,6 +539,7 @@ function PhishingDetector() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="identifyText"
                       >
                         Identify Scams
                       </Typography>
@@ -560,11 +565,13 @@ function PhishingDetector() {
                   <Box
                     border={4}
                     justifyContent="center"
-                    borderColor="#A36F09"
+                    borderColor="#59CE8F"
                     sx={{
                       width: "180px",
                       height: "50px",
                     }}
+                    borderRadius="18px"
+                    className="reportBox"
                   >
                     <Box
                       className="picBox3"
@@ -592,6 +599,7 @@ function PhishingDetector() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="reportText"
                       >
                         Report a scam
                       </Typography>

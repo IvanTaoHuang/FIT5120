@@ -225,7 +225,7 @@ function FirstSimulator() {
             display: loading ? "block" : "none",
           }}
         >
-          <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
+          <CircularProgress size="75px" sx={{ color: "#59CE8F" }} />
         </div>
 
         <Stack

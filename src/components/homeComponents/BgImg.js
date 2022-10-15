@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 function BgImg() {
   const sMatches = useMediaQuery("(min-width:825px)");
-  const smMatches = useMediaQuery("(min-width:1000px)");
+  const smMatches = useMediaQuery("(min-width:760px)");
   const mMatches = useMediaQuery("(min-width:1180px)");
   const ref = useRef(null);
   const handleClick = () => {
@@ -55,18 +55,27 @@ function BgImg() {
                 // opacity: "0.2",
               }}
               className="box1"
+              border={4}
+              borderColor="rgba(89,206,143,0.5)"
+              borderRadius="18px"
             >
-              <Typography
-                sx={{
-                  color: "#E8F9FD",
-                  fontSize: "70px",
-                  textAlign: "center",
-                }}
+              <h3
+                // sx={{
+                //   color: "#E8F9FD",
+                //   fontSize: "70px",
+                //   textAlign: "center",
+                // }}
+                className="numberInBox"
               >
                 58%
-              </Typography>
+              </h3>
               <Typography
-                sx={{ color: "#FFFF", fontSize: "28px", textAlign: "center" }}
+                sx={{
+                  color: "#FFFF",
+                  fontSize: "28px",
+                  textAlign: "center",
+                  marginTop: "20px",
+                }}
               >
                 Have reported phishing mails compared to other scams
               </Typography>
@@ -157,12 +166,15 @@ function BgImg() {
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox1"
                 sx={{
-                  width: "100%",
-                  height: "80%",
+                  width: "70%",
+                  height: "70%",
+                  marginTop: "14px",
+                  marginLeft: "37px",
                 }}
               ></Box>
 
@@ -172,6 +184,7 @@ function BgImg() {
                   color: "white",
                   fontSize: "35px",
                   fontFamily: "Montserrat",
+                  marginTop: "10px",
                 }}
                 variant="h1"
               >
@@ -206,6 +219,7 @@ function BgImg() {
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox2"
@@ -256,6 +270,7 @@ function BgImg() {
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox3"
@@ -283,61 +298,129 @@ function BgImg() {
         </Stack>
 
         {/* margin box */}
-        <Box sx={{ height: "200px" }}></Box>
+        <Box sx={{ height: "150px" }}></Box>
 
+        <Typography color="#BDB39F" fontSize="35px" textAlign="center">
+          Gain Awareness through past trends or from our simulated environment{" "}
+        </Typography>
+        <Box sx={{ height: "50px" }}></Box>
         {/* card for data Visualisation */}
-        <Stack justifyContent="center" alignItems="center" direction="column">
-          <Box
-            // border={4}
-            justifyContent="center"
-            // borderColor="#A36F09"
-            sx={{
-              width: "300px",
-              height: "300px",
-            }}
-            onClick
-          >
-            <Link to="/pastData">
+        <Stack
+          justifyContent="center"
+          alignItems="center"
+          direction={smMatches ? "row" : "column"}
+          spacing={smMatches ? 0 : 24}
+        >
+          <Box width="50%">
+            <Stack alignItems="center">
               <Box
-                className="picBox4"
+                border={4}
+                justifyContent="center"
+                // borderColor="#A36F09"
                 sx={{
-                  marginTop: "14px",
-                  marginLeft: "20px",
-                  marginBottom: "20px",
-                  width: "100%",
-                  height: "100%",
+                  minWidth: "320px",
+                  maxWidth: "360px",
+                  height: "470px",
+                  backgroundColor: "rgba(89,206,143,0.5)",
                 }}
-              ></Box>
-            </Link>
+                borderRadius="18px"
+              >
+                <Link to="/pastData">
+                  <Box
+                    className="picBox4"
+                    sx={{
+                      marginTop: "23px",
+                      marginLeft: "47px",
+                      marginBottom: "20px",
+                      width: "90%",
+                      height: "75%",
+                    }}
+                  ></Box>
+                  <Stack alignItems="center" direction="column">
+                    <Typography
+                      variant="h1"
+                      sx={{
+                        color: "#FFFFFF",
+                        fontFamily: "Montserrat Alternates",
+                        fontSize: "35px",
+                        marginTop: "-40px",
+                      }}
+                    >
+                      8,292
+                    </Typography>
+                    <Box sx={{ width: "90%" }}>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "white ",
+                          fontFamily: "Montserrat",
+                          fontSize: "15px",
+                          marginTop: "5px",
+                          textAlign: "center",
+                          width: "100%",
+                        }}
+                      >
+                        Graduates have fallen to phishing mails during job
+                        seeking
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </Link>
+              </Box>
+            </Stack>
           </Box>
-          <Typography
-            variant="h1"
-            sx={{
-              color: "#FFFFFF",
-              fontFamily: "Montserrat Alternates",
-              // fontSize: "40px",
-              marginTop: "30px",
-            }}
-          >
-            8,292
-          </Typography>
-          <Box sx={{ width: "60%" }}>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "#59CE8F ",
-                fontFamily: "Montserrat",
-                fontSize: "40px",
-                marginTop: "30px",
-                textAlign: "center",
-              }}
-            >
-              Graduates have fallen to phishing mails during job seeking
-            </Typography>
+
+          <Box width="50%">
+            <Stack alignItems="center">
+              <Box
+                border={4}
+                justifyContent="center"
+                // borderColor="#A36F09"
+                sx={{
+                  minWidth: "320px",
+                  maxWidth: "360px",
+                  height: "470px",
+                  backgroundColor: "rgba(89,206,143,0.5)",
+                }}
+                borderRadius="18px"
+              >
+                <Link to="/pastData">
+                  <Box
+                    className="picBox8"
+                    sx={{
+                      marginTop: "23px",
+                      marginLeft: "32px",
+                      marginBottom: "20px",
+                      width: "90%",
+                      height: "75%",
+                    }}
+                  ></Box>
+
+                  <Box sx={{ width: "100%" }}>
+                    <Stack alignItems="center">
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "white ",
+                          fontFamily: "Montserrat",
+                          fontSize: "15px",
+                          marginTop: "-25px",
+                          textAlign: "center",
+                          width: "90%",
+                        }}
+                      >
+                        Visit our Phishing Simulator and gain experience of scam
+                        emails
+                      </Typography>
+                    </Stack>
+                  </Box>
+                </Link>
+              </Box>
+            </Stack>
           </Box>
         </Stack>
         <Box sx={{ height: "200px" }}></Box>
-        <Stack justifyContent="center" alignItems="center" direction="column">
+        {/* <Stack justifyContent="center" alignItems="center" direction="column">
           <Box
             // border={4}
             justifyContent="center"
@@ -360,8 +443,8 @@ function BgImg() {
                 }}
               ></Box>
             </Link>
-          </Box>
-          {/* <Typography
+          </Box> */}
+        {/* <Typography
             variant="h1"
             sx={{
               color: "#FFFFFF",
@@ -373,7 +456,7 @@ function BgImg() {
             8,292
           </Typography> */}
 
-          <Box sx={{ width: "60%" }}>
+        {/* <Box sx={{ width: "60%" }}>
             <Typography
               variant="body1"
               sx={{
@@ -387,8 +470,7 @@ function BgImg() {
               Visit our Phishing Simulator and gain experience of scam emails
             </Typography>
           </Box>
-        </Stack>
-        <Box sx={{ height: "150px" }}></Box>
+        </Stack> */}
       </Box>
     </>
   );

@@ -29,15 +29,21 @@ import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
 import ButtonsOnBot from "../buttonOnBot";
+
 // import { HashLink } from "react-router-hash-link";
 
 export default function ImageAvatars() {
   const matches = useMediaQuery("(min-width:1250px)");
   const smatches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:655px)");
+  const lMatches = useMediaQuery("(min-width:1070px)");
   const ssmatches = useMediaQuery("(min-width:700px)");
   const sssmatches = useMediaQuery("(min-width:701px)");
   const Mmatches = useMediaQuery("(max-width:835px)");
+  // const Slider = styled(MuiSlider)({
+  //   "& .MuiSlider-mark": {
+  //     backgroundColor: "white",
+  //   },
+  // });
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: "black",
@@ -47,6 +53,7 @@ export default function ImageAvatars() {
     // marginLeft: smatches ? "10vw" : "4vw",
     textAlign: "center",
   }));
+
   const [sliderValue, setSliderValue] = useState(0);
   const [data, setData] = useState(Second2018);
   const [title, setTitle] = useState("Cyber incident breaches");
@@ -89,6 +96,7 @@ export default function ImageAvatars() {
     {
       value: 0,
       label: ssmatches ? "2nd half-2018" : "",
+      color: "#ffff",
     },
     {
       value: 16.66667,
@@ -158,7 +166,7 @@ export default function ImageAvatars() {
                 gutterBottom
                 variant="h5"
                 component="div"
-                color="#A36F09"
+                color="#59CE8F"
               >
                 Phishing Fraud
               </Typography>
@@ -178,7 +186,7 @@ export default function ImageAvatars() {
               <Button
                 variant="contained"
                 size="small"
-                style={{ backgroundColor: "#A36F09" }}
+                style={{ backgroundColor: "#59CE8F" }}
               >
                 <a
                   className="cardLink"
@@ -204,7 +212,7 @@ export default function ImageAvatars() {
                 gutterBottom
                 variant="h5"
                 component="div"
-                color="#A36F09"
+                color="#59CE8F"
               >
                 Identity Fraud
               </Typography>
@@ -224,7 +232,7 @@ export default function ImageAvatars() {
               <Button
                 variant="contained"
                 size="small"
-                style={{ backgroundColor: "#A36F09" }}
+                style={{ backgroundColor: "#59CE8F" }}
               >
                 <a
                   className="cardLink"
@@ -250,7 +258,7 @@ export default function ImageAvatars() {
                 gutterBottom
                 variant="h5"
                 component="div"
-                color="#A36F09"
+                color="#59CE8F"
               >
                 Debit Card Fraud
               </Typography>
@@ -271,7 +279,7 @@ export default function ImageAvatars() {
               <Button
                 variant="contained"
                 size="small"
-                style={{ backgroundColor: "#A36F09" }}
+                style={{ backgroundColor: "#59CE8F" }}
               >
                 <a
                   className="cardLink"
@@ -303,7 +311,7 @@ export default function ImageAvatars() {
         <Box
           sx={{
             width: ssmatches ? "80vw" : "340px",
-            backgroundColor: "#FFF",
+            backgroundColor: "white",
           }}
         >
           <Stack alignItems="center">
@@ -312,14 +320,14 @@ export default function ImageAvatars() {
               aria-label="Restricted values"
               defaultValue={0}
               valueLabelFormat={valueLabelFormat}
-              getAriaValueText={valuetext}
+              // getAriaValueText={valuetext}
               step={null}
               valueLabelDisplay="auto"
               marks={marks}
               style={{ width: ssmatches ? "80%" : "300px" }}
               value={sliderValue}
               onChange={handleChange}
-              sx={{ color: "black" }}
+              sx={{ color: "#59CE8F" }}
             />
           </Stack>
         </Box>
@@ -351,8 +359,8 @@ export default function ImageAvatars() {
       </Box>
       <Box sx={{ height: "40px" }}></Box>
       <TimeToRead time="10 mins read"></TimeToRead>
-      <Box sx={{ height: "20px" }}></Box>
-      <Steps
+      {/* <Box sx={{ height: "20px" }}></Box> */}
+      {/* <Steps
         stepImg={require("../../images/step1.png")}
         margin="6vw"
         information1="Check the damage done: Scams would be traps to get yourn money in the bank or even worse, your personal information. The information the scammers obtain from the scam you fell would be used to conduct other scams. This can damage your identity and reputation. "
@@ -378,24 +386,85 @@ export default function ImageAvatars() {
         link1="https://www.catchphish.org/report/"
         linkName1="click here"
         information4=" and report your experience caused by phishing to help elimination the chances happening to another graduate."
-      ></Steps>
+      ></Steps> */}
+      <Box height="20px"></Box>
+
+      <Stack
+        direction={lMatches ? "row" : "column"}
+        spacing={lMatches ? 0 : 12}
+        alignItems="center"
+      >
+        <Box width="33.333%">
+          <Stack alignItems="center">
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    src={require("../../images/step1.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
+                <div className="flip-card-back">
+                  <img
+                    src={require("../../images/step1Text.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                    className="backImg"
+                  />
+                </div>
+              </div>
+            </div>
+          </Stack>
+        </Box>
+        <Box width="33.333%">
+          <Stack alignItems="center">
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    src={require("../../images/step2.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
+                <div className="flip-card-back">
+                  <img
+                    src={require("../../images/step2Text.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                    className="backImg"
+                  />
+                </div>
+              </div>
+            </div>
+          </Stack>
+        </Box>
+        <Box width="33.333%">
+          <Stack alignItems="center">
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    src={require("../../images/step3.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
+                <div className="flip-card-back">
+                  <img
+                    src={require("../../images/step3Text.png")}
+                    alt="Avatar"
+                    style={{ width: "100%", height: "100%" }}
+                    className="backImg"
+                  />
+                </div>
+              </div>
+            </div>
+          </Stack>
+        </Box>
+      </Stack>
       <Box height="50px"></Box>
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img
-              src={require("../../images/step3.jpg")}
-              alt="Avatar"
-              style={{ width: "500px", height: "500px" }}
-            />
-          </div>
-          <div className="flip-card-back">
-            <h1>John Doe</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div>
       {/* Two buttons on bottom */}
       <ButtonsOnBot />
     </>

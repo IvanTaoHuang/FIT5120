@@ -16,6 +16,8 @@ import Breadcrumb from "../components/breadCrumb";
 import IconTopic from "../components/iconTopic";
 import { Link } from "react-router-dom";
 import "./buttonOnBot.css";
+import HomeIcon from "@mui/icons-material/Home";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 function ButtonsOnBot() {
   const lMatches = useMediaQuery("(min-width:655px)");
@@ -38,52 +40,77 @@ function ButtonsOnBot() {
             >
               <Box
                 border={4}
-                borderColor="#A36F09"
+                borderRadius="18px"
+                borderColor="#59CE8F"
                 sx={{
-                  width: "180px",
+                  width: "220px",
                   height: "50px",
                 }}
+                className="buttonBoxes"
               >
                 <Link to="/">
-                  <Box
-                    // className="picBox2"
-                    sx={{
-                      width: "30%",
-                      height: "80%",
-                      marginLeft: "10px",
-                      marginTop: "5px",
-                    }}
-                  >
-                    <KeyboardDoubleArrowLeftIcon
+                  <Stack direction="row">
+                    <Box
+                      // className="picBox2"
                       sx={{
-                        fontSize: "40px",
-                        color: "white",
-                        display: "block",
+                        width: "25%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "5px",
                       }}
-                    />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "30px",
-                      marginTop: "-33px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
-                      sx={{
-                        color: "white",
-                        fontSize: "20px",
-                        fontFamily: "Montserrat",
-                        marginTop: "2px",
-                      }}
-                      variant="h1"
                     >
-                      Home
-                    </Typography>
-                  </Box>
+                      <KeyboardDoubleArrowLeftIcon
+                        sx={{
+                          fontSize: "40px",
+                          color: "white",
+                          display: "block",
+                        }}
+                        className="buttonIcons"
+                      />
+                    </Box>
+
+                    <Box
+                      // className="picBox2"
+                      sx={{
+                        width: "10%",
+                        height: "80%",
+                        marginLeft: "30px",
+                        marginTop: "5px",
+                      }}
+                    >
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "20px",
+                          fontFamily: "Montserrat",
+                          marginTop: "9px",
+                        }}
+                        variant="h1"
+                        className="buttonText"
+                      >
+                        Home
+                      </Typography>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        width: "50%",
+                        height: "20%",
+                        marginLeft: "60px",
+                        marginTop: "6px",
+                      }}
+                    >
+                      <HomeIcon
+                        sx={{
+                          fontSize: "40px",
+                          color: "white",
+                          display: "block",
+                        }}
+                        className="buttonIcons"
+                      />
+                    </Box>
+                  </Stack>
                 </Link>
               </Box>
             </Stack>
@@ -104,43 +131,67 @@ function ButtonsOnBot() {
               <Box
                 border={4}
                 justifyContent="center"
-                borderColor="#A36F09"
+                borderColor="#59CE8F"
                 sx={{
-                  width: "180px",
+                  width: "220px",
                   height: "50px",
                 }}
+                borderRadius="18px"
+                className="buttonBoxes"
               >
                 <Link to="/phishingDetector">
-                  <Box
-                    className="picBox7"
-                    sx={{
-                      width: "20%",
-                      height: "80%",
-                      //   marginLeft: "10px",
-                      //   marginTop: "5px",
-                    }}
-                  ></Box>
-
-                  <Box
-                    sx={{
-                      width: "70%",
-                      height: "20%",
-                      marginLeft: "52px",
-                      marginTop: "-33px",
-                    }}
-                  >
-                    <Typography
-                      align="center"
+                  <Stack direction="row">
+                    <Box
+                      className="picBox7"
                       sx={{
-                        color: "white",
-                        fontSize: "20px",
-                        fontFamily: "Montserrat",
+                        width: "17%",
+                        // height: "80%",
+                        //   marginLeft: "10px",
+                        //   marginTop: "5px",
                       }}
-                      variant="h1"
+                    ></Box>
+
+                    <Box
+                      sx={{
+                        width: "70%",
+                        height: "20%",
+                        marginLeft: "16px",
+                        marginTop: "14px",
+                      }}
                     >
-                      Scam Detector
-                    </Typography>
-                  </Box>
+                      <Typography
+                        align="center"
+                        sx={{
+                          color: "white",
+                          fontSize: "20px",
+                          fontFamily: "Montserrat",
+                        }}
+                        variant="h1"
+                        className="buttonText"
+                      >
+                        Scam Detector
+                      </Typography>
+                    </Box>
+
+                    <Box
+                      // className="picBox2"
+                      sx={{
+                        width: "20%",
+                        height: "80%",
+                        marginLeft: "10px",
+                        marginTop: "8px",
+                      }}
+                    >
+                      <KeyboardDoubleArrowRightIcon
+                        sx={{
+                          fontSize: "40px",
+                          color: "white",
+                          display: "block",
+                        }}
+                        className="buttonIcons"
+                      />
+                    </Box>
+                  </Stack>
                 </Link>
               </Box>
             </Stack>
