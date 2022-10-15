@@ -179,15 +179,17 @@ export default function Signs() {
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/phishingDetector">
                     <Box
                       className="picBox2"
                       sx={{
-                        width: "30%",
+                        width: "20%",
                         height: "80%",
                         marginLeft: "10px",
-                        marginTop: "5px",
+                        marginTop: "8px",
                       }}
                     ></Box>
 
@@ -195,8 +197,8 @@ export default function Signs() {
                       sx={{
                         width: "70%",
                         height: "20%",
-                        marginLeft: "55px",
-                        marginTop: "-28px",
+                        marginLeft: "50px",
+                        marginTop: "-42px",
                       }}
                     >
                       <Typography
@@ -207,6 +209,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Back to Detector
                       </Typography>
@@ -236,6 +239,8 @@ export default function Signs() {
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/report">
                     <Box
@@ -244,7 +249,7 @@ export default function Signs() {
                         width: "30%",
                         height: "80%",
                         marginLeft: "10px",
-                        marginTop: "5px",
+                        marginTop: "7px",
                       }}
                     ></Box>
 
@@ -252,7 +257,7 @@ export default function Signs() {
                       sx={{
                         width: "70%",
                         height: "20%",
-                        marginLeft: "50px",
+                        marginLeft: "55px",
                         marginTop: "-28px",
                       }}
                     >
@@ -264,6 +269,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Report a scam
                       </Typography>
