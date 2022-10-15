@@ -50,6 +50,7 @@ function PhishingDetector() {
   const [result, setResult] = useState("");
   let phishRate1 = 0;
   let legitRate1 = 0;
+  const [buttonText, setButtonText] = React.useState("Check");
 
   const handleChange = (event) => {
     setUrl(event.target.value);
@@ -69,6 +70,7 @@ function PhishingDetector() {
     // setIsActive((current) => !current);
     console.log("hi");
     await setResult("");
+    await setButtonText("Processing...");
     setLoading(true);
     const data = { url: url };
     await fetch("https://api.isitphish.com/v2/query", {
@@ -113,6 +115,7 @@ function PhishingDetector() {
         console.error("Error:", error);
       });
     setLoading(false);
+    setButtonText("Check");
   };
 
   const Div = styled("div")(({ theme }) => ({
@@ -130,6 +133,7 @@ function PhishingDetector() {
     if (event.key === "Enter") {
       event.preventDefault();
       await setResult("");
+      await setButtonText("Processing...");
       console.log("hi");
       setLoading(true);
       const data = { url: url };
@@ -175,6 +179,7 @@ function PhishingDetector() {
           console.error("Error:", error);
         });
       setLoading(false);
+      setButtonText("Check");
     } else {
       console.log("Failure");
     }
@@ -342,8 +347,8 @@ function PhishingDetector() {
                 <button onClick={handleClear}>{<ClearIcon />}</button>
               </form>
             </div>
-            <button className="submit" onClick={handleClick}>
-              Check
+            <button className="submit" onClick={handleClick} width="70px">
+              {buttonText}
             </button>
           </Stack>
 
