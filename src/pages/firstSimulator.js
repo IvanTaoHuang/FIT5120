@@ -52,6 +52,7 @@ function FirstSimulator() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = useState("");
+  const [buttonText, setButtonText] = React.useState("Check");
 
   const handleChange = (event) => {
     setEmail(event.target.value);
@@ -66,6 +67,7 @@ function FirstSimulator() {
     if (event.key === "Enter") {
       event.preventDefault();
       await setResult("");
+      await setButtonText("Processing...");
       setLoading(true);
       await emailjs
         .sendForm(
@@ -87,9 +89,11 @@ function FirstSimulator() {
       console.log("Success");
     }
     setLoading(false);
+    setButtonText("Check");
   };
   const handleClick = async () => {
     await setResult("");
+    await setButtonText("Processing...");
     setLoading(true);
     await emailjs
       .sendForm(
@@ -110,6 +114,7 @@ function FirstSimulator() {
       );
     console.log("Success");
     setLoading(false);
+    setButtonText("Check");
   };
   const [closeAlert, setCloseAlert] = useState(false);
   const handleCloseAlert = () => {
@@ -235,7 +240,8 @@ function FirstSimulator() {
         >
           <br />
           <Alert severity="success">
-            The email has been succssfully sent to your email address.
+            The email has been succssfully sent to your email address. Please
+            check your email.
           </Alert>
 
           <br />
@@ -285,7 +291,7 @@ function FirstSimulator() {
       </Stack>
       <Box sx={{ height: "100px" }}></Box>
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot link1="/phishingDetector" link2="/pastData" />
     </Box>
   );
 }

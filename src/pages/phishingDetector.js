@@ -11,12 +11,9 @@ import { Helmet } from "react-helmet";
 import { useMediaQuery } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import ClearIcon from "@mui/icons-material/Clear";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import IconTopic from "../components/iconTopic";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -24,10 +21,11 @@ import Button from "@mui/material/Button";
 import tutVideo from "../images/detectorTut.mp4";
 import poster from "../images/poster.PNG";
 import { useTheme } from "@mui/material/styles";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 function PhishingDetector() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:655px)");
+  const lMatches = useMediaQuery("(min-width:750px)");
   const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -191,7 +189,7 @@ function PhishingDetector() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
+          // height: "100%",
           position: "fixed",
           top: "70px",
           left: "0",
@@ -232,12 +230,7 @@ function PhishingDetector() {
           <br></br>
           <br></br>
           {/* watch tutorial */}
-          <Stack
-            marginLeft={lMatches ? "5vw" : "0px"}
-            direction="row"
-            justifyContent={lMatches ? "flex-start" : "center"}
-            alignItems="center"
-          >
+          <Stack direction="row" justifyContent="center" alignItems="center">
             <Box
               border={4}
               borderColor="#59CE8F"
@@ -347,7 +340,7 @@ function PhishingDetector() {
                 <button onClick={handleClear}>{<ClearIcon />}</button>
               </form>
             </div>
-            <button className="submit" onClick={handleClick} width="70px">
+            <button className="submit" onClick={handleClick}>
               {buttonText}
             </button>
           </Stack>
@@ -491,7 +484,7 @@ function PhishingDetector() {
           <Box height={lMatches ? "0px" : "30px"}></Box>
         </Stack>
         {/* three buttons */}
-        <Box
+        {/* <Box
           sx={{ width: "100%", backgroundColor: "black", marginTop: "50px" }}
         >
           <Stack direction={lMatches ? "row" : "column"}>
@@ -615,8 +608,9 @@ function PhishingDetector() {
             </Box>
           </Stack>
           <Box height="130px"></Box>
-        </Box>
-        <Box sx={{ height: "20px" }}></Box>
+        </Box> */}
+        <Box sx={{ height: "60px" }}></Box>
+        <ButtonsOnBot link1="/identify" link2="/report" />
       </Box>
     </>
   );

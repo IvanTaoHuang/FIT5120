@@ -12,10 +12,11 @@ import "../components/reportComponents/report.css";
 import IconTopic from "../components/iconTopic";
 import ScrollToTop from "../components/scroll.js";
 // import { HashLink } from "react-router-hash-link";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:655px)");
+  const lMatches = useMediaQuery("(min-width:750px)");
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: "black",
@@ -33,7 +34,7 @@ export default function Signs() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
+          // height: "100%",
           position: "fixed",
           top: "70px",
           left: "0",
@@ -133,9 +134,9 @@ export default function Signs() {
           </Stack>
         </Box>
 
-        <Box height="180px"></Box>
+        <Box height="100px"></Box>
 
-        {/* three buttons */}
+        {/* three buttons
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack direction={lMatches ? "row" : "column"}>
             <Box
@@ -258,7 +259,8 @@ export default function Signs() {
             </Box>
           </Stack>
           <Box height="180px"></Box>
-        </Box>
+        </Box> */}
+        <ButtonsOnBot link1="/phishingDetector" link2="/phishingSimulation" />
       </Box>
     </>
   );

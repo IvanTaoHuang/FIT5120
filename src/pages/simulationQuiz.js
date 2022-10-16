@@ -303,13 +303,15 @@ function SimulationQuiz() {
             marginTop="20px"
           >
             <Box display={answerReal || answerFake ? "none" : "block"}>
-              <button className="answerButton1" onClick={handleReal}>
-                Real
-              </button>
+              <Stack direction="row" spacing={12}>
+                <button className="answerButton1" onClick={handleReal}>
+                  Real
+                </button>
 
-              <button className="answerButton2" onClick={handleFake}>
-                Fake
-              </button>
+                <button className="answerButton2" onClick={handleFake}>
+                  Fake
+                </button>
+              </Stack>
             </Box>
           </Stack>
           <Box height="20px"></Box>
@@ -381,7 +383,7 @@ function SimulationQuiz() {
       </Stack>
 
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot link1="/phishingDetector" link2="/pastData" />
     </Box>
   );
 }

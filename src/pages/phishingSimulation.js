@@ -50,7 +50,7 @@ function PhishingSimulation() {
       sx={{
         width: "100%",
         backgroundColor: "black",
-        height: "100%",
+        // height: "100%",
         position: "fixed",
         top: "70px",
         left: "0",
@@ -84,9 +84,9 @@ function PhishingSimulation() {
       <br></br>
       {/* watch tutorial */}
       <Stack
-        marginLeft={lMatches ? "5vw" : "0px"}
+        // marginLeft={lMatches ? "5vw" : "0px"}
         direction="row"
-        justifyContent={lMatches ? "flex-start" : "center"}
+        justifyContent="center"
         alignItems="center"
       >
         <Box
@@ -243,7 +243,7 @@ function PhishingSimulation() {
       </Stack>
       <Box height="80px"></Box>
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot link1="/report" link2="/pastData" />
     </Box>
   );
 }

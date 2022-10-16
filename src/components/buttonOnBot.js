@@ -1,4 +1,5 @@
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -17,14 +18,58 @@ import IconTopic from "../components/iconTopic";
 import { Link } from "react-router-dom";
 import "./buttonOnBot.css";
 import HomeIcon from "@mui/icons-material/Home";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
-function ButtonsOnBot() {
-  const lMatches = useMediaQuery("(min-width:655px)");
+function ButtonsOnBot(props) {
+  const lMatches = useMediaQuery("(min-width:750px)");
   return (
     <>
+      {/* <ButtonsOnBot /> */}
+      <Box backgroundColor="#59CE8F">
+        <Stack direction={lMatches ? "row" : "column"} alignItems="center">
+          <Box width="50%">
+            <Stack direction="row" spacing={18} alignItems="center">
+              <Link to={props.link1}>
+                <KeyboardDoubleArrowLeftIcon
+                  sx={{
+                    fontSize: "70px",
+                    color: "white",
+                    display: "block",
+                  }}
+                  className="buttonIcons"
+                />
+              </Link>
+              <Link to={props.link1}>
+                <Typography color="white" fontSize="50px">
+                  {props.text1}
+                </Typography>
+              </Link>
+            </Stack>
+          </Box>
+          <Box width="50%">
+            <Stack alignItems="flex-end">
+              <Stack direction="row" spacing={18} alignItems="flex-end">
+                <Link to={props.link2}>
+                  <Typography color="white" fontSize="50px">
+                    {props.text2}
+                  </Typography>
+                </Link>
+                <Link to={props.link2}>
+                  <KeyboardDoubleArrowRightIcon
+                    sx={{
+                      fontSize: "70px",
+                      color: "white",
+                      display: "block",
+                    }}
+                    className="buttonIcons"
+                  />
+                </Link>
+              </Stack>
+            </Stack>
+          </Box>
+        </Stack>
+      </Box>
       {/* three buttons */}
-      <Box sx={{ width: "100%", backgroundColor: "black" }}>
+      {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
         <Stack direction={lMatches ? "row" : "column"}>
           <Box
             sx={{
@@ -198,7 +243,7 @@ function ButtonsOnBot() {
           </Box>
         </Stack>
         <Box height="180px"></Box>
-      </Box>
+      </Box> */}
     </>
   );
 }

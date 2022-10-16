@@ -11,12 +11,15 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import AnimatedNumbers from "react-animated-numbers";
 
 function BgImg() {
   const sMatches = useMediaQuery("(min-width:825px)");
   const smMatches = useMediaQuery("(min-width:760px)");
   const mMatches = useMediaQuery("(min-width:1180px)");
   const ref = useRef(null);
+  const [num, setNum] = React.useState(8292);
+  const [num1, setNum1] = React.useState(58);
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -46,19 +49,19 @@ function BgImg() {
           alignItems="center"
           justifyContent="center"
         >
-          <Link to="/identify">
-            <Box
-              sx={{
-                width: "300px",
-                height: "260px",
-                backgroundColor: "rgba(89,206,143,0.5)",
-                // opacity: "0.2",
-              }}
-              className="box1"
-              border={4}
-              borderColor="rgba(89,206,143,0.5)"
-              borderRadius="18px"
-            >
+          <Box
+            sx={{
+              width: "300px",
+              height: "260px",
+              backgroundColor: "rgba(89,206,143,0.5)",
+              // opacity: "0.2",
+            }}
+            className="box1"
+            border={4}
+            borderColor="rgba(89,206,143,0.5)"
+            borderRadius="18px"
+          >
+            <Stack alignItems="center">
               <h3
                 // sx={{
                 //   color: "#E8F9FD",
@@ -67,20 +70,32 @@ function BgImg() {
                 // }}
                 className="numberInBox"
               >
-                58%
+                <AnimatedNumbers
+                  includeComma
+                  animateToNumber={num}
+                  fontStyle={{ fontSize: 70, color: "white" }}
+                  configs={[
+                    { mass: 1, tension: 220, friction: 100 },
+                    { mass: 1, tension: 180, friction: 130 },
+                    { mass: 1, tension: 280, friction: 90 },
+                    { mass: 1, tension: 180, friction: 135 },
+                    { mass: 1, tension: 260, friction: 100 },
+                    { mass: 1, tension: 210, friction: 180 },
+                  ]}
+                ></AnimatedNumbers>
               </h3>
-              <Typography
-                sx={{
-                  color: "#FFFF",
-                  fontSize: "28px",
-                  textAlign: "center",
-                  marginTop: "20px",
-                }}
-              >
-                Have reported phishing mails compared to other scams
-              </Typography>
-            </Box>
-          </Link>
+            </Stack>
+            <Typography
+              sx={{
+                color: "#FFFF",
+                fontSize: "27px",
+                textAlign: "center",
+                marginTop: "20px",
+              }}
+            >
+              Graduates have fallen to phishing mails during job seeking in 2021
+            </Typography>
+          </Box>
         </Stack>
         <Stack alignItems="center">
           <Box sx={{ height: "45px" }}></Box>
@@ -145,6 +160,14 @@ function BgImg() {
       {/* </div> */}
 
       <div ref={ref}></div>
+
+      {/* <AnimatedNumbers
+        animateToNumber={num}
+        fontStyle={{ fontSize: 32, color: "white" }}
+        configs={(number, index) => {
+          return { mass: 1, tension: 230 * (index + 1), friction: 140 };
+        }}
+      ></AnimatedNumbers> */}
 
       {/* Cards to different pages */}
       <Box sx={{ backgroundColor: "black", width: "100%" }}>
@@ -346,7 +369,22 @@ function BgImg() {
                         marginTop: "-40px",
                       }}
                     >
-                      8,292
+                      <Stack direction="row">
+                        <AnimatedNumbers
+                          includeComma
+                          animateToNumber={num1}
+                          fontStyle={{ fontSize: 37, color: "white" }}
+                          configs={[
+                            { mass: 1, tension: 220, friction: 100 },
+                            { mass: 1, tension: 180, friction: 130 },
+                            { mass: 1, tension: 280, friction: 90 },
+                            { mass: 1, tension: 180, friction: 135 },
+                            { mass: 1, tension: 260, friction: 100 },
+                            { mass: 1, tension: 210, friction: 180 },
+                          ]}
+                        ></AnimatedNumbers>{" "}
+                        %
+                      </Stack>
                     </Typography>
                     <Box sx={{ width: "90%" }}>
                       <Typography
@@ -360,8 +398,7 @@ function BgImg() {
                           width: "100%",
                         }}
                       >
-                        Graduates have fallen to phishing mails during job
-                        seeking
+                        Have reported phishing mails compared to other scams
                       </Typography>
                     </Box>
                   </Stack>

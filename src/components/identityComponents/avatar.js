@@ -29,6 +29,8 @@ import { First2019 } from "../../Data/2019First";
 import { Second2018 } from "../../Data/2018Second";
 import { useState } from "react";
 import ButtonsOnBot from "../buttonOnBot";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 // import { HashLink } from "react-router-hash-link";
 
@@ -294,6 +296,16 @@ export default function ImageAvatars() {
           </Card>
         </Stack>
       </Box>
+      <Box sx={{ height: "80px" }}></Box>
+      <Box width="90%" marginLeft="5%">
+        <hr
+          style={{
+            color: "#59CE8F",
+            backgroundColor: "#59CE8F",
+            height: 5,
+          }}
+        />
+      </Box>
       <section id="phishingData"></section>
       <Box sx={{ height: "80px" }}></Box>
       <Stack alignItems="center">
@@ -345,7 +357,16 @@ export default function ImageAvatars() {
           </Box>
         </Box>
       </Stack>
-      <Box sx={{ height: "40px" }}></Box>
+      <Box sx={{ height: "80px" }}></Box>
+      <Box width="90%" marginLeft="5%">
+        <hr
+          style={{
+            color: "#59CE8F",
+            backgroundColor: "#59CE8F",
+            height: 5,
+          }}
+        />
+      </Box>
 
       {/* Steps to do if I fail into a scam */}
       <section id="steps"></section>
@@ -466,7 +487,7 @@ export default function ImageAvatars() {
       </Stack>
       <Box height="50px"></Box>
       {/* Two buttons on bottom */}
-      <ButtonsOnBot />
+      <ButtonsOnBot link1="/" link2="/phishingDetector" />
     </>
   );
 }
