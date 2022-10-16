@@ -516,16 +516,16 @@ function BgImg() {
         <Box backgroundColor="#59CE8F ">
           <Box width="100%">
             <Stack alignItems="flex-end">
-              <Stack direction="row" spacing={18} alignItems="flex-end">
+              <Stack direction="row" alignItems="flex-end">
                 <Link to="/identify">
-                  <Typography color="white" fontSize="35px">
+                  <Typography color="white" fontSize="25px">
                     What are the types of scams?
                   </Typography>
                 </Link>
                 <Link to="/identify">
                   <KeyboardDoubleArrowRightIcon
                     sx={{
-                      fontSize: "50px",
+                      fontSize: "40px",
                       color: "white",
                       display: "block",
                     }}

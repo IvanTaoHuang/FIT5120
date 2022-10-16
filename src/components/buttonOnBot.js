@@ -31,7 +31,7 @@ function ButtonsOnBot(props) {
               <Link to={props.link1}>
                 <KeyboardDoubleArrowLeftIcon
                   sx={{
-                    fontSize: "50px",
+                    fontSize: "40px",
                     color: "white",
                     display: "block",
                   }}
@@ -39,7 +39,7 @@ function ButtonsOnBot(props) {
                 />
               </Link>
               <Link to={props.link1}>
-                <Typography color="white" fontSize="35px">
+                <Typography color="white" fontSize="25px">
                   {props.text1}
                 </Typography>
               </Link>
@@ -51,14 +51,14 @@ function ButtonsOnBot(props) {
                 <Box>
                   <Stack direction="row">
                     <Link to={props.link2}>
-                      <Typography color="white" fontSize="35px">
+                      <Typography color="white" fontSize="25px">
                         {props.text2}
                       </Typography>
                     </Link>
                     <Link to={props.link2}>
                       <KeyboardDoubleArrowRightIcon
                         sx={{
-                          fontSize: "50px",
+                          fontSize: "40px",
                           color: "white",
                           display: "block",
                         }}
