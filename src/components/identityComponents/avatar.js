@@ -487,7 +487,12 @@ export default function ImageAvatars() {
       </Stack>
       <Box height="50px"></Box>
       {/* Two buttons on bottom */}
-      <ButtonsOnBot link1="/" link2="/phishingDetector" />
+      <ButtonsOnBot
+        link1="/"
+        link2="/phishingDetector"
+        text1="Home"
+        text2="Is the URL real or fake?"
+      />
     </>
   );
 }

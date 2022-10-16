@@ -260,7 +260,12 @@ export default function Signs() {
           </Stack>
           <Box height="180px"></Box>
         </Box> */}
-        <ButtonsOnBot link1="/phishingDetector" link2="/phishingSimulation" />
+        <ButtonsOnBot
+          link1="/phishingDetector"
+          link2="/phishingSimulation"
+          text1="Is the URL real or fake?"
+          text2="How does phishing mails work?"
+        />
       </Box>
     </>
   );

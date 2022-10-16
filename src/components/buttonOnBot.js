@@ -26,12 +26,12 @@ function ButtonsOnBot(props) {
       {/* <ButtonsOnBot /> */}
       <Box backgroundColor="#59CE8F">
         <Stack direction={lMatches ? "row" : "column"} alignItems="center">
-          <Box width="50%">
-            <Stack direction="row" spacing={18} alignItems="center">
+          <Box width={lMatches ? "50%" : "100%"}>
+            <Stack direction="row" alignItems="center">
               <Link to={props.link1}>
                 <KeyboardDoubleArrowLeftIcon
                   sx={{
-                    fontSize: "70px",
+                    fontSize: "60px",
                     color: "white",
                     display: "block",
                   }}
@@ -39,30 +39,34 @@ function ButtonsOnBot(props) {
                 />
               </Link>
               <Link to={props.link1}>
-                <Typography color="white" fontSize="50px">
+                <Typography color="white" fontSize="40px">
                   {props.text1}
                 </Typography>
               </Link>
             </Stack>
           </Box>
-          <Box width="50%">
+          <Box width={lMatches ? "50%" : "100%"}>
             <Stack alignItems="flex-end">
-              <Stack direction="row" spacing={18} alignItems="flex-end">
-                <Link to={props.link2}>
-                  <Typography color="white" fontSize="50px">
-                    {props.text2}
-                  </Typography>
-                </Link>
-                <Link to={props.link2}>
-                  <KeyboardDoubleArrowRightIcon
-                    sx={{
-                      fontSize: "70px",
-                      color: "white",
-                      display: "block",
-                    }}
-                    className="buttonIcons"
-                  />
-                </Link>
+              <Stack direction="row" alignItems="flex-end">
+                <Box>
+                  <Stack direction="row">
+                    <Link to={props.link2}>
+                      <Typography color="white" fontSize="40px">
+                        {props.text2}
+                      </Typography>
+                    </Link>
+                    <Link to={props.link2}>
+                      <KeyboardDoubleArrowRightIcon
+                        sx={{
+                          fontSize: "60px",
+                          color: "white",
+                          display: "block",
+                        }}
+                        className="buttonIcons"
+                      />
+                    </Link>
+                  </Stack>
+                </Box>
               </Stack>
             </Stack>
           </Box>

@@ -383,7 +383,12 @@ function SimulationQuiz() {
       </Stack>
 
       {/* Two buttons */}
-      <ButtonsOnBot link1="/phishingDetector" link2="/pastData" />
+      <ButtonsOnBot
+        link1="/phishingDetector"
+        link2="/pastData"
+        text1="How do I report a Phishing URL?"
+        text2="What is the past phishing numbers?"
+      />
     </Box>
   );
 }

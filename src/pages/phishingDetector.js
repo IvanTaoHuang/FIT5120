@@ -235,7 +235,7 @@ function PhishingDetector() {
               border={4}
               borderColor="#59CE8F"
               sx={{
-                width: "180px",
+                width: "320px",
                 height: "50px",
               }}
               onClick={handleClickOpen}
@@ -245,7 +245,7 @@ function PhishingDetector() {
               <Box
                 className="picBox10"
                 sx={{
-                  width: "20%",
+                  width: "12%",
                   height: "80%",
                   marginLeft: "10px",
                   marginTop: "5px",
@@ -254,23 +254,23 @@ function PhishingDetector() {
 
               <Box
                 sx={{
-                  width: "70%",
+                  width: "80%",
                   height: "20%",
-                  marginLeft: "50px",
-                  marginTop: "-33px",
+                  marginLeft: "53px",
+                  marginTop: "-30px",
                 }}
               >
                 <Typography
                   align="center"
                   sx={{
                     color: "white",
-                    fontSize: "20px",
+                    fontSize: "19px",
                     fontFamily: "Montserrat",
                   }}
                   variant="h1"
                   className="watchTutorial"
                 >
-                  Watch Tutorial
+                  How to use the Phishing Detector
                 </Typography>
               </Box>
             </Box>
@@ -610,7 +610,12 @@ function PhishingDetector() {
           <Box height="130px"></Box>
         </Box> */}
         <Box sx={{ height: "60px" }}></Box>
-        <ButtonsOnBot link1="/identify" link2="/report" />
+        <ButtonsOnBot
+          link1="/identify"
+          link2="/report"
+          text1="What are the types of scams?"
+          text2="How do I report a phishing URL?"
+        />
       </Box>
     </>
   );

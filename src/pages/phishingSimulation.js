@@ -93,7 +93,7 @@ function PhishingSimulation() {
           border={4}
           borderColor="#59CE8F"
           sx={{
-            width: "180px",
+            width: "320px",
             height: "50px",
           }}
           onClick={handleClickOpen}
@@ -103,7 +103,7 @@ function PhishingSimulation() {
           <Box
             className="picBox10"
             sx={{
-              width: "20%",
+              width: "12%",
               height: "80%",
               marginLeft: "10px",
               marginTop: "5px",
@@ -112,23 +112,23 @@ function PhishingSimulation() {
 
           <Box
             sx={{
-              width: "70%",
+              width: "80%",
               height: "20%",
-              marginLeft: "50px",
-              marginTop: "-33px",
+              marginLeft: "53px",
+              marginTop: "-30px",
             }}
           >
             <Typography
               align="center"
               sx={{
                 color: "white",
-                fontSize: "20px",
+                fontSize: "19px",
                 fontFamily: "Montserrat",
               }}
               variant="h1"
               className="watchTutorial"
             >
-              Watch Tutorial
+              How to use the Phishing Simulator
             </Typography>
           </Box>
         </Box>
@@ -243,7 +243,12 @@ function PhishingSimulation() {
       </Stack>
       <Box height="80px"></Box>
       {/* Two buttons */}
-      <ButtonsOnBot link1="/report" link2="/pastData" />
+      <ButtonsOnBot
+        link1="/report"
+        link2="/pastData"
+        text1="How do I report a Phishing URL?"
+        text2="What is the past phishing numbers?"
+      />
     </Box>
   );
 }

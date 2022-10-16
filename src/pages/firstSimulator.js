@@ -20,6 +20,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
 import ButtonsOnBot from "../components/buttonOnBot";
+
 function FirstSimulator() {
   const sMatches = useMediaQuery("(min-width:660px)");
   const breadcrumbs = [
@@ -210,7 +211,7 @@ function FirstSimulator() {
           </form>
         </div>
         <button className="submit" onClick={handleClick}>
-          Submit
+          {buttonText}
         </button>
       </Stack>
 
@@ -291,7 +292,12 @@ function FirstSimulator() {
       </Stack>
       <Box sx={{ height: "100px" }}></Box>
       {/* Two buttons */}
-      <ButtonsOnBot link1="/phishingDetector" link2="/pastData" />
+      <ButtonsOnBot
+        link1="/phishingDetector"
+        link2="/pastData"
+        text1="How do I report a Phishing URL?"
+        text2="What is the past phishing numbers?"
+      />
     </Box>
   );
 }

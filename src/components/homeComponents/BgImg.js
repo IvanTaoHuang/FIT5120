@@ -12,6 +12,7 @@ import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDo
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import AnimatedNumbers from "react-animated-numbers";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 function BgImg() {
   const sMatches = useMediaQuery("(min-width:825px)");
@@ -172,7 +173,11 @@ function BgImg() {
       {/* Cards to different pages */}
       <Box sx={{ backgroundColor: "black", width: "100%" }}>
         {/* margin box */}
-        <Box sx={{ height: "100px" }}></Box>
+        <Box sx={{ height: "50px" }}></Box>
+        <Typography color="#BDB39F" fontSize="35px" textAlign="center">
+          Start your journey by identifying the types of scams
+        </Typography>
+        <Box sx={{ height: "50px" }}></Box>
         <Stack
           direction={mMatches ? "row" : "column"}
           justifyContent="center"
@@ -508,6 +513,29 @@ function BgImg() {
             </Typography>
           </Box>
         </Stack> */}
+        <Box backgroundColor="#59CE8F ">
+          <Box width="100%">
+            <Stack alignItems="flex-end">
+              <Stack direction="row" spacing={18} alignItems="flex-end">
+                <Link to="/identify">
+                  <Typography color="white" fontSize="50px">
+                    What are the types of scams?
+                  </Typography>
+                </Link>
+                <Link to="/identify">
+                  <KeyboardDoubleArrowRightIcon
+                    sx={{
+                      fontSize: "70px",
+                      color: "white",
+                      display: "block",
+                    }}
+                    className="buttonIcons"
+                  />
+                </Link>
+              </Stack>
+            </Stack>
+          </Box>
+        </Box>
       </Box>
     </>
   );

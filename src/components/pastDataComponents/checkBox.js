@@ -1349,7 +1349,12 @@ export default function ControlledCheckbox() {
       </Stack>
       {/* three buttons */}
       <Box height="50px"></Box>
-      <ButtonsOnBot link1="/phishingSimulation" link2="/" />
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/"
+        text1="How does phishing mails work?"
+        text2="Home"
+      />
       {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
         <Stack direction={lMatches ? "row" : "column"}>
           <Box
