@@ -461,7 +461,7 @@ function BgImg() {
             </Stack>
           </Box>
         </Stack>
-        <Box sx={{ height: "200px" }}></Box>
+        <Box sx={{ height: "150px" }}></Box>
         {/* <Stack justifyContent="center" alignItems="center" direction="column">
           <Box
             // border={4}
@@ -518,14 +518,14 @@ function BgImg() {
             <Stack alignItems="flex-end">
               <Stack direction="row" spacing={18} alignItems="flex-end">
                 <Link to="/identify">
-                  <Typography color="white" fontSize="50px">
+                  <Typography color="white" fontSize="35px">
                     What are the types of scams?
                   </Typography>
                 </Link>
                 <Link to="/identify">
                   <KeyboardDoubleArrowRightIcon
                     sx={{
-                      fontSize: "70px",
+                      fontSize: "50px",
                       color: "white",
                       display: "block",
                     }}
