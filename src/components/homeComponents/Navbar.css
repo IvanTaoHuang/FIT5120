@@ -179,7 +179,7 @@
   }
 
   .nav-menu1.active {
-    background: #59CE8F ;
+    background: rgba(89,206,143,0.5) ;
     left: 0;
     opacity: 1.2;
     transition: all 0.5s ease; 
