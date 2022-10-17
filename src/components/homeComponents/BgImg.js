@@ -426,7 +426,7 @@ function BgImg() {
                 }}
                 borderRadius="18px"
               >
-                <Link to="/pastData">
+                <Link to="/phishingSimulation">
                   <Box
                     className="picBox8"
                     sx={{

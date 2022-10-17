@@ -13,7 +13,7 @@ function ButtonsOnBot(props) {
   return (
     <>
       {/* <ButtonsOnBot /> */}
-      <Box backgroundColor="#59CE8F" height="120px">
+      <Box backgroundColor="#59CE8F">
         <Box height="30px"></Box>
         <Stack direction={lMatches ? "row" : "column"} alignItems="center">
           <Box width={lMatches ? "50%" : "100%"}>
@@ -61,6 +61,7 @@ function ButtonsOnBot(props) {
             </Stack>
           </Box>
         </Stack>
+        <Box height="30px"></Box>
       </Box>
       {/* three buttons */}
       {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
