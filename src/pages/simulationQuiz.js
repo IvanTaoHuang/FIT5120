@@ -162,7 +162,7 @@ function SimulationQuiz() {
 
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           justifyContent="center"
           sx={{ maxWidth: "600px", maxHeight: "500px" }}
         >
@@ -303,13 +303,15 @@ function SimulationQuiz() {
             marginTop="20px"
           >
             <Box display={answerReal || answerFake ? "none" : "block"}>
-              <button className="answerButton1" onClick={handleReal}>
-                Real
-              </button>
+              <Stack direction="row" spacing={12}>
+                <button className="answerButton1" onClick={handleReal}>
+                  Real
+                </button>
 
-              <button className="answerButton2" onClick={handleFake}>
-                Fake
-              </button>
+                <button className="answerButton2" onClick={handleFake}>
+                  Fake
+                </button>
+              </Stack>
             </Box>
           </Stack>
           <Box height="20px"></Box>
@@ -381,7 +383,12 @@ function SimulationQuiz() {
       </Stack>
 
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/pastData"
+        text1="Go back to Simulator"
+        text2="What are the past phishing numbers?"
+      />
     </Box>
   );
 }

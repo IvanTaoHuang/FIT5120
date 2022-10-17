@@ -208,7 +208,12 @@ function QuickExperience() {
       </Stack>
 
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/pastData"
+        text1="Go back to Simulator"
+        text2="What are the past phishing numbers?"
+      />
     </Box>
   );
 }

@@ -11,12 +11,9 @@ import { Helmet } from "react-helmet";
 import { useMediaQuery } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import ClearIcon from "@mui/icons-material/Clear";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import IconTopic from "../components/iconTopic";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -24,10 +21,11 @@ import Button from "@mui/material/Button";
 import tutVideo from "../images/detectorTut.mp4";
 import poster from "../images/poster.PNG";
 import { useTheme } from "@mui/material/styles";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 function PhishingDetector() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:655px)");
+  const lMatches = useMediaQuery("(min-width:750px)");
   const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -50,6 +48,7 @@ function PhishingDetector() {
   const [result, setResult] = useState("");
   let phishRate1 = 0;
   let legitRate1 = 0;
+  const [buttonText, setButtonText] = React.useState("Check");
 
   const handleChange = (event) => {
     setUrl(event.target.value);
@@ -69,6 +68,7 @@ function PhishingDetector() {
     // setIsActive((current) => !current);
     console.log("hi");
     await setResult("");
+    await setButtonText("Processing...");
     setLoading(true);
     const data = { url: url };
     await fetch("https://api.isitphish.com/v2/query", {
@@ -113,6 +113,7 @@ function PhishingDetector() {
         console.error("Error:", error);
       });
     setLoading(false);
+    setButtonText("Check");
   };
 
   const Div = styled("div")(({ theme }) => ({
@@ -130,6 +131,7 @@ function PhishingDetector() {
     if (event.key === "Enter") {
       event.preventDefault();
       await setResult("");
+      await setButtonText("Processing...");
       console.log("hi");
       setLoading(true);
       const data = { url: url };
@@ -175,6 +177,7 @@ function PhishingDetector() {
           console.error("Error:", error);
         });
       setLoading(false);
+      setButtonText("Check");
     } else {
       console.log("Failure");
     }
@@ -186,7 +189,7 @@ function PhishingDetector() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
+          // height: "100%",
           position: "fixed",
           top: "70px",
           left: "0",
@@ -227,26 +230,22 @@ function PhishingDetector() {
           <br></br>
           <br></br>
           {/* watch tutorial */}
-          <Stack
-            marginLeft={lMatches ? "5vw" : "0px"}
-            direction="row"
-            justifyContent={lMatches ? "flex-start" : "center"}
-            alignItems="center"
-          >
+          <Stack direction="row" justifyContent="center" alignItems="center">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
-                width: "180px",
+                width: "320px",
                 height: "50px",
               }}
               onClick={handleClickOpen}
               className="tutBox"
+              borderRadius="18px"
             >
               <Box
                 className="picBox10"
                 sx={{
-                  width: "20%",
+                  width: "12%",
                   height: "80%",
                   marginLeft: "10px",
                   marginTop: "5px",
@@ -255,22 +254,23 @@ function PhishingDetector() {
 
               <Box
                 sx={{
-                  width: "70%",
+                  width: "80%",
                   height: "20%",
-                  marginLeft: "50px",
-                  marginTop: "-33px",
+                  marginLeft: "53px",
+                  marginTop: "-30px",
                 }}
               >
                 <Typography
                   align="center"
                   sx={{
                     color: "white",
-                    fontSize: "20px",
+                    fontSize: "19px",
                     fontFamily: "Montserrat",
                   }}
                   variant="h1"
+                  className="watchTutorial"
                 >
-                  Watch Tutorial
+                  How to use the Phishing Detector
                 </Typography>
               </Box>
             </Box>
@@ -341,7 +341,7 @@ function PhishingDetector() {
               </form>
             </div>
             <button className="submit" onClick={handleClick}>
-              Check
+              {buttonText}
             </button>
           </Stack>
 
@@ -361,7 +361,7 @@ function PhishingDetector() {
                 display: loading ? "block" : "none",
               }}
             >
-              <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
+              <CircularProgress size="75px" sx={{ color: "#59CE8F" }} />
             </div>
 
             <Stack
@@ -484,7 +484,7 @@ function PhishingDetector() {
           <Box height={lMatches ? "0px" : "30px"}></Box>
         </Stack>
         {/* three buttons */}
-        <Box
+        {/* <Box
           sx={{ width: "100%", backgroundColor: "black", marginTop: "50px" }}
         >
           <Stack direction={lMatches ? "row" : "column"}>
@@ -502,11 +502,13 @@ function PhishingDetector() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="identifyBox"
                 >
                   <Link to="/identify">
                     <Box
@@ -535,6 +537,7 @@ function PhishingDetector() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="identifyText"
                       >
                         Identify Scams
                       </Typography>
@@ -560,11 +563,13 @@ function PhishingDetector() {
                   <Box
                     border={4}
                     justifyContent="center"
-                    borderColor="#A36F09"
+                    borderColor="#59CE8F"
                     sx={{
                       width: "180px",
                       height: "50px",
                     }}
+                    borderRadius="18px"
+                    className="reportBox"
                   >
                     <Box
                       className="picBox3"
@@ -592,6 +597,7 @@ function PhishingDetector() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="reportText"
                       >
                         Report a scam
                       </Typography>
@@ -602,8 +608,14 @@ function PhishingDetector() {
             </Box>
           </Stack>
           <Box height="130px"></Box>
-        </Box>
-        <Box sx={{ height: "20px" }}></Box>
+        </Box> */}
+        <Box sx={{ height: "60px" }}></Box>
+        <ButtonsOnBot
+          link1="/identify"
+          link2="/report"
+          text1="What are the types of scams?"
+          text2="How do I report a phishing URL?"
+        />
       </Box>
     </>
   );

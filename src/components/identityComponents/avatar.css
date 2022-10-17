@@ -11,7 +11,7 @@ a{text-decoration: none;
 
 .quizButton{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 30px;
     font-family: Montserrat;
     width: 300px;
@@ -20,9 +20,73 @@ a{text-decoration: none;
 }
 
 .quizButton:hover{
-    color:#A36F09;
+    color:#59CE8F;
     background-color: #FFFF;
     font-size: 35px;
     cursor: pointer;
 }
 
+
+.flip-card {
+    background-color: transparent;
+    /* min-width: 480px; */
+    width: 280px;
+    /* max-height: 480px; */
+    height: 430px;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    border: 0;
+    display: inline-block;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: black;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #59CE8F;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .backImg{
+    object-fit: fill;
+  }
+  
+
+  
+  /* .MuiSlider-thumb{ 
+    color: green;
+  }
+  .MuiSlider-rail{
+    color:#59CE8F;
+  }*/
+  /* .MuiSlider-track{
+    color: green;
+  }  */

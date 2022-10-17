@@ -11,12 +11,16 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import AnimatedNumbers from "react-animated-numbers";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 function BgImg() {
   const sMatches = useMediaQuery("(min-width:825px)");
-  const smMatches = useMediaQuery("(min-width:1000px)");
+  const smMatches = useMediaQuery("(min-width:760px)");
   const mMatches = useMediaQuery("(min-width:1180px)");
   const ref = useRef(null);
+  const [num, setNum] = React.useState(8292);
+  const [num1, setNum1] = React.useState(58);
   const handleClick = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -46,32 +50,53 @@ function BgImg() {
           alignItems="center"
           justifyContent="center"
         >
-          <Link to="/identify">
-            <Box
+          <Box
+            sx={{
+              width: "300px",
+              height: "260px",
+              backgroundColor: "rgba(89,206,143,0.5)",
+              // opacity: "0.2",
+            }}
+            className="box1"
+            border={4}
+            borderColor="rgba(89,206,143,0.5)"
+            borderRadius="18px"
+          >
+            <Stack alignItems="center">
+              <h3
+                // sx={{
+                //   color: "#E8F9FD",
+                //   fontSize: "70px",
+                //   textAlign: "center",
+                // }}
+                className="numberInBox"
+              >
+                <AnimatedNumbers
+                  includeComma
+                  animateToNumber={num}
+                  fontStyle={{ fontSize: 70, color: "white" }}
+                  configs={[
+                    { mass: 1, tension: 220, friction: 100 },
+                    { mass: 1, tension: 180, friction: 130 },
+                    { mass: 1, tension: 280, friction: 90 },
+                    { mass: 1, tension: 180, friction: 135 },
+                    { mass: 1, tension: 260, friction: 100 },
+                    { mass: 1, tension: 210, friction: 180 },
+                  ]}
+                ></AnimatedNumbers>
+              </h3>
+            </Stack>
+            <Typography
               sx={{
-                width: "300px",
-                height: "260px",
-                backgroundColor: "rgba(163,111,9,0.5)",
-                // opacity: "0.2",
+                color: "#FFFF",
+                fontSize: "27px",
+                textAlign: "center",
+                marginTop: "20px",
               }}
-              className="box1"
             >
-              <Typography
-                sx={{
-                  color: "#a36f09",
-                  fontSize: "70px",
-                  textAlign: "center",
-                }}
-              >
-                58%
-              </Typography>
-              <Typography
-                sx={{ color: "#FFFF", fontSize: "28px", textAlign: "center" }}
-              >
-                Have reported phishing mails compared to other scams
-              </Typography>
-            </Box>
-          </Link>
+              Graduates have fallen to phishing mails during job seeking in 2021
+            </Typography>
+          </Box>
         </Stack>
         <Stack alignItems="center">
           <Box sx={{ height: "45px" }}></Box>
@@ -137,10 +162,22 @@ function BgImg() {
 
       <div ref={ref}></div>
 
+      {/* <AnimatedNumbers
+        animateToNumber={num}
+        fontStyle={{ fontSize: 32, color: "white" }}
+        configs={(number, index) => {
+          return { mass: 1, tension: 230 * (index + 1), friction: 140 };
+        }}
+      ></AnimatedNumbers> */}
+
       {/* Cards to different pages */}
       <Box sx={{ backgroundColor: "black", width: "100%" }}>
         {/* margin box */}
-        <Box sx={{ height: "100px" }}></Box>
+        <Box sx={{ height: "50px" }}></Box>
+        <Typography color="#BDB39F" fontSize="35px" textAlign="center">
+          Start your journey by identifying the types of scams
+        </Typography>
+        <Box sx={{ height: "50px" }}></Box>
         <Stack
           direction={mMatches ? "row" : "column"}
           justifyContent="center"
@@ -152,17 +189,20 @@ function BgImg() {
             <Box
               border={4}
               justifyContent="center"
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox1"
                 sx={{
-                  width: "100%",
-                  height: "80%",
+                  width: "70%",
+                  height: "70%",
+                  marginTop: "14px",
+                  marginLeft: "37px",
                 }}
               ></Box>
 
@@ -172,6 +212,7 @@ function BgImg() {
                   color: "white",
                   fontSize: "35px",
                   fontFamily: "Montserrat",
+                  marginTop: "10px",
                 }}
                 variant="h1"
               >
@@ -201,11 +242,12 @@ function BgImg() {
             <Box
               alignContent="center"
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox2"
@@ -251,11 +293,12 @@ function BgImg() {
           <Link to="/report">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F "
               sx={{
                 width: "250px",
                 height: "300px",
               }}
+              borderRadius="18px"
             >
               <Box
                 className="picBox3"
@@ -283,61 +326,143 @@ function BgImg() {
         </Stack>
 
         {/* margin box */}
-        <Box sx={{ height: "200px" }}></Box>
+        <Box sx={{ height: "150px" }}></Box>
 
+        <Typography color="#BDB39F" fontSize="35px" textAlign="center">
+          Gain Awareness through past trends or from our simulated environment{" "}
+        </Typography>
+        <Box sx={{ height: "50px" }}></Box>
         {/* card for data Visualisation */}
-        <Stack justifyContent="center" alignItems="center" direction="column">
-          <Box
-            // border={4}
-            justifyContent="center"
-            // borderColor="#A36F09"
-            sx={{
-              width: "300px",
-              height: "300px",
-            }}
-            onClick
-          >
-            <Link to="/pastData">
+        <Stack
+          justifyContent="center"
+          alignItems="center"
+          direction={smMatches ? "row" : "column"}
+          spacing={smMatches ? 0 : 24}
+        >
+          <Box width="50%">
+            <Stack alignItems="center">
               <Box
-                className="picBox4"
+                border={4}
+                justifyContent="center"
+                // borderColor="#A36F09"
                 sx={{
-                  marginTop: "14px",
-                  marginLeft: "20px",
-                  marginBottom: "20px",
-                  width: "100%",
-                  height: "100%",
+                  minWidth: "320px",
+                  maxWidth: "360px",
+                  height: "470px",
+                  backgroundColor: "rgba(89,206,143,0.5)",
                 }}
-              ></Box>
-            </Link>
+                borderRadius="18px"
+              >
+                <Link to="/pastData">
+                  <Box
+                    className="picBox4"
+                    sx={{
+                      marginTop: "23px",
+                      marginLeft: "47px",
+                      marginBottom: "20px",
+                      width: "90%",
+                      height: "75%",
+                    }}
+                  ></Box>
+                  <Stack alignItems="center" direction="column">
+                    <Typography
+                      variant="h1"
+                      sx={{
+                        color: "#FFFFFF",
+                        fontFamily: "Montserrat Alternates",
+                        fontSize: "35px",
+                        marginTop: "-40px",
+                      }}
+                    >
+                      <Stack direction="row">
+                        <AnimatedNumbers
+                          includeComma
+                          animateToNumber={num1}
+                          fontStyle={{ fontSize: 37, color: "white" }}
+                          configs={[
+                            { mass: 1, tension: 220, friction: 100 },
+                            { mass: 1, tension: 180, friction: 130 },
+                            { mass: 1, tension: 280, friction: 90 },
+                            { mass: 1, tension: 180, friction: 135 },
+                            { mass: 1, tension: 260, friction: 100 },
+                            { mass: 1, tension: 210, friction: 180 },
+                          ]}
+                        ></AnimatedNumbers>{" "}
+                        %
+                      </Stack>
+                    </Typography>
+                    <Box sx={{ width: "90%" }}>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "white ",
+                          fontFamily: "Montserrat",
+                          fontSize: "15px",
+                          marginTop: "5px",
+                          textAlign: "center",
+                          width: "100%",
+                        }}
+                      >
+                        Have reported phishing mails compared to other scams
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </Link>
+              </Box>
+            </Stack>
           </Box>
-          <Typography
-            variant="h1"
-            sx={{
-              color: "#FFFFFF",
-              fontFamily: "Montserrat Alternates",
-              // fontSize: "40px",
-              marginTop: "30px",
-            }}
-          >
-            8,292
-          </Typography>
-          <Box sx={{ width: "60%" }}>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "#A36F09",
-                fontFamily: "Montserrat",
-                fontSize: "40px",
-                marginTop: "30px",
-                textAlign: "center",
-              }}
-            >
-              Graduates have fallen to phishing mails during job seeking
-            </Typography>
+
+          <Box width="50%">
+            <Stack alignItems="center">
+              <Box
+                border={4}
+                justifyContent="center"
+                // borderColor="#A36F09"
+                sx={{
+                  minWidth: "320px",
+                  maxWidth: "360px",
+                  height: "470px",
+                  backgroundColor: "rgba(89,206,143,0.5)",
+                }}
+                borderRadius="18px"
+              >
+                <Link to="/pastData">
+                  <Box
+                    className="picBox8"
+                    sx={{
+                      marginTop: "23px",
+                      marginLeft: "32px",
+                      marginBottom: "20px",
+                      width: "90%",
+                      height: "75%",
+                    }}
+                  ></Box>
+
+                  <Box sx={{ width: "100%" }}>
+                    <Stack alignItems="center">
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "white ",
+                          fontFamily: "Montserrat",
+                          fontSize: "15px",
+                          marginTop: "-25px",
+                          textAlign: "center",
+                          width: "90%",
+                        }}
+                      >
+                        Visit our Phishing Simulator and gain experience of scam
+                        emails
+                      </Typography>
+                    </Stack>
+                  </Box>
+                </Link>
+              </Box>
+            </Stack>
           </Box>
         </Stack>
-        <Box sx={{ height: "200px" }}></Box>
-        <Stack justifyContent="center" alignItems="center" direction="column">
+        <Box sx={{ height: "150px" }}></Box>
+        {/* <Stack justifyContent="center" alignItems="center" direction="column">
           <Box
             // border={4}
             justifyContent="center"
@@ -360,8 +485,8 @@ function BgImg() {
                 }}
               ></Box>
             </Link>
-          </Box>
-          {/* <Typography
+          </Box> */}
+        {/* <Typography
             variant="h1"
             sx={{
               color: "#FFFFFF",
@@ -373,11 +498,11 @@ function BgImg() {
             8,292
           </Typography> */}
 
-          <Box sx={{ width: "60%" }}>
+        {/* <Box sx={{ width: "60%" }}>
             <Typography
               variant="body1"
               sx={{
-                color: "#A36F09",
+                color: "#59CE8F ",
                 fontFamily: "Montserrat",
                 fontSize: "40px",
                 marginTop: "30px",
@@ -387,8 +512,31 @@ function BgImg() {
               Visit our Phishing Simulator and gain experience of scam emails
             </Typography>
           </Box>
-        </Stack>
-        <Box sx={{ height: "150px" }}></Box>
+        </Stack> */}
+        <Box backgroundColor="#59CE8F " height="120px">
+          <Box height="30px"></Box>
+          <Box width="100%">
+            <Stack alignItems="flex-end">
+              <Stack direction="row" alignItems="flex-end">
+                <Link to="/identify">
+                  <Typography color="white" fontSize="35px">
+                    What are the types of scams?
+                  </Typography>
+                </Link>
+                <Link to="/identify">
+                  <KeyboardDoubleArrowRightIcon
+                    sx={{
+                      fontSize: "50px",
+                      color: "white",
+                      display: "block",
+                    }}
+                    className="buttonIcons"
+                  />
+                </Link>
+              </Stack>
+            </Stack>
+          </Box>
+        </Box>
       </Box>
     </>
   );

@@ -5,6 +5,20 @@ video {
     /* position: fixed;
     z-index: -1; */
   }
+
+  .box1:hover .numberInBox{
+    font-size: 80px;
+    color:#59CE8F;
+  }
+  
+  
+  .numberInBox{
+    font-size: 70px;
+    color:#E8F9FD;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: -5px;
+  }
   .homeVideo {
     object-fit: fill;
     width: 100%;
@@ -15,7 +29,7 @@ video {
   .button1{
     width: 100%;
                     font-size: 30px;
-                    background-color: #a36f09;
+                    background-color: #59CE8F ;
                     color: #FFF;
                     border: 0;
                     border-radius: 10px;

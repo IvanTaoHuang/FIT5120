@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import tutVideo from "../images/simulatorTut.mp4";
 import poster from "../images/poster.PNG";
 import { useTheme } from "@mui/material/styles";
+import "../components/phishingSimulationComponents/phishingSimulation.css";
 
 function PhishingSimulation() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -49,7 +50,7 @@ function PhishingSimulation() {
       sx={{
         width: "100%",
         backgroundColor: "black",
-        height: "100%",
+        // height: "100%",
         position: "fixed",
         top: "70px",
         left: "0",
@@ -83,25 +84,26 @@ function PhishingSimulation() {
       <br></br>
       {/* watch tutorial */}
       <Stack
-        marginLeft={lMatches ? "5vw" : "0px"}
+        // marginLeft={lMatches ? "5vw" : "0px"}
         direction="row"
-        justifyContent={lMatches ? "flex-start" : "center"}
+        justifyContent="center"
         alignItems="center"
       >
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           sx={{
-            width: "180px",
+            width: "320px",
             height: "50px",
           }}
           onClick={handleClickOpen}
           className="tutBox"
+          borderRadius="18px"
         >
           <Box
             className="picBox10"
             sx={{
-              width: "20%",
+              width: "12%",
               height: "80%",
               marginLeft: "10px",
               marginTop: "5px",
@@ -110,22 +112,23 @@ function PhishingSimulation() {
 
           <Box
             sx={{
-              width: "70%",
+              width: "80%",
               height: "20%",
-              marginLeft: "50px",
-              marginTop: "-33px",
+              marginLeft: "53px",
+              marginTop: "-30px",
             }}
           >
             <Typography
               align="center"
               sx={{
                 color: "white",
-                fontSize: "20px",
+                fontSize: "19px",
                 fontFamily: "Montserrat",
               }}
               variant="h1"
+              className="watchTutorial"
             >
-              Watch Tutorial
+              How to use the Phishing Simulator
             </Typography>
           </Box>
         </Box>
@@ -175,11 +178,13 @@ function PhishingSimulation() {
           <Stack alignItems="center">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
                 width: "320px",
                 height: "60px",
               }}
+              borderRadius="18px"
+              className="firstHandBox"
             >
               <Link to="/firstSimulator">
                 <Typography
@@ -191,6 +196,7 @@ function PhishingSimulation() {
                     marginTop: "12px",
                   }}
                   variant="h1"
+                  className="firstHandText"
                 >
                   First-Hand Simulator
                 </Typography>
@@ -208,11 +214,13 @@ function PhishingSimulation() {
           <Stack alignItems="center">
             <Box
               border={4}
-              borderColor="#A36F09"
+              borderColor="#59CE8F"
               sx={{
                 width: "320px",
                 height: "60px",
               }}
+              borderRadius="18px"
+              className="quickBox"
             >
               <Link to="/quickExperience">
                 <Typography
@@ -224,6 +232,7 @@ function PhishingSimulation() {
                     marginTop: "12px",
                   }}
                   variant="h1"
+                  className="quickText"
                 >
                   Quick Experience
                 </Typography>
@@ -234,7 +243,12 @@ function PhishingSimulation() {
       </Stack>
       <Box height="80px"></Box>
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot
+        link1="/report"
+        link2="/pastData"
+        text1="How do I report a Phishing URL?"
+        text2="What are the past phishing numbers?"
+      />
     </Box>
   );
 }

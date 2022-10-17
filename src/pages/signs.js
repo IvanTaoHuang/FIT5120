@@ -11,10 +11,9 @@ import SignInfo from "../components/signsComponents/signInfo.js";
 import { Link } from "react-router-dom";
 import TimeToRead from "../components/timeToRead.js";
 import "../components/signsComponents/signs.css";
-
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -160,7 +159,7 @@ export default function Signs() {
         <Box sx={{ height: "100px" }}></Box>
 
         {/* three buttons */}
-        <Box sx={{ width: "100%", backgroundColor: "black" }}>
+        {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack direction={lMatches ? "row" : "column"}>
             <Box
               sx={{
@@ -176,20 +175,22 @@ export default function Signs() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/phishingDetector">
                     <Box
                       className="picBox2"
                       sx={{
-                        width: "30%",
+                        width: "20%",
                         height: "80%",
                         marginLeft: "10px",
-                        marginTop: "5px",
+                        marginTop: "8px",
                       }}
                     ></Box>
 
@@ -197,8 +198,8 @@ export default function Signs() {
                       sx={{
                         width: "70%",
                         height: "20%",
-                        marginLeft: "55px",
-                        marginTop: "-28px",
+                        marginLeft: "50px",
+                        marginTop: "-42px",
                       }}
                     >
                       <Typography
@@ -209,6 +210,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Back to Detector
                       </Typography>
@@ -233,11 +235,13 @@ export default function Signs() {
                 <Box
                   border={4}
                   justifyContent="center"
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/report">
                     <Box
@@ -246,7 +250,7 @@ export default function Signs() {
                         width: "30%",
                         height: "80%",
                         marginLeft: "10px",
-                        marginTop: "5px",
+                        marginTop: "7px",
                       }}
                     ></Box>
 
@@ -254,7 +258,7 @@ export default function Signs() {
                       sx={{
                         width: "70%",
                         height: "20%",
-                        marginLeft: "50px",
+                        marginLeft: "55px",
                         marginTop: "-28px",
                       }}
                     >
@@ -266,6 +270,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Report a scam
                       </Typography>
@@ -276,8 +281,14 @@ export default function Signs() {
               </Stack>
             </Box>
           </Stack>
-        </Box>
+        </Box> */}
         <Box height="100px"></Box>
+        <ButtonsOnBot
+          link1="/phishingDetector"
+          link2="/report"
+          text1="Go back to Detector"
+          text2="How do I report a phishing URL?"
+        />
       </Box>
     </>
   );

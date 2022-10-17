@@ -109,7 +109,7 @@ function SimulationFeedback() {
         <Box height="50px"></Box>
         <Box
           border={4}
-          borderColor="#A36F09"
+          borderColor="#59CE8F"
           justifyContent="center"
           sx={{ minWidth: "320px", maxWidth: "700px", minHeight: "300px" }}
         >
@@ -142,7 +142,12 @@ function SimulationFeedback() {
       <Box height="50px"></Box>
 
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/pastData"
+        text1="Go back to Simulator"
+        text2="What are the past phishing numbers?"
+      />
     </Box>
   );
 }

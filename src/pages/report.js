@@ -12,10 +12,11 @@ import "../components/reportComponents/report.css";
 import IconTopic from "../components/iconTopic";
 import ScrollToTop from "../components/scroll.js";
 // import { HashLink } from "react-router-hash-link";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
-  const lMatches = useMediaQuery("(min-width:655px)");
+  const lMatches = useMediaQuery("(min-width:750px)");
   const Div = styled("div")(({ theme }) => ({
     ...theme.typography.button,
     backgroundColor: "black",
@@ -33,7 +34,7 @@ export default function Signs() {
         sx={{
           width: "100%",
           backgroundColor: "black",
-          height: "100%",
+          // height: "100%",
           position: "fixed",
           top: "70px",
           left: "0",
@@ -69,7 +70,7 @@ export default function Signs() {
               sx={{
                 fontSize: "36px",
                 fontFamily: "Montserrat",
-                color: "#A36F09",
+                color: "#59CE8F",
               }}
             >
               Report a scam
@@ -111,7 +112,7 @@ export default function Signs() {
               sx={{
                 fontSize: "36px",
                 fontFamily: "Montserrat",
-                color: "#A36F09",
+                color: "#59CE8F",
               }}
             >
               Required details to be provided
@@ -133,9 +134,9 @@ export default function Signs() {
           </Stack>
         </Box>
 
-        <Box height="180px"></Box>
+        <Box height="100px"></Box>
 
-        {/* three buttons */}
+        {/* three buttons
         <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack direction={lMatches ? "row" : "column"}>
             <Box
@@ -152,11 +153,13 @@ export default function Signs() {
               >
                 <Box
                   border={4}
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="detectorBox"
                 >
                   <Link to="/phishingDetector">
                     <Box
@@ -165,7 +168,7 @@ export default function Signs() {
                         width: "20%",
                         height: "80%",
                         // marginLeft: "10px",
-                        // marginTop: "5px",
+                        marginTop: "8px",
                       }}
                     ></Box>
 
@@ -174,7 +177,7 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-33px",
+                        marginTop: "-35px",
                       }}
                     >
                       <Typography
@@ -185,6 +188,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="detectorText"
                       >
                         Scam Detector
                       </Typography>
@@ -209,11 +213,13 @@ export default function Signs() {
                 <Box
                   border={4}
                   justifyContent="center"
-                  borderColor="#A36F09"
+                  borderColor="#59CE8F"
                   sx={{
                     width: "180px",
                     height: "50px",
                   }}
+                  borderRadius="18px"
+                  className="pastDataBox"
                 >
                   <Link to="/pastData">
                     <Box
@@ -231,7 +237,7 @@ export default function Signs() {
                         width: "70%",
                         height: "20%",
                         marginLeft: "50px",
-                        marginTop: "-33px",
+                        marginTop: "-31px",
                       }}
                     >
                       <Typography
@@ -242,6 +248,7 @@ export default function Signs() {
                           fontFamily: "Montserrat",
                         }}
                         variant="h1"
+                        className="pastDataText"
                       >
                         Past Data
                       </Typography>
@@ -252,7 +259,13 @@ export default function Signs() {
             </Box>
           </Stack>
           <Box height="180px"></Box>
-        </Box>
+        </Box> */}
+        <ButtonsOnBot
+          link1="/phishingDetector"
+          link2="/phishingSimulation"
+          text1="Is the URL real or fake?"
+          text2="How does phishing mails work?"
+        />
       </Box>
     </>
   );

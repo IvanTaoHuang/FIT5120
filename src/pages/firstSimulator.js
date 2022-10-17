@@ -20,6 +20,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
 import ButtonsOnBot from "../components/buttonOnBot";
+
 function FirstSimulator() {
   const sMatches = useMediaQuery("(min-width:660px)");
   const breadcrumbs = [
@@ -52,6 +53,7 @@ function FirstSimulator() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = useState("");
+  const [buttonText, setButtonText] = React.useState("Check");
 
   const handleChange = (event) => {
     setEmail(event.target.value);
@@ -66,6 +68,7 @@ function FirstSimulator() {
     if (event.key === "Enter") {
       event.preventDefault();
       await setResult("");
+      await setButtonText("Processing...");
       setLoading(true);
       await emailjs
         .sendForm(
@@ -87,9 +90,11 @@ function FirstSimulator() {
       console.log("Success");
     }
     setLoading(false);
+    setButtonText("Check");
   };
   const handleClick = async () => {
     await setResult("");
+    await setButtonText("Processing...");
     setLoading(true);
     await emailjs
       .sendForm(
@@ -110,6 +115,7 @@ function FirstSimulator() {
       );
     console.log("Success");
     setLoading(false);
+    setButtonText("Check");
   };
   const [closeAlert, setCloseAlert] = useState(false);
   const handleCloseAlert = () => {
@@ -205,7 +211,7 @@ function FirstSimulator() {
           </form>
         </div>
         <button className="submit" onClick={handleClick}>
-          Submit
+          {buttonText}
         </button>
       </Stack>
 
@@ -225,7 +231,7 @@ function FirstSimulator() {
             display: loading ? "block" : "none",
           }}
         >
-          <CircularProgress size="75px" sx={{ color: "#A36F09" }} />
+          <CircularProgress size="75px" sx={{ color: "#59CE8F" }} />
         </div>
 
         <Stack
@@ -235,7 +241,8 @@ function FirstSimulator() {
         >
           <br />
           <Alert severity="success">
-            The email has been succssfully sent to your email address.
+            The email has been succssfully sent to your email address. Please
+            check your email.
           </Alert>
 
           <br />
@@ -285,7 +292,12 @@ function FirstSimulator() {
       </Stack>
       <Box sx={{ height: "100px" }}></Box>
       {/* Two buttons */}
-      <ButtonsOnBot />
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/pastData"
+        text1="Go back to Simulator"
+        text2="What are the past phishing numbers?"
+      />
     </Box>
   );
 }

@@ -10,7 +10,7 @@ export default function SignInfo(props) {
   return (
     <Box
       border={4}
-      borderColor="#A36F09"
+      borderColor="#59CE8F"
       sx={{
         width: "80vw",
         minHeight: "300px",
@@ -32,7 +32,7 @@ export default function SignInfo(props) {
         <Stack direction="column">
           <Typography
             sx={{
-              color: "#A36F09",
+              color: "#59CE8F",
               fontSize: "35px",
               fontFamily: "Montserrat",
               marginLeft: "1vw",

@@ -147,7 +147,7 @@ background-image{
   background-color: transparent;
   transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out;
   border: 4px solid;
-  border-color:#A36F09 ;
+  border-color:#59CE8F ;
   
 }
 
@@ -191,7 +191,7 @@ background-image{
     background-color: #FFF;
     border: 3px solid;
     border-radius: 12px;
-    border-color: #A36F09;
+    border-color: #59CE8F;
     margin-right: 5px;
   }
   .field button:hover {
@@ -199,22 +199,21 @@ background-image{
     right: 0;
     top : 5px;
     height: 80%;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     border-color: #FFFF;
   }
   .submit{
-    width:80px;
-    background-color: #ffff;
-    color:#A36F09;
+    background-color: black;
+    color:#59CE8F;
     border: 4px solid;
-    border-color: #A36F09;
+    border-color: #59CE8F;
     border-radius: 8px;
     font-size: large;
     
   }
   .submit:hover{
-    width:80px;
-    background-color: #A36F09;
+    
+    background-color: #59CE8F;
     color:#ffff;
     border: 4px solid;
     border-color: #FFFF;
@@ -249,4 +248,25 @@ background-image{
           }
 .tutBox:hover{
     cursor: pointer;
+    background-color: #FFF;
+}
+.tutBox:hover .picBox10{
+    transform: scale(1.1);
+}
+.tutBox:hover .watchTutorial{
+    color:#59CE8F
+}
+
+.reportBox:hover{
+    background-color: #FFF;
+}
+.reportBox:hover .reportText{
+    color: #59CE8F;
+}
+
+.identifyBox:hover{
+    background-color: #FFF;
+}
+.identifyBox:hover .identifyText{
+    color: #59CE8F;
 }

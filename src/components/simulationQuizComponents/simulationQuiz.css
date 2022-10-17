@@ -1,6 +1,6 @@
 .answerButton1{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 25px;
     font-family: Montserrat;
     width: 150px;
@@ -9,7 +9,7 @@
 }
 .answerButton2{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 25px;
     font-family: Montserrat;
     width: 150px;
@@ -31,7 +31,7 @@
 }
 .questionButton{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 25px;
     font-family: Montserrat;
     width: 200px;
@@ -40,14 +40,14 @@
 }
 
 .questionButton:hover{
-    color:#A36F09;
+    color:#59CE8F;
     background-color: #FFFF;
     font-size: 30px;
     cursor: pointer;
 }
 .feedbackButton{
     color:#FFFF;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     font-size: 25px;
     font-family: Montserrat;
     width: 310px;
@@ -56,7 +56,7 @@
 }
 
 .feedbackButton:hover{
-    color:#A36F09;
+    color:#59CE8F;
     background-color: #FFFF;
     font-size: 27px;
     cursor: pointer;

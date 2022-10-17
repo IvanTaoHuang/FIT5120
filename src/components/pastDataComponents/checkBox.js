@@ -45,6 +45,7 @@ import AgeAnalysis from "./ageAnalysis";
 import Radio from "@mui/material/Radio";
 import { Card } from "@mui/material";
 import { Link } from "react-router-dom";
+import ButtonsOnBot from "../buttonOnBot";
 
 export default function ControlledCheckbox() {
   const lMatches = useMediaQuery("(min-width:655px)");
@@ -1348,7 +1349,13 @@ export default function ControlledCheckbox() {
       </Stack>
       {/* three buttons */}
       <Box height="50px"></Box>
-      <Box sx={{ width: "100%", backgroundColor: "black" }}>
+      <ButtonsOnBot
+        link1="/phishingSimulation"
+        link2="/"
+        text1="How does phishing mails work?"
+        text2="Home"
+      />
+      {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
         <Stack direction={lMatches ? "row" : "column"}>
           <Box
             sx={{
@@ -1364,7 +1371,7 @@ export default function ControlledCheckbox() {
             >
               <Box
                 border={4}
-                borderColor="#A36F09"
+                borderColor="#59CE8F"
                 sx={{
                   width: "180px",
                   height: "50px",
@@ -1421,11 +1428,12 @@ export default function ControlledCheckbox() {
               <Box
                 border={4}
                 justifyContent="center"
-                borderColor="#A36F09"
+                borderColor="#59CE8F"
                 sx={{
                   width: "180px",
                   height: "50px",
                 }}
+                borderRadius="18px"
               >
                 <Link to="/pastData">
                   <Box
@@ -1463,8 +1471,8 @@ export default function ControlledCheckbox() {
             </Stack>
           </Box>
         </Stack>
-        <Box height="180px"></Box>
-      </Box>
+        <Box height="180px"></Box> */}
+      {/* </Box> */}
     </div>
   );
 }

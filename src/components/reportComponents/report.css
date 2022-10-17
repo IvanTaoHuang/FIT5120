@@ -2,7 +2,7 @@
     
     width:370px;
     height: 60px;
-    background-color: #A36F09;
+    background-color: #59CE8F;
     border: 4px solid;
     border-radius: 12px;
     border-color: #FFF;
@@ -13,7 +13,23 @@
 
   .reportButton:hover {
     background-color: #FFF;
-    border-color:  #A36F09;
-    color:#A36F09;
+    border-color:  #59CE8F;
+    color:#59CE8F;
     cursor: pointer;
+  }
+
+  .pastDataBox:hover .pastDataText{
+    color:#59CE8F
+
+  }
+  .detectorBox:hover .detectorText{
+    color:#59CE8F
+  }
+  .pastDataBox:hover {
+    background-color:#ffff
+
+  }
+  .detectorBox:hover {
+    background-color:#ffff
+
   }
