@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { HashLink } from "react-router-hash-link";
+import { Stack } from "@mui/system";
+import { Typography } from "@mui/material";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -40,9 +42,21 @@ function Navbar() {
             }}
           >
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-              <Box sx={{ marginTop: "10px" }}>
-                CatchPhish &nbsp;
-                <img src={require("../../images/logo.png")} width="35px"></img>
+              <Box sx={{ marginTop: "16px" }}>
+                <Stack direction="row" alignItems="center">
+                  <Typography
+                    sx={{ fontSize: "28px", fontFamily: "Montserrat" }}
+                    marginLeft="-8px"
+                  >
+                    CatchPhish
+                  </Typography>
+                  <Box marginRight="8px" marginLeft="8px">
+                    <img
+                      src={require("../../images/logo.png")}
+                      width="38px"
+                    ></img>
+                  </Box>
+                </Stack>
               </Box>
             </Link>
           </Box>
