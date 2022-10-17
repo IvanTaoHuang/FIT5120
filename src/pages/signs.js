@@ -13,6 +13,7 @@ import TimeToRead from "../components/timeToRead.js";
 import "../components/signsComponents/signs.css";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import ButtonsOnBot from "../components/buttonOnBot";
 
 export default function Signs() {
   const matches = useMediaQuery("(min-width:575px)");
@@ -158,7 +159,7 @@ export default function Signs() {
         <Box sx={{ height: "100px" }}></Box>
 
         {/* three buttons */}
-        <Box sx={{ width: "100%", backgroundColor: "black" }}>
+        {/* <Box sx={{ width: "100%", backgroundColor: "black" }}>
           <Stack direction={lMatches ? "row" : "column"}>
             <Box
               sx={{
@@ -280,8 +281,14 @@ export default function Signs() {
               </Stack>
             </Box>
           </Stack>
-        </Box>
+        </Box> */}
         <Box height="100px"></Box>
+        <ButtonsOnBot
+          link1="/phishingDetector"
+          link2="/report"
+          text1="Go back to Detector"
+          text2="How do I report a phishing URL?"
+        />
       </Box>
     </>
   );

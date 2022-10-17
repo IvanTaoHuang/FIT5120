@@ -247,7 +247,7 @@ function PhishingSimulation() {
         link1="/report"
         link2="/pastData"
         text1="How do I report a Phishing URL?"
-        text2="What is the past phishing numbers?"
+        text2="What are the past phishing numbers?"
       />
     </Box>
   );

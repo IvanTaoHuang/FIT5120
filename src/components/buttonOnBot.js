@@ -3,35 +3,25 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
-import SendIcon from "@mui/icons-material/Send";
-import Fade from "@mui/material/Fade";
-import { Helmet } from "react-helmet";
-import { styled } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
-import { useState, useEffect } from "react";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import Breadcrumb from "../components/breadCrumb";
-import IconTopic from "../components/iconTopic";
 import { Link } from "react-router-dom";
 import "./buttonOnBot.css";
-import HomeIcon from "@mui/icons-material/Home";
 
 function ButtonsOnBot(props) {
   const lMatches = useMediaQuery("(min-width:750px)");
   return (
     <>
       {/* <ButtonsOnBot /> */}
-      <Box backgroundColor="#59CE8F">
+      <Box backgroundColor="#59CE8F" height="120px">
+        <Box height="30px"></Box>
         <Stack direction={lMatches ? "row" : "column"} alignItems="center">
           <Box width={lMatches ? "50%" : "100%"}>
             <Stack direction="row" alignItems="center">
               <Link to={props.link1}>
                 <KeyboardDoubleArrowLeftIcon
                   sx={{
-                    fontSize: "40px",
+                    fontSize: "50px",
                     color: "white",
                     display: "block",
                   }}
@@ -39,7 +29,7 @@ function ButtonsOnBot(props) {
                 />
               </Link>
               <Link to={props.link1}>
-                <Typography color="white" fontSize="25px">
+                <Typography color="white" fontSize="35px">
                   {props.text1}
                 </Typography>
               </Link>
@@ -51,14 +41,14 @@ function ButtonsOnBot(props) {
                 <Box>
                   <Stack direction="row">
                     <Link to={props.link2}>
-                      <Typography color="white" fontSize="25px">
+                      <Typography color="white" fontSize="35px">
                         {props.text2}
                       </Typography>
                     </Link>
                     <Link to={props.link2}>
                       <KeyboardDoubleArrowRightIcon
                         sx={{
-                          fontSize: "40px",
+                          fontSize: "50px",
                           color: "white",
                           display: "block",
                         }}

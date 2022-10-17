@@ -513,19 +513,20 @@ function BgImg() {
             </Typography>
           </Box>
         </Stack> */}
-        <Box backgroundColor="#59CE8F ">
+        <Box backgroundColor="#59CE8F " height="120px">
+          <Box height="30px"></Box>
           <Box width="100%">
             <Stack alignItems="flex-end">
               <Stack direction="row" alignItems="flex-end">
                 <Link to="/identify">
-                  <Typography color="white" fontSize="25px">
+                  <Typography color="white" fontSize="35px">
                     What are the types of scams?
                   </Typography>
                 </Link>
                 <Link to="/identify">
                   <KeyboardDoubleArrowRightIcon
                     sx={{
-                      fontSize: "40px",
+                      fontSize: "50px",
                       color: "white",
                       display: "block",
                     }}
